@@ -14,7 +14,13 @@ const MyDrinks = lazy(() => import('pages/MyDrinks/MyDrinks'));
 const Favorites = lazy(() => import('pages/Favorites/Favorites'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
+const Welcome = lazy(() => import('pages/Welcome/Welcome'));
+
 const appRoutes = [
+  {
+    path: ROUTES.WELCOME_ROUTE,
+    element: <Welcome />,
+  },
   {
     path: ROUTES.HOME_ROUTE,
     element: <Home />,
