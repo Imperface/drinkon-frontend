@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const FooterWrapper = styled.div`
-  background-color: yellow;
+  background-color: ${(props) => props.theme.yellow};
   padding: 30px 20px;
-  color: black;
+  color: ${(props) => props.theme.black};
 `;
