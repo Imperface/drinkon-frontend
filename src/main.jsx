@@ -14,7 +14,7 @@ const theme = {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/drinkon-frontend">
+    <BrowserRouter basename="/drinkon-frontend/">
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>

@@ -10,6 +10,8 @@ export default defineConfig({
       components: '/src/components',
       pages: '/src/pages',
       constants: '/src/constants',
+      images: '/src/images',
+      icons: '/src/icons',
     },
   },
   base: '/drinkon-frontend/',

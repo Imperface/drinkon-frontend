@@ -1,15 +1,17 @@
-import { AppWrapper } from './App.styled';
-import * as ROUTES from 'constants/routes.js';
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Loader } from './components/Loader/Loader';
-import { Layout } from './components/Layout/Layout';
+
+import * as ROUTES from 'constants/routes.js';
+
+import { AppWrapper } from 'src/App.styled';
+import { Loader } from 'components/Loader/Loader';
+import { Layout } from 'components/Layout/Layout';
+
 const Home = lazy(() => import('pages/Home/Home'));
 const Drinks = lazy(() => import('pages/Drinks/Drinks'));
 const AddDrink = lazy(() => import('pages/AddDrink/AddDrink'));
 const MyDrinks = lazy(() => import('pages/MyDrinks/MyDrinks'));
 const Favorites = lazy(() => import('pages/Favorites/Favorites'));
-
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 const appRoutes = [
@@ -44,7 +46,6 @@ export const App = () => {
             {appRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
             ))}
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
