@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
   color: ${(props) => props.theme.white};
   & .header-nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     column-gap: 20px;
   }
