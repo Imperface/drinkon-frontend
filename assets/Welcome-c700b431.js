@@ -1,4 +1,4 @@
-import{s,N as p,j as t}from"./index-a775de5d.js";const i="/drinkon-frontend/assets/start-desc@1x-056acf8c.jpg",l="/drinkon-frontend/assets/start-desc@2x-1b660c93.jpg",o="/drinkon-frontend/assets/start-tabl@1x-d2779c30.jpg",d="/drinkon-frontend/assets/start-tabl@2x-baeefd91.jpg",n="/drinkon-frontend/assets/start-mob@1x-d50afbcf.jpg",c="/drinkon-frontend/assets/start-mob@2x-166b0082.jpg",a="/drinkon-frontend/assets/bg-welcome-desc@1x-d9c12561.jpg",x="/drinkon-frontend/assets/bg-welcome-desc@2x-9b80a98c.jpg",g=s.div`
+import{s,N as p,j as t}from"./index-891cf531.js";const i="/drinkon-frontend/assets/start-desc@1x-056acf8c.jpg",l="/drinkon-frontend/assets/start-desc@2x-1b660c93.jpg",o="/drinkon-frontend/assets/start-tabl@1x-d2779c30.jpg",d="/drinkon-frontend/assets/start-tabl@2x-baeefd91.jpg",n="/drinkon-frontend/assets/start-mob@1x-d50afbcf.jpg",c="/drinkon-frontend/assets/start-mob@2x-166b0082.jpg",a="/drinkon-frontend/assets/bg-welcome-desc@1x-d9c12561.jpg",x="/drinkon-frontend/assets/bg-welcome-desc@2x-9b80a98c.jpg",g=s.div`
   color: ${e=>e.theme.startPageTxtColor};
   width: 100vw;
   height: 100vh;
