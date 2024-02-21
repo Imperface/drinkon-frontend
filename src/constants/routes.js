@@ -1,4 +1,7 @@
 export const WELCOME_ROUTE = '/';
+
+export const SIGNIN_ROUTE = '/signin';
+
 export const HOME_ROUTE = '/home';
 export const DRINKS_ROUTE = '/drinks';
 export const ADD_DRINK_ROUTE = '/add-drink';
