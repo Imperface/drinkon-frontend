@@ -1,4 +1,4 @@
-import { ReactComponent as DeleteIcon } from 'icons/trash-01.svg';
+import { RiDeleteBinLine } from "react-icons/ri";
 // import placeholderImage from ''; // Шлях до заглушки
 import {
   StyledDrinksItem,
@@ -19,7 +19,6 @@ export const DrinksItem = ({
   description,
   onRemoveDrinks,
 }) => {
-
   return (
     <StyledDrinksItem key={id}>
       <img
@@ -35,11 +34,9 @@ export const DrinksItem = ({
         </div>
         <TextDescr>{description}</TextDescr>
         <ButtonContainer>
-          <ButtonMore type="button">
-            See more
-          </ButtonMore>
-          <ButtonDelete type="button" onClick={onRemoveDrinks}>
-            <DeleteIcon />
+          <ButtonMore type="button">See more</ButtonMore>
+          <ButtonDelete type="button" onClick={() => onRemoveDrinks(id)}>
+            <RiDeleteBinLine />
           </ButtonDelete>
         </ButtonContainer>
       </StyledDivContainer>
