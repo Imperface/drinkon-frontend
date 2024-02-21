@@ -1,6 +1,6 @@
 import { Pagination } from 'components/Pagination/Pagination';
 import { DrinksItem } from 'components/DrinksItem/DrinksItem';
-import { usePagination } from 'custom-hooks/usePagination';
+import { usePagination } from 'customHooks/usePagination';
 import { useEffect, useState } from 'react';
 import { StyledDrinksList } from './DrinksList.styled';
 import { useDispatch } from 'react-redux';
