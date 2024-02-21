@@ -2,7 +2,7 @@ import * as ROUTES from 'constants/routes.js';
 
 import { Suspense, lazy } from 'react';
 import { Footer } from '../Footer/Footer';
-import { Header } from '../Header/Header';
+import Header from '../Header/Header';
 import { LayoutWrapper } from './LayoutWrapper';
 import { Loader } from 'components/Loader/Loader';
 import { Route, Routes } from 'react-router-dom';

@@ -1,24 +1,18 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
-export const HeaderWrapper = styled.div`
-  background-color: ${(props) => props.theme.blue};
-  padding: 30px 20px;
-  color: ${(props) => props.theme.white};
-  & .header-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 20px;
+export const HeaderStyled = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 23px 32px 32px;
   }
-  & .nav-link {
-    border: 1px solid ${(props) => props.theme.black};
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: all 0.3s;
-    &:hover {
-      background-color: ${(props) => props.theme.white};
-      color: ${(props) => props.theme.black};
-      border-color: transparent;
-    }
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    align-items: center;
   }
 `;
