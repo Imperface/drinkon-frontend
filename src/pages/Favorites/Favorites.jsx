@@ -3,10 +3,9 @@ import { Section } from 'components/Section/Section';
 import { PageTitle } from 'components/pageTitle/PageTitle';
 import { DrinksList } from 'components/DrinksList/DrinksList';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFavoritesData } from 'redux/favorites/favoritesSelectors';
+import { selectFavoritesData } from '../../redux/favorites/favoritesSelectors';
 import { useEffect } from 'react';
-import { getFavorites } from 'redux/favorites/favoritesOperations';
-
+import { getFavorites } from '../../redux/favorites/favoritesOperations';
 const Favorites = () => {
   const drinkFavoriteData = useSelector(selectFavoritesData);
 

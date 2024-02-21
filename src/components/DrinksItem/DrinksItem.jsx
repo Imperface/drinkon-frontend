@@ -1,4 +1,4 @@
-import { ReactComponent as DeleteIcon } from 'Icons/trash-01.svg';
+import { ReactComponent as DeleteIcon } from 'icons/trash-01.svg';
 // import placeholderImage from ''; // Шлях до заглушки
 import {
   StyledDrinksItem,

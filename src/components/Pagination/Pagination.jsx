@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentPage } from 'redux/pagination/paginationReducer';
-import { selectPagination } from 'redux/pagination/paginationSelectors';
+import { setCurrentPage } from '../../redux/pagination/paginationReducer';
+import { selectPagination } from '../../redux/pagination/paginationSelectors';
 import {
   PaginationList,
   PaginationItem,
@@ -15,7 +15,7 @@ export const Pagination = ({ itemsPerPage, totalItems }) => {
   const currentPage = useSelector(selectPagination);
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  const handlePageChange = page => {
+  const handlePageChange = (page) => {
     dispatch(setCurrentPage(page));
   };
 

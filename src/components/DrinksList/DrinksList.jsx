@@ -4,7 +4,7 @@ import { usePagination } from 'customHooks/usePagination';
 import { useEffect, useState } from 'react';
 import { StyledDrinksList } from './DrinksList.styled';
 import { useDispatch } from 'react-redux';
-import { deleteDrink } from 'redux/drinks/drinksReducer';
+import { deleteDrink } from '../../redux/drinks/drinksReducer';
 
 export function DrinksList({ data }) {
   const [itemsPerPage, setItemsPerPage] = useState(9);
