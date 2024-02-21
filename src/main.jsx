@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom/client';
 import { App } from './App.jsx';
 import './index.css';
 import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
+import { persistor, store } from './redux/store.js';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const theme = {
   blue: 'rgb(0, 0, 255)',
@@ -40,9 +43,13 @@ const theme = {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/drinkon-frontend/">
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </PersistGate>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

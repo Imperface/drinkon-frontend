@@ -12,6 +12,7 @@ export default defineConfig({
       constants: '/src/constants',
       images: '/src/images',
       icons: '/src/icons',
+      customHooks: '/src/customHooks',
     },
   },
   base: '/drinkon-frontend/',
