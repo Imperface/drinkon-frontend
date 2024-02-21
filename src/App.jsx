@@ -7,7 +7,7 @@ import { AppWrapper } from 'src/App.styled';
 import { Loader } from 'components/Loader/Loader';
 import { Layout } from 'components/Layout/Layout';
 
-const Welcome = lazy(() => import('pages/Welcome/Welcome'));
+import Welcome from 'pages/Welcome/Welcome';
 
 export const App = () => {
   return (
