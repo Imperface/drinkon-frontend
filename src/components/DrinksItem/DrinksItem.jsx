@@ -13,36 +13,29 @@ import {
 
 export const DrinksItem = ({
   id,
-  ingredientThumb,
-  // drinkThumb,
-  title,
-  alcohol,
+  drinkThumb,
+  drink,
+  alcoholic,
   description,
-  onOpenModal,
   onRemoveDrinks,
 }) => {
-  const checkAlco = (value) => {
-    return value && value.toLowerCase() === 'yes'
-      ? 'Alcoholic'
-      : 'Non-Alcoholic';
-  };
 
   return (
     <StyledDrinksItem key={id}>
       <img
-        // src={ingredientThumb || placeholderImage}
-        src={ingredientThumb}
-        alt={title}
+        // src={drinkThumb || placeholderImage}
+        src={drinkThumb}
+        alt={drink}
         loading="lazy"
       />
       <StyledDivContainer>
         <div>
-          <Title>{title}</Title>
-          <TextAlcohol>{checkAlco(alcohol)}</TextAlcohol>
+          <Title>{drink}</Title>
+          <TextAlcohol>{alcoholic}</TextAlcohol>
         </div>
         <TextDescr>{description}</TextDescr>
         <ButtonContainer>
-          <ButtonMore type="button" onClick={onOpenModal}>
+          <ButtonMore type="button">
             See more
           </ButtonMore>
           <ButtonDelete type="button" onClick={onRemoveDrinks}>
