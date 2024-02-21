@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 import { paginationReducer } from './pagination/paginationReducer';
 import { userReducer } from './users/slice';
+import { favoritesReducer } from './favorites/favoritesReducer';
 
 const userConfig = {
   key: 'token',
@@ -19,10 +20,17 @@ const userConfig = {
   whitelist: ['token'],
 };
 
+const favoritesConfig = {
+  key: 'favorites',
+  storage,
+  whitelist: ['favorites'],
+};
+
 export const store = configureStore({
   reducer: {
     pagination: paginationReducer,
     user: persistReducer(userConfig, userReducer),
+    drinkFavorite: persistReducer(favoritesConfig, favoritesReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
