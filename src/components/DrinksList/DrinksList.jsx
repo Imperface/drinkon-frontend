@@ -3,10 +3,8 @@ import { DrinksItem } from 'components/DrinksItem/DrinksItem';
 import { usePagination } from 'customHooks/usePagination';
 import { useEffect, useState } from 'react';
 import { StyledDrinksList } from './DrinksList.styled';
-import { useDispatch } from 'react-redux';
-// import { deleteDrink } from '../../redux/drinks/drinksReducer';
 
-export function DrinksList({ data }) {
+export function DrinksList({ data, onRemoveDrinks }) {
   const [itemsPerPage, setItemsPerPage] = useState(9);
 
   useEffect(() => {
@@ -28,11 +26,6 @@ export function DrinksList({ data }) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const dispatch = useDispatch();
-
-  const handleDeleteDrink = (drinkId) => {
-    // dispatch(deleteDrink(drinkId));
-  };
 
   const { currentPage, currentData, handlePageChange } = usePagination(
     data,
@@ -46,7 +39,7 @@ export function DrinksList({ data }) {
           <DrinksItem
             key={item._id}
             {...item}
-            onRemoveDrinks={() => handleDeleteDrink(item._id)}
+            onRemoveDrinks={onRemoveDrinks}
           />
         ))}
       </StyledDrinksList>
