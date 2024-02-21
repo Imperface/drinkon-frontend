@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import {
+  persistReducer,
   FLUSH,
   PAUSE,
   PERSIST,
@@ -9,9 +10,10 @@ import {
   REHYDRATE,
   persistStore,
 } from 'redux-persist';
-import { paginationReducer } from 'pagination/paginationReducer';
+import { paginationReducer } from './pagination/paginationReducer';
+import { userReducer } from './users/slice';
 
-const authConfig = {
+const userConfig = {
   key: 'token',
   storage,
   whitelist: ['token'],
@@ -20,6 +22,7 @@ const authConfig = {
 export const store = configureStore({
   reducer: {
     pagination: paginationReducer,
+    user: persistReducer(userConfig, userReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

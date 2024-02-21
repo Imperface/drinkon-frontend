@@ -19,8 +19,10 @@ export const signupThunk = createAsyncThunk(
     try {
       const { data } = await instance.post('/api/users/signup', credentials);
       setToken(data.token);
+      console.log(data);
       return data;
     } catch (error) {
+      console.log(error);
       return thunkAPI.rejectWithValue(error.response.statusText);
     }
   }
