@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentPage } from '../../redux/pagination/paginationReducer';
-import { selectPagination } from '../../redux/pagination/paginationSelectors';
+import { setCurrentPage } from '../redux/pagination/paginationReducer';
+import { selectPagination } from '../redux/pagination/paginationSelectors';
 
 export function usePagination(data, itemsPerPage) {
   const dispatch = useDispatch();
