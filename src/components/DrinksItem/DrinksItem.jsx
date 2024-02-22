@@ -37,7 +37,7 @@ export const DrinksItem = ({
         <ButtonContainer>
           <ButtonMore type="button">See more</ButtonMore>
           <ButtonDelete type="button" onClick={() => onRemoveDrinks(_id)}>
-            <RiDeleteBinLine />
+            <RiDeleteBinLine color="#f3f3f3" size={24} />
           </ButtonDelete>
         </ButtonContainer>
       </StyledDivContainer>

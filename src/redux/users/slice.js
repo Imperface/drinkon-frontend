@@ -37,7 +37,7 @@ const userSlice = createSlice({
       })
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user = payload;
-        state.isLogin = true;
+        state.isSignin = true;
       })
       .addCase(updateUserThunk.fulfilled, (state, { payload }) => {
         state.user = { ...state.user, ...payload };
