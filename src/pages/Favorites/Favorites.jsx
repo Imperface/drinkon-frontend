@@ -9,6 +9,7 @@ import {
   removeFavoriteDrinksThunk,
 } from '../../redux/drinks/operations';
 import { selectFavoritesDrinks } from '../../redux/drinks/selectors';
+import { Placeholder } from 'components/Placeholder/Placeholder';
 
 const Favorites = () => {
   const drinkFavoriteData = useSelector(selectFavoritesDrinks);
@@ -27,7 +28,14 @@ const Favorites = () => {
     <FavoritesWrapper>
       <Section className="favorites">
         <PageTitle name="Favorites" />
-        <DrinksList data={drinkFavoriteData} onRemoveDrinks={onRemoveDrinks} />
+        {drinkFavoriteData.length > 0 ? (
+          <DrinksList
+            data={drinkFavoriteData}
+            onRemoveDrinks={onRemoveDrinks}
+          />
+        ) : (
+          <Placeholder />
+        )}
       </Section>
     </FavoritesWrapper>
   );

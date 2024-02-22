@@ -9,6 +9,7 @@ import {
   getOwnDrinksThunk,
   removeOwnDrinkThunk,
 } from '../../redux/drinks/operations';
+import { Placeholder } from 'components/Placeholder/Placeholder';
 
 const MyDrinks = () => {
   const ownDrinksData = useSelector(selectOwnDrinks);
@@ -26,7 +27,11 @@ const MyDrinks = () => {
     <MyDrinksWrapper>
       <Section className="myDrinks">
         <PageTitle name="MyDrinks" />
-        <DrinksList data={ownDrinksData} onRemoveDrinks={onRemoveOwnDrinks} />
+        {ownDrinksData.length > 0 ? (
+          <DrinksList data={ownDrinksData} onRemoveDrinks={onRemoveOwnDrinks} />
+        ) : (
+          <Placeholder />
+        )}
       </Section>
     </MyDrinksWrapper>
   );
