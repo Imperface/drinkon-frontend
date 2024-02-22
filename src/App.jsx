@@ -7,11 +7,13 @@ import { AppWrapper } from 'src/App.styled';
 import { Loader } from 'components/Loader/Loader';
 import { Layout } from 'components/Layout/Layout';
 
+
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/users/operations';
 import { RestrictedRoute } from './components/RestrictedRoute/RestrictedRoute';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
+
 
 const Welcome = lazy(() => import('pages/Welcome/Welcome'));
 const Signin = lazy(() => import('pages/Signin/Signin'));
@@ -28,6 +30,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
+
 
   const appRoutes = [
     {
