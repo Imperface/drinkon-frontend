@@ -5,7 +5,11 @@ import { DrinksList } from 'components/DrinksList/DrinksList';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavoritesData } from '../../redux/favorites/favoritesSelectors';
 import { useEffect } from 'react';
-import { getFavorites } from '../../redux/favorites/favoritesOperations';
+import {
+  deleteFavorite,
+  getFavorites,
+} from '../../redux/favorites/favoritesOperations';
+
 const Favorites = () => {
   const drinkFavoriteData = useSelector(selectFavoritesData);
 
@@ -15,11 +19,15 @@ const Favorites = () => {
     dispatch(getFavorites());
   }, [dispatch]);
 
+  const onRemoveDrinks = (drinkId) => {
+    dispatch(deleteFavorite(drinkId));
+  };
+
   return (
     <FavoritesWrapper>
       <Section className="favorites">
         <PageTitle name="Favorites" />
-        <DrinksList data={drinkFavoriteData} />
+        <DrinksList data={drinkFavoriteData} onRemoveDrinks={onRemoveDrinks} />
       </Section>
     </FavoritesWrapper>
   );
