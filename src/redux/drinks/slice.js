@@ -47,7 +47,6 @@ const drinksSlice = createSlice({
         state.own.push(payload.addedDrink);
       })
       .addCase(removeOwnDrinkThunk.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.own = state.own.filter((item) => item._id !== payload.drink._id);
       })
       .addCase(getDrinkByIdThunk.fulfilled, (state, { payload }) => {

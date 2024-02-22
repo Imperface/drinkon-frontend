@@ -2,7 +2,7 @@ import { SigninPageWrapper } from './Signin.styled';
 
 import { NavLink } from 'react-router-dom';
 import { Section } from 'components/Section/Section';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { signinThunk } from '../../redux/users/operations';
 import { Notify } from 'notiflix';
 
