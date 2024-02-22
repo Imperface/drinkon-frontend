@@ -13,12 +13,14 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/users/operations';
 
+
 export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
+
 
   return (
     <AppWrapper>
