@@ -9,7 +9,7 @@ import { Layout } from 'components/Layout/Layout';
 
 import Welcome from 'pages/Welcome/Welcome';
 
-export const App = () => {
+ export const App = () => {
   return (
     <AppWrapper>
       <Routes>
@@ -19,4 +19,3 @@ export const App = () => {
     </AppWrapper>
   );
 };
-

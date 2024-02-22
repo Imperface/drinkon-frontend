@@ -1,99 +1,75 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-
+import { DrinkStyle } from './DrinkDescriptionFields.styled';
+import { Input } from './input';
+import {ReactComponent as Icon} from "../../images/addDrink/plus.svg"
 
 export const DrinkDescriptionFields = () => {
+    const GLASSES = [
+        'Beer Glass',
+        'Parfait glass',
+        'Mason jar',
+        'Margarita glass',
+        'Martini Glass',
+        'Balloon Glass',
+        'Coupe Glass',
+      ];
     const category = [
-        'Ordinary Drink',
-        'Cocktail',
-        'Shake',
-        'Other/Unknown',
-        'Cocoa',
-        'Shot',
-        'Coffee/Tea',
-        'Homemade Liqueur',
+                'Homemade Liqueur',
         'Punch/Party Drink',
         'Beer',
         'Soft Drink',
       ];
-  
+     
       
-     const handleChange = function(asd){
-        return <option>{asd}</option>
-      };
-
     return (
-        <div>
-    
-       
+        <DrinkStyle>
+         
                <form>
-
-               <input type="file" accept="image/*"/>
-                <input type="text" placeholder="Enter item title"/>
-                <input type="text" placeholder="Enter about recipe"/>
-
-                <Select>category.map(handleChange())</Select>
-                {/* <input type="text" placeholder="Category"/> */}
-                <input type="text" placeholder="Glass"/>
+               <div className='image'>
+               {/* <Input icon = {()=><Icon/>} type="file" accept="image/*" name='image'/> */}
+               <input className = 'inputImg' type="file" accept="image/*" name='image'/>
+               
+               <label className='titleImg' htmlFor="image">Add image</label>
+               </div> 
+               
+               <div>
+               <label htmlFor="title">Enter item title</label>
+                <input  type="text" name = 'title'/>
+                <label htmlFor="aboutRecipe">Enter about recipe</label>
+                <input type="text" name="aboutRecipe"/>
+                <label htmlFor="category">Category</label>
+            <select name='category'>
+              {category.map((item) => (
+                <option value={item} key={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+            <label htmlFor="glas">Glas</label>
+                <select name = "glasses">
+              {GLASSES.map((item) => (
+                <option value={item} key={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+               </div>
+               
+               <div>
+               <label htmlFor="alcoholic">Alcoholic</label>
+            <input type="radio"  name='alcoholic' />
+            <label htmlFor="nonAlcoholices">Non-alcoholic</label>
+            <input type="radio" name = "nonAlcoholices" />
+               </div>
+           
+                      
                </form>
               
                 
          
-        </div>
+        </DrinkStyle>
     )
     }
 
    
-
-      
-//     import React, { useState } from 'react';
-// import Select from 'react-select';
-// const options = [
-//    { value: 'apple', label: 'Apple' },
-//    { value: 'banana', label: 'Banana' },
-//    { value: 'grape', label: 'Grape' },
-//    { value: 'orange', label: 'Orange' }
-// ];
-// const App = () => {
-//    const [selectedOption, setSelectedOption] = useState('');
-//    const handleChange = selected => {
-//       setSelectedOption(selected);
-//    };
-//    return (
-      
-//          Select your favorite fruit:
-         
-//          You have selected: {selectedOption.label}
-      
-//    );
-// };
-
- // class ImageUpload extends React.Component {
-    //     constructor(props) {
-    //       super(props);
-    //       this.state = { imageUrl: null };
-      
-    //       this.handleImageChange = this.handleImageChange.bind(this);
-    //     }
-      
-    //     handleImageChange(event) {
-    //       const file = event.target.files[0];
-    //       const imageUrl = URL.createObjectURL(file);
-    //       this.setState({ imageUrl });
-    //     }
-      
-    //     render() {
-    //       return (
-    //         <div>
-    //           <input
-    //             type="file"
-    //             accept="image/*"
-    //             onChange={this.handleImageChange}
-    //           />
-    //           {this.state.imageUrl && (
-    //             <img src={this.state.imageUrl} alt="Uploaded" />
-    //           )}
-    //         </div>
-    //       );
-    //     }
-    //   }
