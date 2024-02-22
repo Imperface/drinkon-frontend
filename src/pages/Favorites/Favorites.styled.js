@@ -7,15 +7,15 @@ export const FavoritesWrapper = styled.div`
   & .favorites {
     padding-top: 80px;
     padding-bottom: 80px;
-  }
 
-  @media ${device.tablet} {
-    padding-top: 140px;
-    padding-bottom: 140px;
-  }
+    @media ${device.tablet} {
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
 
-  @media ${device.desktop} {
-    padding-top: 158px;
-    padding-bottom: 140px;
+    @media ${device.desktop} {
+      padding-top: 158px;
+      padding-bottom: 140px;
+    }
   }
 `;
