@@ -1,4 +1,5 @@
-import { NavigationLink, StyledNavigation } from './Navigation.styled';
+import { NavLink } from 'react-router-dom';
+import { StyledNavigation } from './Navigation.styled';
 import {
   HOME_ROUTE,
   DRINKS_ROUTE,
@@ -10,11 +11,21 @@ import {
 export const Navigation = () => {
   return (
     <StyledNavigation>
-      <NavigationLink to={HOME_ROUTE}>Home</NavigationLink>
-      <NavigationLink to={DRINKS_ROUTE}>Drinks</NavigationLink>
-      <NavigationLink to={ADD_DRINK_ROUTE}>Add drink</NavigationLink>
-      <NavigationLink to={MY_DRINKS_ROUTE}>My drinks</NavigationLink>
-      <NavigationLink to={FAVORITES_ROUTE}>Favorites</NavigationLink>
+      <NavLink className="navigation-link" to={HOME_ROUTE}>
+        Home
+      </NavLink>
+      <NavLink className="navigation-link" to={DRINKS_ROUTE}>
+        Drinks
+      </NavLink>
+      <NavLink className="navigation-link" to={ADD_DRINK_ROUTE}>
+        Add drink
+      </NavLink>
+      <NavLink className="navigation-link" to={MY_DRINKS_ROUTE}>
+        My drinks
+      </NavLink>
+      <NavLink className="navigation-link" to={FAVORITES_ROUTE}>
+        Favorites
+      </NavLink>
     </StyledNavigation>
   );
 };
