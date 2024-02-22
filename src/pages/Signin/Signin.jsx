@@ -2,13 +2,28 @@ import { SigninPageWrapper } from './Signin.styled';
 
 import { NavLink } from 'react-router-dom';
 import { Section } from 'components/Section/Section';
+import { useDispatch } from 'react-redux';
+import { signinThunk } from '../../redux/users/operations';
+import { Notify } from 'notiflix';
 
 const Signin = () => {
-  const onSubmit = (e) => {
+  const dispatch = useDispatch();
+
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.currentTarget;
+    const userSignIn = {
+      email: e.target.elements.userEmail.value,
+      password: e.target.elements.userPassword.value,
+    };
 
+    const { error, payload } = await dispatch(signinThunk(userSignIn));
+
+    if (error) {
+      Notify.failure(payload);
+      return;
+    }
     form.reset();
   };
 
@@ -43,11 +58,10 @@ const Signin = () => {
             <button type="submit" className="buttonSignin">
               Sign In
             </button>
+            <NavLink className="link" to="/signup">
+              Sign Up
+            </NavLink>
           </form>
-
-          <NavLink className="link" to="/signup">
-            Sign Up
-          </NavLink>
         </div>
       </Section>
     </SigninPageWrapper>
