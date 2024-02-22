@@ -7,16 +7,16 @@ import { AppWrapper } from 'src/App.styled';
 import { Loader } from 'components/Loader/Loader';
 import { Layout } from 'components/Layout/Layout';
 
-
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/users/operations';
 import { RestrictedRoute } from './components/RestrictedRoute/RestrictedRoute';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 
-
 const Welcome = lazy(() => import('pages/Welcome/Welcome'));
 const Signin = lazy(() => import('pages/Signin/Signin'));
+const Signup = lazy(() => import('pages/Signup/Signup'));
+
 const Home = lazy(() => import('pages/Home/Home'));
 const Drinks = lazy(() => import('pages/Drinks/Drinks'));
 const AddDrink = lazy(() => import('pages/AddDrink/AddDrink'));
@@ -30,7 +30,6 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
-
 
   const appRoutes = [
     {
@@ -49,6 +48,16 @@ export const App = () => {
         <RestrictedRoute>
           <Suspense fallback={<Loader />}>
             <Signin />
+          </Suspense>
+        </RestrictedRoute>
+      ),
+    },
+    {
+      path: ROUTES.SIGNUP_ROUTE,
+      element: (
+        <RestrictedRoute>
+          <Suspense fallback={<Loader />}>
+            <Signup />
           </Suspense>
         </RestrictedRoute>
       ),

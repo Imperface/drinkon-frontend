@@ -11,7 +11,8 @@ import { device } from 'constants/device';
 export const SignupPageWrapper = styled.div`
   color: ${(props) => props.theme.startPageTxtColor};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px 0;
   background-image: url(${start1xMobile});
 
   @supports (-webkit-image-set: url()) {
@@ -128,9 +129,11 @@ export const SignupPageWrapper = styled.div`
   @media ${device.tablet} {
     background-image: url(${start1xTablet});
     text-align: left;
+    margin: 0;
 
     & .section {
       margin: 0;
+      margin-right: auto;
     }
 
     & .signup {

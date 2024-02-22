@@ -48,7 +48,6 @@ const Calendar = () => {
       }) => (
         <div
           style={{
-            background: '${(props) => props.theme.darkBlueColor}',
             margin: 10,
             display: 'flex',
             justifyContent: 'center',
