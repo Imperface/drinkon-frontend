@@ -3,7 +3,6 @@ import { device } from 'constants/device';
 
 export const MyDrinksWrapper = styled.div`
   width: 100%;
-  height: 100vh;
 
   & .myDrinks {
     padding-top: 80px;

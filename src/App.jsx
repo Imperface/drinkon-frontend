@@ -54,7 +54,7 @@ export const App = () => {
       path: ROUTES.HOME_ROUTE,
       element: (
         <Layout>
-          <PrivateRoute navigateTo={ROUTES.WELCOME_ROUTE}>
+          <PrivateRoute>
             <Suspense fallback={<Loader />}>
               <Home />
             </Suspense>
@@ -66,7 +66,7 @@ export const App = () => {
       path: ROUTES.DRINKS_ROUTE,
       element: (
         <Layout>
-          <PrivateRoute navigateTo={ROUTES.WELCOME_ROUTE}>
+          <PrivateRoute>
             <Suspense fallback={<Loader />}>
               <Drinks />
             </Suspense>
@@ -78,7 +78,7 @@ export const App = () => {
       path: ROUTES.ADD_DRINK_ROUTE,
       element: (
         <Layout>
-          <PrivateRoute navigateTo={ROUTES.WELCOME_ROUTE}>
+          <PrivateRoute>
             <Suspense fallback={<Loader />}>
               <AddDrink />
             </Suspense>
@@ -90,7 +90,7 @@ export const App = () => {
       path: ROUTES.MY_DRINKS_ROUTE,
       element: (
         <Layout>
-          <PrivateRoute navigateTo={ROUTES.WELCOME_ROUTE}>
+          <PrivateRoute>
             <Suspense fallback={<Loader color="white" />}>
               <MyDrinks />
             </Suspense>
@@ -102,7 +102,7 @@ export const App = () => {
       path: ROUTES.FAVORITES_ROUTE,
       element: (
         <Layout>
-          <PrivateRoute navigateTo={ROUTES.WELCOME_ROUTE}>
+          <PrivateRoute>
             <Suspense fallback={<Loader />}>
               <Favorites />
             </Suspense>
