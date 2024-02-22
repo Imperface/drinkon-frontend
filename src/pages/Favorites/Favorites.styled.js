@@ -3,7 +3,6 @@ import { device } from 'constants/device';
 
 export const FavoritesWrapper = styled.div`
   width: 100%;
-  height: 100vh;
 
   & .favorites {
     padding-top: 80px;

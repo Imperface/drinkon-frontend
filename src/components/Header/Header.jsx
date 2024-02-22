@@ -11,7 +11,7 @@ const Header = () => {
       <Logo />
       <Navigation />
       <div className="media-screen-wrapper">
-        <TogglerTheme />
+        {/* <TogglerTheme /> */}
         <UserLogo />
         <BurgerMenu />
       </div>
