@@ -1,4 +1,4 @@
-import{s as Qt,c as st,u as Vt,j as H,N as Yt,a as _t}from"./index-099e343c.js";import{s as Nt,c as Gt,a as Ct,d as Kt,w as Jt,b as zt,e as Zt}from"./bg-welcome-desc@1x-0be22210.js";import{d as St,S as te}from"./Section-ac6aeacf.js";const ee=Qt.div`
+import{s as Qt,c as st,u as Vt,j as H,N as Yt,a as _t}from"./index-33d8d1ff.js";import{s as Nt,c as Gt,a as Ct,d as Kt,w as Jt,b as zt,e as Zt}from"./bg-welcome-desc@1x-0be22210.js";import{d as St,S as te}from"./Section-adb2d0b3.js";const ee=Qt.div`
   color: ${h=>h.theme.startPageTxtColor};
   width: 100%;
   height: 100vh;
