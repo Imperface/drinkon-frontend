@@ -4,12 +4,17 @@ export const StyledUserLogo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  @media screen and (min-width: 768px) {
-    gap: 10px;
-  }
+  gap: 8px;
+  margin-right: 14px;
+
   @media screen and (min-width: 768px) {
     gap: 14px;
+    margin-right: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 14px;
+    margin-right: 0;
   }
 
   .user-logo-wrapper {
@@ -17,6 +22,7 @@ export const StyledUserLogo = styled.div`
     height: 32px;
     border-radius: 50%;
     overflow: hidden;
+
     @media screen and (min-width: 768px) {
       width: 44px;
       height: 44px;
@@ -24,9 +30,9 @@ export const StyledUserLogo = styled.div`
   }
 
   .user-logo-text {
+    margin-bottom: 0;
     font-size: 14px;
     font-weight: 500;
-    max-width: 104px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

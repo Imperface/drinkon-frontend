@@ -1,35 +1,35 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledNavigation = styled.nav`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  display: none;
 
   @media screen and (min-width: 1440px) {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     flex-direction: row;
-    margin-left: 224px;
-    margin-right: 191px;
-  }
-`;
-
-export const NavigationLink = styled(NavLink)`
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  padding: 8px 16px;
-  border-radius: 40px;
-  transition: background 0.2s;
-  overflow: hidden;
-
-  &:active {
-    color: #fff;
-    background: #000;
-    border: red;
   }
 
-  @media screen and (min-width: 768px) {
-    line-height: 22.4px;
+  .navigation-link {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    padding: 8px 16px;
+    border-radius: 40px;
+    border: 1px solid rgba(243, 243, 243, 0.2);
+    box-sizing: border-box;
+    transition:
+      background 300ms,
+      border 300ms,
+      color 300ms;
+    overflow: hidden;
+
+    &:hover,
+    &.active,
+    &:focus {
+      color: ${({ theme }) => theme.whiteColor};
+      background: ${({ theme }) => theme.darkBlueColor};
+      border: 1px solid transparent;
+    }
   }
 `;

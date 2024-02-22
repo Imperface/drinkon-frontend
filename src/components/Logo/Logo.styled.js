@@ -4,6 +4,9 @@ import styled from 'styled-components';
 export const StyledLogoLink = styled(NavLink)`
   display: inline-flex;
   align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.125;
   .logo {
     width: 22px;
     height: 22px;
