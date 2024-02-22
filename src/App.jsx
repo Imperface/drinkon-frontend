@@ -9,10 +9,11 @@ import { Layout } from 'components/Layout/Layout';
 
 import Welcome from 'pages/Welcome/Welcome';
 import Signin from 'pages/Signin/Signin';
+import Signup from 'pages/Signup/Signup';
+
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/users/operations';
-
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -21,12 +22,12 @@ export const App = () => {
     dispatch(refreshThunk());
   }, [dispatch]);
 
-
   return (
     <AppWrapper>
       <Routes>
         <Route path={ROUTES.WELCOME_ROUTE} element={<Welcome />} />
         <Route path={ROUTES.SIGNIN_ROUTE} element={<Signin />} />
+        <Route path={ROUTES.SIGNUP_ROUTE} element={<Signup />} />
         <Route path="*" element={<Layout />} />
       </Routes>
     </AppWrapper>
