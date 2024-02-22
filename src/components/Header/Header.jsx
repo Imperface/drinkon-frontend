@@ -1,17 +1,21 @@
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import TogglerTheme from '../TogglerTheme/TogglerTheme';
 import UserLogo from '../UserLogo/UserLogo';
-import { HeaderStyled } from './Header.styled';
+import { StyledHeader } from './Header.styled';
 
 const Header = () => {
   return (
-    <HeaderStyled>
+    <StyledHeader>
       <Logo />
       <Navigation />
-      <TogglerTheme />
-      <UserLogo />
-    </HeaderStyled>
+      <div className="media-screen-wrapper">
+        {/* <TogglerTheme /> */}
+        <UserLogo />
+        <BurgerMenu />
+      </div>
+    </StyledHeader>
   );
 };
 

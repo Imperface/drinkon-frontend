@@ -1,9 +1,10 @@
 import { FavoritesWrapper } from './Favorites.styled';
 import { Section } from 'components/Section/Section';
-import { PageTitle } from 'components/pageTitle/PageTitle';
+import { PageTitle } from 'components/Title/PageTitle';
 import { DrinksList } from 'components/DrinksList/DrinksList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+
 import {
   getFavoritesDrinksThunk,
   removeFavoriteDrinksThunk,
@@ -21,6 +22,7 @@ const Favorites = () => {
   }, [dispatch]);
 
   const onRemoveDrinks = (drinkId) => {
+    console.log(drinkId);
     dispatch(removeFavoriteDrinksThunk(drinkId));
   };
 

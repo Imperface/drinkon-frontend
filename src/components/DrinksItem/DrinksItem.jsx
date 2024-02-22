@@ -12,15 +12,16 @@ import {
 } from './DrinksItem.styled';
 
 export const DrinksItem = ({
-  id,
+  _id,
   drinkThumb,
   drink,
   alcoholic,
   description,
   onRemoveDrinks,
 }) => {
+  console.log(_id);
   return (
-    <StyledDrinksItem key={id}>
+    <StyledDrinksItem key={_id}>
       <img
         // src={drinkThumb || placeholderImage}
         src={drinkThumb}
@@ -35,7 +36,7 @@ export const DrinksItem = ({
         <TextDescr>{description}</TextDescr>
         <ButtonContainer>
           <ButtonMore type="button">See more</ButtonMore>
-          <ButtonDelete type="button" onClick={() => onRemoveDrinks(id)}>
+          <ButtonDelete type="button" onClick={() => onRemoveDrinks(_id)}>
             <RiDeleteBinLine color="#f3f3f3" size={24} />
           </ButtonDelete>
         </ButtonContainer>
