@@ -9,8 +9,17 @@ import { Layout } from 'components/Layout/Layout';
 
 import Welcome from 'pages/Welcome/Welcome';
 import Signin from 'pages/Signin/Signin';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshThunk } from './redux/users/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
+
   return (
     <AppWrapper>
       <Routes>

@@ -65,6 +65,7 @@ export const SigninPageWrapper = styled.div`
     border: 1px solid ${(props) => props.theme.whiteFiftyColor};
     color: ${(props) => props.theme.whiteFiftyColor};
     background-color: transparent;
+    transition: all 0.3s;
 
     &:hover {
       border: 1px solid ${(props) => props.theme.whiteColor};
@@ -87,7 +88,7 @@ export const SigninPageWrapper = styled.div`
   & .buttonSignin {
     background-color: ${(props) => props.theme.whiteColor};
     color: ${(props) => props.theme.darkBlueColor};
-    border-radius: 42px;
+    border-radius: 30px;
     font-weight: 600;
     font-size: 14px;
     width: 335px;
@@ -96,6 +97,12 @@ export const SigninPageWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 14px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: transparent;
+      color: ${(props) => props.theme.whiteColor};
+    }
   }
   & .link {
     color: ${(props) => props.theme.whiteColor};
@@ -104,7 +111,6 @@ export const SigninPageWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 12px;
   }
 
   @media ${device.tablet} {
@@ -116,7 +122,6 @@ export const SigninPageWrapper = styled.div`
     }
 
     & .signin {
-      padding-left: 32px;
       width: 400px;
       height: 292px;
     }
@@ -146,7 +151,7 @@ export const SigninPageWrapper = styled.div`
       font-size: 14px;
       justify-content: center;
       align-items: center;
-      padding-top: 14px;
+      padding: 14px;
     }
   }
 
