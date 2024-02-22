@@ -1,4 +1,4 @@
-import { RiDeleteBinLine } from "react-icons/ri";
+import { RiDeleteBinLine } from 'react-icons/ri';
 // import placeholderImage from ''; // Шлях до заглушки
 import {
   StyledDrinksItem,
@@ -36,7 +36,7 @@ export const DrinksItem = ({
         <ButtonContainer>
           <ButtonMore type="button">See more</ButtonMore>
           <ButtonDelete type="button" onClick={() => onRemoveDrinks(id)}>
-            <RiDeleteBinLine />
+            <RiDeleteBinLine color="#f3f3f3" size={24} />
           </ButtonDelete>
         </ButtonContainer>
       </StyledDivContainer>
