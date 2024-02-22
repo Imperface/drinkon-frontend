@@ -3,10 +3,12 @@ import { Section } from 'components/Section/Section';
 import { PageTitle } from 'components/Title/PageTitle';
 import { DrinksList } from 'components/DrinksList/DrinksList';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFavoritesData } from '../../redux/favorites/favoritesSelectors';
 import { useEffect } from 'react';
 
-import { getFavoritesDrinksThunk } from '../../redux/drinks/operations';
+import {
+  getFavoritesDrinksThunk,
+  removeFavoriteDrinksThunk,
+} from '../../redux/drinks/operations';
 import { selectFavoritesDrinks } from '../../redux/drinks/selectors';
 
 const Favorites = () => {
@@ -19,7 +21,8 @@ const Favorites = () => {
   }, [dispatch]);
 
   const onRemoveDrinks = (drinkId) => {
-    dispatch(deleteFavorite(drinkId));
+    console.log(drinkId);
+    dispatch(removeFavoriteDrinksThunk(drinkId));
   };
 
   return (
