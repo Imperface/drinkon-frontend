@@ -122,9 +122,28 @@ export const getSearchDrinksThunk = createAsyncThunk(
     { category = '', ingredientId = '', query = '', page = '', limit = '' },
     thunkAPI
   ) => {
+    const getQueryParams = () => {
+      let params = '?';
+      if (category) {
+        params = `${params}category=${category}&`;
+      }
+      if (ingredientId) {
+        params = `${params}ingredientId=${ingredientId}&`;
+      }
+      if (query) {
+        params = `${params}query=${query}&`;
+      }
+      if (page) {
+        params = `${params}page=${page}&`;
+      }
+      if (limit) {
+        params = `${params}limit=${limit}`;
+      }
+      return params;
+    };
     try {
       const { data } = await instance.get(
-        `/api/drinks/search?category=${category}&ingredientId=${ingredientId}&query=${query}&page${page}&limit${limit}`
+        `/api/drinks/search${getQueryParams()}`
       );
       return data;
     } catch (error) {
