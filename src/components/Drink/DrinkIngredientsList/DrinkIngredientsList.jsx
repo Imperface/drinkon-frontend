@@ -10,7 +10,6 @@ import {
 import defaultImage from '../../../images/drinkPage/coctailPlaceholder.png';
 
 export const DrinkIngredientsList = ({ data }) => {
-  console.log(data);
   return (
     <>
       <Title>Ingredients</Title>

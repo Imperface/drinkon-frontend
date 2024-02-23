@@ -31,7 +31,6 @@ export const PopularDrinks = () => {
   const loading = useSelector(selectDrinksIsLoading);
   const error = useSelector(selectDrinksError);
 
-  console.log(popularDrinks);
   if (loading) {
     return <p>Loading...</p>;
   }
