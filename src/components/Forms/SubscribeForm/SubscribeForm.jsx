@@ -6,10 +6,10 @@ import {
   SubscribeButton,
 } from './SubscribeForm.styled';
 import { useDispatch } from 'react-redux';
-import { subscribeEmail } from 'redux/users/operations';
-// import { object, string } from 'yup';
-// import { toast } from 'react-toastify';
-// import { toastConfig } from '../../Notification/notification_options';
+import { subscribeEmail } from 'redux/subscribes/subscribesOperations';
+import { object, string } from 'yup';
+import { Notify } from 'notiflix';
+import { toastConfig } from '../../Notification/notification_options';
 
 const validationSchema = object({
   email: string()
@@ -33,9 +33,9 @@ const SubscribeForm = () => {
           await dispatch(subscribeEmail(values));
 
           actions.resetForm();
-          toast.success('You have successfully subscribed!', toastConfig());
+          Notify.success('You have successfully subscribed!', toastConfig());
         } catch (error) {
-          toast.error('Subscription failed. Please try again.', toastConfig());
+          Notify.error('Subscription failed. Please try again.', toastConfig());
         }
       }}
     >

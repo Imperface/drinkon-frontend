@@ -27,14 +27,3 @@ export const signupThunk = createAsyncThunk(
     }
   }
 );
-
-// export const subscribeEmail = createAsyncThunk(
-//   '/auth/subscribe',
-//   async (data, thunkAPI) => {
-//     try {
-//       await axios.post('/users/subscribe', data);
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
