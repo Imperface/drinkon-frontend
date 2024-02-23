@@ -8,7 +8,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { subscribeEmail } from 'redux/subscribes/subscribesOperations';
 import { object, string } from 'yup';
-import { Notify } from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { toastConfig } from '../../Notification/notification_options';
 
 const validationSchema = object({
