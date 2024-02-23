@@ -1,4 +1,4 @@
-import{s as n,j as e,u as s,f as l}from"./index-03843ed9.js";import{P as o}from"./PageTitle-197600af.js";const d=n.div``,c=n.div`
+import{s as n,j as e,u as s,f as l}from"./index-5fca90f7.js";import{P as o}from"./PageTitle-02e3109b.js";const d=n.div``,c=n.div`
  display: block;
   width: 335px;
 

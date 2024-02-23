@@ -1,4 +1,4 @@
-import{s as r,h as n,u as p,r as m,m as d,j as t,n as x}from"./index-03843ed9.js";import{d as o,S as c}from"./Section-1431104d.js";import{P as h}from"./PageTitle-197600af.js";import{D as v,P as g}from"./Placeholder-a6cc8c4d.js";import{a as l}from"./selectors-3bd61cc3.js";const f=r.div`
+import{s as r,h as n,u as p,r as m,m as d,j as t,n as x}from"./index-5fca90f7.js";import{d as o,S as c}from"./Section-2325c3e4.js";import{P as h}from"./PageTitle-02e3109b.js";import{D as v,P as g}from"./Placeholder-b3ca3345.js";import{a as l}from"./selectors-3bd61cc3.js";const f=r.div`
   width: 100%;
 
   & .favorites {
