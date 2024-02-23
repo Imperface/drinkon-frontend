@@ -58,44 +58,6 @@ export const PopularDrinks = () => {
               </PopularDrinksListDescriptionContainer>
             </Link>
           </PopularDrinksListItem>
-          // <>
-          // <a href="">
-          // <PopularDrinksListItem>
-          //     <PopularDrinksListImg src="" alt="" />
-          //     <PopularDrinksListDescriptionContainer>
-          //       <PopularDrinksListDescriptionTitle>Gin Lemon</PopularDrinksListDescriptionTitle>
-          //       <PopularDrinksListDescription>A gin and tonic is a highball cocktail made with gin and tonic water poured over a large </PopularDrinksListDescription>
-          //     </PopularDrinksListDescriptionContainer>
-          // </PopularDrinksListItem>
-          // </a>
-          // <a href="">
-          // <PopularDrinksListItem>
-          //     <PopularDrinksListImg src="" alt="" />
-          //     <PopularDrinksListDescriptionContainer>
-          //       <PopularDrinksListDescriptionTitle>Gin Smash</PopularDrinksListDescriptionTitle>
-          //       <PopularDrinksListDescription>The Gin Basil Smash is a modern classic cocktail that’s refreshing, delicious, and so</PopularDrinksListDescription>
-          //     </PopularDrinksListDescriptionContainer>
-          // </PopularDrinksListItem>
-          // </a>
-          // <a href="">
-          // <PopularDrinksListItem>
-          //     <PopularDrinksListImg src="" alt="" />
-          //     <PopularDrinksListDescriptionContainer>
-          //       <PopularDrinksListDescriptionTitle>Spring Punch</PopularDrinksListDescriptionTitle>
-          //       <PopularDrinksListDescription>The  spring punch is a highball cocktail of vodka and liqueur, per IBA specified ingredients</PopularDrinksListDescription>
-          //     </PopularDrinksListDescriptionContainer>
-          // </PopularDrinksListItem>
-          // </a>
-          // <a href="">
-          // <PopularDrinksListItem>
-          //     <PopularDrinksListImg src="" alt="" />
-          //     <PopularDrinksListDescriptionContainer>
-          //       <PopularDrinksListDescriptionTitle>Lone  Tree Cooler</PopularDrinksListDescriptionTitle>
-          //       <PopularDrinksListDescription>Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice, add gin</PopularDrinksListDescription>
-          //     </PopularDrinksListDescriptionContainer>
-          // </PopularDrinksListItem>
-          // </a>
-          // </>
           ))}
           </PopularDrinksList>
         </PopularDrinksWrapper>
