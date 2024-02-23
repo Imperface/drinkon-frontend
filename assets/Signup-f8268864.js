@@ -1,4 +1,4 @@
-var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(oo(r,typeof n!="symbol"?n+"":n,e),e);import{s as dr,g as ao,r as P,b as fr,R as hr,c as m,i as so,j as A,u as io,N as co,d as lo}from"./index-d70df441.js";import{s as xn,c as uo,a as Cn,d as po,w as fo,b as Mn,e as ho}from"./bg-welcome-desc@1x-0be22210.js";import{d as Gt,S as mo}from"./Section-51e883ab.js";import{n as go}from"./notiflix-aio-3.2.7.min-a29d10db.js";const yo=dr.div`
+var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(oo(r,typeof n!="symbol"?n+"":n,e),e);import{s as dr,g as ao,r as P,b as fr,R as hr,c as m,i as so,j as A,u as io,N as co,d as lo}from"./index-03843ed9.js";import{s as xn,c as uo,a as Cn,d as po,w as fo,b as Mn,e as ho}from"./bg-welcome-desc@1x-0be22210.js";import{d as Gt,S as mo}from"./Section-1431104d.js";import{n as go}from"./notiflix-aio-3.2.7.min-0f74c00f.js";const yo=dr.div`
   color: ${r=>r.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
