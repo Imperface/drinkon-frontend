@@ -22,7 +22,6 @@ const Favorites = () => {
   }, [dispatch]);
 
   const onRemoveDrinks = (drinkId) => {
-    console.log(drinkId);
     dispatch(removeFavoriteDrinksThunk(drinkId));
   };
 

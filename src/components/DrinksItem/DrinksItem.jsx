@@ -19,7 +19,6 @@ export const DrinksItem = ({
   description,
   onRemoveDrinks,
 }) => {
-  console.log(_id);
   return (
     <StyledDrinksItem key={_id}>
       <img

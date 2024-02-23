@@ -6,20 +6,38 @@ export const StyledDrinksItem = styled.li`
   flex-direction: column;
   gap: 18px;
   width: 335px;
+  height: 581px;
+  & img {
+    border-radius: 20px;
+    width: 335px;
+    height: 392px;
+    object-fit: cover;
+  }
 
   @media ${device.tablet} {
     width: 342px;
+    height: 650px;
     gap: 24px;
+    & img {
+      width: 342px;
+      height: 360px;
+    }
   }
 
   @media ${device.desktop} {
     width: 400px;
+    height: 676px;
+    & img {
+      width: 400px;
+      height: 400px;
+    }
   }
 `;
 export const StyledDivContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
+  flex-grow: 1;
 
   @media ${device.tablet} {
     gap: 24px;
@@ -44,6 +62,7 @@ export const TextAlcohol = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
+
   color: ${(props) => props.theme.whiteFiftyColor};
 
   @media ${device.tablet} {
@@ -54,6 +73,12 @@ export const TextAlcohol = styled.p`
 
 export const TextDescr = styled.p`
   font-family: 'Manrope', sans-serif;
+  flex-grow: 1;
+
+  --max-lines: 3;
+  position: relative;
+  max-height: calc(1.4rem * 4);
+  overflow: hidden;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
