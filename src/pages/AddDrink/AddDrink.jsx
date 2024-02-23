@@ -21,15 +21,6 @@ const AddDrink = () => {
         </div>
         
       </AddDrinkContainer>
-        {/* <div className="addContainer">
-          <div className="addImage"></div>
-          <div className="addForm"></div>
-        </div>
-        <div className="followUs"></div>
-        <div className="popularDrinks"></div>
-        <div className="ingredients"></div>
-        <div className="recipePreparation"></div>
-        <button className="addButton">Add</button> */}
     </AddDrinkWrapper>
   </Container>
   );
