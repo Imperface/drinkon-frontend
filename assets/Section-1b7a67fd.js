@@ -1,4 +1,4 @@
-import{s,j as i}from"./index-5fca90f7.js";const n={mobile:"(max-width: 375.9px)",tablet:"(min-width: 768px)",desktop:"(min-width: 1440px)"},a=s.div`
+import{s,j as i}from"./index-6787b180.js";const n={mobile:"(max-width: 375.9px)",tablet:"(min-width: 768px)",desktop:"(min-width: 1440px)"},a=s.div`
   margin: 0 auto;
   padding: 0 20px;
   width: 375px;

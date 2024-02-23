@@ -1,4 +1,4 @@
-import{s as p,j as t,N as r}from"./index-5fca90f7.js";import{s as i,a as o,w as n,b as a,c as s,d as c,e as d}from"./bg-welcome-desc@1x-0be22210.js";import{d as l,S as g}from"./Section-2325c3e4.js";const x="/drinkon-frontend/assets/bg-welcome-desc@2x-9b80a98c.jpg",m=p.div`
+import{s as p,j as t,N as r}from"./index-6787b180.js";import{s as i,a as o,w as n,b as a,c as s,d as c,e as d}from"./bg-welcome-desc@1x-0be22210.js";import{d as l,S as g}from"./Section-1b7a67fd.js";const x="/drinkon-frontend/assets/bg-welcome-desc@2x-9b80a98c.jpg",m=p.div`
   color: ${e=>e.theme.startPageTxtColor};
   width: 100%;
   height: 100vh;
