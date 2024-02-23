@@ -23,6 +23,7 @@ const AddDrink = lazy(() => import('pages/AddDrink/AddDrink'));
 const MyDrinks = lazy(() => import('pages/MyDrinks/MyDrinks'));
 const Favorites = lazy(() => import('pages/Favorites/Favorites'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
+const Drink = lazy(() => import('pages/Drink/Drink'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -81,6 +82,18 @@ export const App = () => {
           <PrivateRoute>
             <Suspense fallback={<Loader />}>
               <Drinks />
+            </Suspense>
+          </PrivateRoute>
+        </Layout>
+      ),
+    },
+    {
+      path: `${ROUTES.GET_DRINK_BY_ID}:drinkId`,
+      element: (
+        <Layout>
+          <PrivateRoute>
+            <Suspense fallback={<Loader />}>
+              <Drink />
             </Suspense>
           </PrivateRoute>
         </Layout>

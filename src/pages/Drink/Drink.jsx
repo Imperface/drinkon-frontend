@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { DrinkIngredientsList } from '../../components/DrinkIngredientsList/DrinkIngredientsList';
-import { DrinkPageHero } from '../../components/DrinkPageHero/DrinkPageHero';
-import { RecipePreparation } from '../../components/RecipePreparation/RecipePreparation';
+import { PageTitle } from '../../components/Title/PageTitle';
+import { DrinkIngredientsList } from '../../components/Drink/DrinkIngredientsList/DrinkIngredientsList';
+import { DrinkPageHero } from '../../components/Drink/DrinkPageHero/DrinkPageHero';
+import { RecipePreparation } from '../../components/Drink/RecipePreparation/RecipePreparation';
 import { Section } from '../../components/Section/Section';
 import { Loader } from '../../components/Loader/Loader';
 import { Container } from '../../components/Container/Container';
@@ -14,33 +15,36 @@ import {
   selectDrinksError,
   selectDrinksIsLoading,
 } from '../../redux/drinks/selectors';
+import { useState } from 'react';
+import { DrinkWrapper } from './Drink.styled';
 
-export const Drink = () => {
+const Drink = () => {
   const dispatch = useDispatch();
   const { drinkId } = useParams();
-  const drink = useSelector(selectDrinkById);
-  const isLoading = useSelector(selectDrinksIsLoading);
-  const isError = useSelector(selectDrinksError);
-
   useEffect(() => {
     dispatch(getDrinkByIdThunk(drinkId));
   }, [dispatch, drinkId]);
 
+  const drink = useSelector(selectDrinkById);
+  const isLoading = useSelector(selectDrinksIsLoading);
+  const isError = useSelector(selectDrinksError);
+
   return (
-    <Section>
-      <Container>
+    <DrinkWrapper>
+      <Section className={'drinkSection'}>
         {isLoading && <Loader />}
         {isError && <h1>{isError}</h1>}
 
-        {drink && (
+        {Object.keys(drink).length > 0 && (
           <>
-            <PageTitle name={drink.recipe.drink} />
-            <DrinkPageHero data={drink.recipe} />
-            <DrinkIngredientsList data={drink.recipe.ingredients} />
-            <RecipePreparation description={drink.recipe.description} />
+            <DrinkPageHero data={drink} />
+            <DrinkIngredientsList data={drink.ingredients} />
+            <RecipePreparation instructions={drink.instructions} />
           </>
         )}
-      </Container>
-    </Section>
+      </Section>
+    </DrinkWrapper>
   );
 };
+
+export default Drink;

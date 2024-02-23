@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const ButtonFavorite = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.3;

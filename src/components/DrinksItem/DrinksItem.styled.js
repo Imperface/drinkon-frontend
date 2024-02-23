@@ -32,6 +32,28 @@ export const StyledDrinksItem = styled.li`
       height: 400px;
     }
   }
+  & .linkSeeMore {
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    border: none;
+    background: ${(props) => props.theme.darkBlueColor};
+    border-radius: 42px;
+    padding: 14px 40px;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.28571;
+    color: ${(props) => props.theme.whiteColor};
+
+    @media ${device.tablet} {
+      padding: 18px 44px;
+
+      font-size: 16px;
+      line-height: 1.125;
+    }
+  }
 `;
 export const StyledDivContainer = styled.div`
   display: flex;
@@ -96,28 +118,7 @@ export const ButtonContainer = styled.div`
   gap: 8px;
 `;
 
-export const ButtonMore = styled.button`
-  cursor: pointer;
-  padding: 0;
-  background: none;
-  border: none;
-  background: ${(props) => props.theme.darkBlueColor};
-  border-radius: 42px;
-  padding: 14px 40px;
-  height: 46px;
-
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.28571;
-  color: ${(props) => props.theme.whiteColor};
-
-  @media ${device.tablet} {
-    height: 54px;
-    font-size: 16px;
-    line-height: 1.125;
-  }
-`;
+export const ButtonMore = styled.button``;
 
 export const ButtonDelete = styled.button`
   display: flex;

@@ -2,15 +2,20 @@ import styled from 'styled-components';
 import { device } from 'constants/device';
 
 export const DrinkContainer = styled.div`
-  @media screen and ${device.desktop} {
+  padding-bottom: 18px;
+  @media ${device.tablet} {
+    padding-bottom: 80px;
+  }
+  @media ${device.desktop} {
+    padding-bottom: 100px;
+
     display: flex;
     justify-content: space-between;
-    position: relative;
   }
 `;
 
 export const DrinkText = styled.div`
-  @media screen and ${device.tablet} {
+  @media ${device.tablet} {
     max-width: 593px;
   }
 `;
@@ -22,7 +27,7 @@ export const Title = styled.p`
 
   margin-bottom: 20px;
 
-  @media screen and ${device.tablet} {
+  @media ${device.tablet} {
     font-size: 16px;
     line-height: 1.25;
   }
@@ -34,7 +39,7 @@ export const Desc = styled.p`
 
   margin-bottom: 40px;
 
-  @media screen and ${device.tablet} {
+  @media ${device.tablet} {
     font-size: 16px;
     line-height: 1.35;
   }
@@ -44,22 +49,17 @@ export const ImagesDrink = styled.img`
   width: 335px;
   height: 400px;
 
-  margin-bottom: 18px;
   border-radius: 8px;
 
   object-fit: cover;
 
-  @media screen and ${device.tablet} {
+  @media ${device.tablet} {
     width: 704px;
     height: 400px;
-    margin-bottom: 80px;
   }
 
-  @media screen and ${device.desktop} {
+  @media ${device.desktop} {
     width: 400px;
     height: 400px;
-    position: absolute;
-    right: 0;
-    top: -92px;
   }
 `;

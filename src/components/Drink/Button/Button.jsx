@@ -1,44 +1,37 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Button } from './Button.styled';
+import { ButtonFavorite } from './Button.styled';
 
 import {
   addFavoriteDrinksThunk,
   removeFavoriteDrinksThunk,
 } from '../../../redux/drinks/operations';
+import { selectUserData } from '../../../redux/users/selectors';
 
-export const Button = ({ id, favoriteDrink }) => {
+export const Button = ({ id, favoritesDrink }) => {
   const [favorite, setfavorite] = useState(null);
   const dispatch = useDispatch();
 
-  const userId = useSelector((state) => state.auth.user.id);
+  const { _id } = useSelector(selectUserData);
 
   useEffect(() => {
-    if (favoriteDrink.length) {
-      favoriteDrink.find((item) => {
-        if (item === userId) {
+    if (favoritesDrink && favoritesDrink.length) {
+      favoritesDrink.find((item) => {
+        if (item._id === _id) {
           return setfavorite(true);
         }
       });
     }
-  }, [favoriteDrink, userId]);
+  }, [favoritesDrink, _id]);
 
   const handleAddFavorite = () => {
-    dispatch(
-      addFavoriteDrinksThunk({
-        drinkId: id,
-      })
-    );
+    dispatch(addFavoriteDrinksThunk(id));
     setfavorite(true);
   };
 
   const handleRemoveFavorite = () => {
-    dispatch(
-      removeFavoriteDrinksThunk({
-        drinkId: id,
-      })
-    );
+    dispatch(removeFavoriteDrinksThunk(id));
     setfavorite(false);
   };
 
