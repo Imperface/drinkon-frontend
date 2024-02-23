@@ -1,6 +1,14 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getPopularDrinksThunk } from '../../redux/drinks/operations';
+import {
+  selectDrinksError,
+  selectDrinksIsLoading,
+  selectPopularDrinks,
+} from '../../redux/drinks/selectors';
+import * as ROUTES from 'constants/routes.js';
+
 import {
   PopularDrinksWrapper,
   PopularDrinksList,
@@ -9,29 +17,21 @@ import {
   PopularDrinksListDescriptionContainer,
   PopularDrinksListDescriptionTitle,
   PopularDrinksListDescription,
-  PopularDrinksTitle
+  PopularDrinksTitle,
 } from './PopularDrinks.styled';
 
 export const PopularDrinks = () => {
-  const [PopularDrinks, setPopularDrinks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchPopularDrinks = async () => {
-      try {
-        const response = await axios.get('/api/drinks/popular');
-        setPopularDrinks(response.data);
-      } catch (error) {
-        setError('Error fetching popular drinks');
-      } finally {
-        setLoading(false);
-      }
-    };
+    dispatch(getPopularDrinksThunk());
+  }, [dispatch]);
 
-    fetchPopularDrinks();
-  }, []);
+  const popularDrinks = useSelector(selectPopularDrinks);
+  const loading = useSelector(selectDrinksIsLoading);
+  const error = useSelector(selectDrinksError);
 
+  console.log(popularDrinks);
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -40,7 +40,7 @@ export const PopularDrinks = () => {
     return <p>{error}</p>;
   }
 
-  if (PopularDrinks.length === 0) {
+  if (popularDrinks.length === 0) {
     return <p>No popular drinks available at the moment.</p>;
   }
 
@@ -48,17 +48,25 @@ export const PopularDrinks = () => {
     <PopularDrinksWrapper>
       <PopularDrinksTitle>Popular drinks</PopularDrinksTitle>
       <PopularDrinksList>
-        {PopularDrinks.map((drink) => (
-          <PopularDrinksListItem key={drink.id}>
-            <Link to={`/drink/${drink.id}`}>
-              <PopularDrinksListImg src={drink.imageUrl} alt={drink.name} />
+        {popularDrinks.map((drink) => (
+          <PopularDrinksListItem key={drink._id}>
+            <Link
+              to={`${ROUTES.GET_DRINK_BY_ID}${drink._id}`}
+              className="popular-link"
+            >
+              <PopularDrinksListImg src={drink.drinkThumb} alt={drink.drink} />
               <PopularDrinksListDescriptionContainer>
-                <PopularDrinksListDescriptionTitle>{drink.name}</PopularDrinksListDescriptionTitle>
-                <PopularDrinksListDescription>{drink.description}</PopularDrinksListDescription>
+                <PopularDrinksListDescriptionTitle>
+                  {drink.drink}
+                </PopularDrinksListDescriptionTitle>
+                <PopularDrinksListDescription>
+                  {drink.shortDescription}
+                </PopularDrinksListDescription>
               </PopularDrinksListDescriptionContainer>
             </Link>
           </PopularDrinksListItem>
-          ))}
-          </PopularDrinksList>
-        </PopularDrinksWrapper>
-      );}
+        ))}
+      </PopularDrinksList>
+    </PopularDrinksWrapper>
+  );
+};

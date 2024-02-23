@@ -7,8 +7,10 @@ import {
   NameIngredient,
   MeasureIngredient,
 } from './DrinkIngredientsList.styled';
+import defaultImage from '../../../images/drinkPage/coctailPlaceholder.png';
 
 export const DrinkIngredientsList = ({ data }) => {
+  console.log(data);
   return (
     <>
       <Title>Ingredients</Title>
@@ -17,7 +19,7 @@ export const DrinkIngredientsList = ({ data }) => {
           return (
             <ItemIngredient key={item._id}>
               <ImagesIngredient
-                src={item.ingredientId.ingredientThumb}
+                src={item.ingredientId?.ingredientThumb || defaultImage}
                 alt={item.title}
               />
               <InfoIngredient>
