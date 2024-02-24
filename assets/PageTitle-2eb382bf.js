@@ -1,7 +1,8 @@
-import{s as e,j as i}from"./index-0f19a87f.js";const s=e.h1`
+import{s as e,j as i}from"./index-62cc04f8.js";const n=e.h1`
   font-size: 32px;
   font-weight: 600;
   color: #f3f3f3;
+  margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     font-size: 56px;
@@ -10,4 +11,4 @@ import{s as e,j as i}from"./index-0f19a87f.js";const s=e.h1`
   @media screen and (min-width: 1440px) {
     font-size: 64px;
   }
-`,o=({name:t})=>t&&i.jsx(s,{children:t});export{o as P};
+`,o=({name:t})=>t&&i.jsx(n,{children:t});export{o as P};

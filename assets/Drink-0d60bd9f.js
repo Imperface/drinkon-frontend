@@ -1,4 +1,4 @@
-import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x as w,y as $}from"./index-0f19a87f.js";import{P as v}from"./PageTitle-c51ba9ad.js";import{S as I}from"./Section-642e7cbf.js";import{b as y,c as z,d as D}from"./selectors-3bd61cc3.js";const T=n.h4`
+import{s as n,d as t,j as e,r as l,u as m,k as c,l as b,x as u,t as j,y as k,z as w,A as $}from"./index-62cc04f8.js";import{P as v}from"./PageTitle-2eb382bf.js";import{S as I}from"./Section-b3a1a615.js";import{b as z,c as y,d as D}from"./selectors-3bd61cc3.js";const T=n.h4`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
@@ -93,7 +93,7 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x a
   @media screen and (min-width: 1440px) {
     margin-bottom: 198px;
   }
-`,_=({id:o,favoritesDrink:i})=>{const[s,r]=l.useState(null),a=m(),{_id:d}=c(b);l.useEffect(()=>{i&&i.length&&i.find(f=>{if(f._id===d)return r(!0)})},[i,d]);const p=()=>{a(u(o)),r(!0)},x=()=>{a(j(o)),r(!1)};return e.jsx(e.Fragment,{children:s?e.jsx(h,{type:"button",onClick:()=>x(),children:"Remove from favorite drinks"}):e.jsx(h,{type:"button",onClick:()=>p(),children:"Add to favorite drinks"})})},N=n.div`
+`,_=({id:o,favoritesDrink:i})=>{const[s,r]=l.useState(null),a=m(),{_id:d}=c(b);l.useEffect(()=>{i&&i.length&&i.find(f=>{if(f._id===d)return r(!0)})},[i,d]);const p=()=>{a(u(o)),r(!0)},x=()=>{a(j(o)),r(!1)};return e.jsx(e.Fragment,{children:s?e.jsx(h,{type:"button",onClick:()=>x(),children:"Remove from favorite drinks"}):e.jsx(h,{type:"button",onClick:()=>p(),children:"Add to favorite drinks"})})},A=n.div`
   padding-bottom: 18px;
   @media ${t.tablet} {
     padding-bottom: 80px;
@@ -104,7 +104,7 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x a
     display: flex;
     justify-content: space-between;
   }
-`,A=n.div`
+`,N=n.div`
   @media ${t.tablet} {
     max-width: 593px;
   }
@@ -146,7 +146,7 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x a
     width: 400px;
     height: 400px;
   }
-`,U=({data:o})=>{const{_id:i,drink:s,alcoholic:r,glass:a,drinkThumb:d,shortDescription:p,favorites:x}=o;return e.jsxs(N,{children:[e.jsxs("div",{className:"info-inner",children:[e.jsx(v,{name:s}),e.jsxs(A,{children:[e.jsxs(H,{children:[a," / ",r]}),e.jsx(M,{children:p}),e.jsx(_,{id:i,favoritesDrink:x})]})]}),e.jsx(O,{src:d,alt:s,title:s})]})},W=n.div`
+`,U=({data:o})=>{const{_id:i,drink:s,alcoholic:r,glass:a,drinkThumb:d,shortDescription:p,favorites:x}=o;return e.jsxs(A,{children:[e.jsxs("div",{className:"info-inner",children:[e.jsx(v,{name:s}),e.jsxs(N,{children:[e.jsxs(H,{children:[a," / ",r]}),e.jsx(M,{children:p}),e.jsx(_,{id:i,favoritesDrink:x})]})]}),e.jsx(O,{src:d,alt:s,title:s})]})},W=n.div`
   @media screen and ${t.desktop} {
     display: flex;
     justify-content: space-between;
@@ -214,4 +214,4 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x a
     padding-top: 158px;
     padding-bottom: 140px;
   }
-`,ne=()=>{const o=m(),{drinkId:i}=k();l.useEffect(()=>{o(w(i))},[o,i]);const s=c(y),r=c(z),a=c(D);return e.jsx(X,{children:e.jsxs(I,{className:"drinkSection",children:[r&&e.jsx($,{}),a&&e.jsx("h1",{children:a}),Object.keys(s).length>0&&e.jsxs(e.Fragment,{children:[e.jsx(U,{data:s}),e.jsx(C,{data:s.ingredients}),e.jsx(V,{instructions:s.instructions})]})]})})};export{ne as default};
+`,ne=()=>{const o=m(),{drinkId:i}=k();l.useEffect(()=>{o(w(i))},[o,i]);const s=c(z),r=c(y),a=c(D);return e.jsx(X,{children:e.jsxs(I,{className:"drinkSection",children:[r&&e.jsx($,{}),a&&e.jsx("h1",{children:a}),Object.keys(s).length>0&&e.jsxs(e.Fragment,{children:[e.jsx(U,{data:s}),e.jsx(C,{data:s.ingredients}),e.jsx(V,{instructions:s.instructions})]})]})})};export{ne as default};
