@@ -1,20 +1,30 @@
+import { useState } from 'react';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import Logo from '../Logo/Logo';
-import Navigation from '../Navigation/Navigation';
-import TogglerTheme from '../TogglerTheme/TogglerTheme';
+
 import UserLogo from '../UserLogo/UserLogo';
 import { StyledHeader } from './Header.styled';
+import OverlayHeader from '../OverlayHeader/OverlayHeader';
+import TogglerTheme from '../TogglerTheme/TogglerTheme';
+import { Navigation } from '../Navigation/Navigation';
 
 const Header = () => {
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+  const toggleOverlay = () => {
+    setIsOverlayOpen(!isOverlayOpen);
+  };
+
   return (
     <StyledHeader>
       <Logo />
       <Navigation />
       <div className="media-screen-wrapper">
-        {/* <TogglerTheme /> */}
+        <TogglerTheme />
         <UserLogo />
-        <BurgerMenu />
+        <BurgerMenu onClick={toggleOverlay} />
       </div>
+      <OverlayHeader onClose={toggleOverlay} isOpen={isOverlayOpen} />
     </StyledHeader>
   );
 };

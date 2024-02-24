@@ -1,17 +1,21 @@
-import { useState } from 'react';
-import { StyledTogglerTheme } from './TogglerTheme.styled';
+import {
+  StyledTogglerTheme,
+  StyledTogglerThemeMobile,
+} from './TogglerTheme.styled';
 
-const TogglerTheme = () => {
-  const [isToggled, setIsToggled] = useState(false);
-
-  const handleToggle = () => {
-    setIsToggled(!isToggled);
-  };
-
+export const TogglerTheme = () => {
   return (
-    <StyledTogglerTheme onClick={handleToggle} isToggled={isToggled}>
+    <StyledTogglerTheme>
       <button className="toggler-btn"></button>
     </StyledTogglerTheme>
+  );
+};
+
+export const TogglerThemeMobile = () => {
+  return (
+    <StyledTogglerThemeMobile>
+      <button className="toggler-btn"></button>
+    </StyledTogglerThemeMobile>
   );
 };
 

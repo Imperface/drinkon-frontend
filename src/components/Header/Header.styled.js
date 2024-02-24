@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
