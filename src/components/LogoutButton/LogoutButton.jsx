@@ -11,11 +11,11 @@ const LogoutButton = ({ classNameButton, closingSignal }) => {
   const dispatch = useDispatch();
   const data = useSelector(selectUserData);
 
+  const options = { _id: data._id };
+
   const onClick = async () => {
     try {
-      const { error, payload } = await dispatch(
-        signoutThunk({ _id: data._id })
-      );
+      const { error, payload } = await dispatch(signoutThunk(options));
       console.log('data._id: ', data._id);
       if (error) {
         Notify.failure(payload);
