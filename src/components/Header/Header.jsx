@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import Logo from '../Logo/Logo';
-import Navigation from '../Navigation/Navigation';
-import TogglerTheme from '../TogglerTheme/TogglerTheme';
+
 import UserLogo from '../UserLogo/UserLogo';
 import { StyledHeader } from './Header.styled';
+import OverlayHeader from '../OverlayHeader/OverlayHeader';
+import TogglerTheme from '../TogglerTheme/TogglerTheme';
+import { Navigation } from '../Navigation/Navigation';
 
 import ModalDropDown from '../Modal/DropDown/ModalDropDown';
 import ModalLogOut from '../Modal/LogOut/ModalLogOut';
@@ -11,6 +14,7 @@ import ModalLogOut from '../Modal/LogOut/ModalLogOut';
 import { useState } from 'react';
 
 const Header = () => {
+<<<<<<< HEAD
   const [modalDropOpen, setModalDrop] = useState(false);
   const [modalLogOutOpen, setModalLogOut] = useState(false);
 
@@ -31,6 +35,12 @@ const Header = () => {
 
   const modalLogOutClose = () => {
     setModalLogOut(!modalLogOutOpen);
+=======
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+  const toggleOverlay = () => {
+    setIsOverlayOpen(!isOverlayOpen);
+>>>>>>> main
   };
 
   return (
@@ -38,6 +48,7 @@ const Header = () => {
       <Logo />
       <Navigation />
       <div className="media-screen-wrapper">
+<<<<<<< HEAD
         {/* <TogglerTheme /> */}
         <UserLogo onClickUser={onClickUser} />
         <BurgerMenu />
@@ -47,6 +58,13 @@ const Header = () => {
         isOpenLogOut={modalLogOutOpen}
         closeModal={modalLogOutClose}
       />
+=======
+        <TogglerTheme />
+        <UserLogo />
+        <BurgerMenu onClick={toggleOverlay} />
+      </div>
+      <OverlayHeader onClose={toggleOverlay} isOpen={isOverlayOpen} />
+>>>>>>> main
     </StyledHeader>
   );
 };
