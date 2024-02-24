@@ -1,4 +1,4 @@
-var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(oo(r,typeof n!="symbol"?n+"":n,e),e);import{s as dr,g as ao,r as P,b as fr,R as hr,c as m,i as so,j as A,u as io,N as co,d as lo}from"./index-1c9be079.js";import{s as xn,c as uo,a as Cn,d as po,w as fo,b as Mn,e as ho}from"./bg-welcome-desc@1x-0be22210.js";import{d as Gt,S as mo}from"./Section-9d213090.js";import{n as go}from"./notiflix-aio-3.2.7.min-34044495.js";const yo=dr.div`
+var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(oo(r,typeof n!="symbol"?n+"":n,e),e);import{s as dr,d as Gt,g as ao,r as P,b as fr,R as hr,e as m,i as so,j as A,u as io,N as co,c as lo,n as uo}from"./index-03f005b6.js";import{s as xn,c as po,a as Cn,d as fo,w as ho,b as Mn,e as mo}from"./bg-welcome-desc@1x-0be22210.js";import{S as go}from"./Section-79a3880a.js";const yo=dr.div`
   color: ${r=>r.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
@@ -8,7 +8,7 @@ var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,config
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
       url(${xn}) 1x,
-      url(${uo}) 2x
+      url(${po}) 2x
     );
   }
   background-size: cover;
@@ -174,12 +174,12 @@ var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,config
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
       url(${Cn}) 1x,
-      url(${po}) 2x
+      url(${fo}) 2x
     );
   }
 
   @media ${Gt.desktop} {
-    background: url(${fo}), url(${Mn});
+    background: url(${ho}), url(${Mn});
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-position: right, center;
@@ -192,7 +192,7 @@ var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,config
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
       url(${Mn}) 1x,
-      url(${ho}) 2x
+      url(${mo}) 2x
     );
   }
 `,wo="/drinkon-frontend/assets/calendar-8302dc80.svg";var mr={exports:{}};/*!
@@ -228,4 +228,4 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 400px;
     height: 56px;
   }
-`,kc=()=>{const[r,n]=P.useState(new Date),e=o(1980,O(new Date)+1,1),t=["January","February","March","April","May","June","July","August","September","October","November","December"];function o(s,a,i){const c=Math.floor(Math.abs((a-s)/i))+1;return Array.from({length:c},(l,d)=>s+d*i)}return A.jsx(Dc,{dateFormat:"dd/MM/yyyy",placeholderText:"dd/mm/yyyy",selected:r,onChange:s=>n(s),showYearDropdown:!0,scrollableYearDropdown:!0,yearDropdownItemNumber:7,shouldCloseOnSelect:!0,renderCustomHeader:({date:s,changeYear:a,changeMonth:i,decreaseMonth:c,increaseMonth:l,prevMonthButtonDisabled:d,nextMonthButtonDisabled:f})=>A.jsxs("div",{style:{margin:10,display:"flex",justifyContent:"center"},children:[A.jsx("button",{onClick:c,disabled:d,children:"<"}),A.jsx("select",{value:O(s),onChange:({target:{value:g}})=>a(g),children:e.map(g=>A.jsx("option",{value:g,children:g},g))}),A.jsx("select",{value:t[Z(s)],onChange:({target:{value:g}})=>i(t.indexOf(g)),children:t.map(g=>A.jsx("option",{value:g,children:g},g))}),A.jsx("button",{onClick:l,disabled:f,children:">"})]})})},Pc=()=>{const[r,n]=P.useState(!1),e=io(),t=async o=>{o.preventDefault();const s=o.currentTarget,a={name:o.target.elements.userName.value,dateOfBirth:o.target.elements[1].value,email:o.target.elements.userEmail.value,password:o.target.elements.userPassword.value},{error:i,payload:c}=await e(lo(a));if(i){go.Notify.failure(c);return}s.reset()};return A.jsx(yo,{children:A.jsx(mo,{className:"section",children:A.jsxs("div",{className:"signup",children:[A.jsx("h2",{className:"signupTitle",children:"Sign Up"}),A.jsxs("form",{className:"signupForm",onSubmit:t,children:[A.jsx("label",{children:A.jsx("input",{type:"text",name:"userName",className:"inputSignup",placeholder:"Name",required:!0})}),A.jsxs("div",{className:"inputWithIcon",children:[A.jsx("img",{src:wo,alt:"calendar",className:"calendarIcon",width:20,height:20,onClick:()=>n(!r)}),A.jsx(kc,{})]}),A.jsx("label",{children:A.jsx("input",{type:"email",placeholder:"Email",className:"inputSignup",required:!0,name:"userEmail"})}),A.jsx("label",{children:A.jsx("input",{type:"password",className:"inputSignup",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),A.jsx("button",{type:"submit",className:"buttonSignup",children:"Sign Up"}),A.jsx(co,{className:"link",to:"/signin",children:"Sign In"})]})]})})})};export{Pc as default};
+`,kc=()=>{const[r,n]=P.useState(new Date),e=o(1980,O(new Date)+1,1),t=["January","February","March","April","May","June","July","August","September","October","November","December"];function o(s,a,i){const c=Math.floor(Math.abs((a-s)/i))+1;return Array.from({length:c},(l,d)=>s+d*i)}return A.jsx(Dc,{dateFormat:"dd/MM/yyyy",placeholderText:"dd/mm/yyyy",selected:r,onChange:s=>n(s),showYearDropdown:!0,scrollableYearDropdown:!0,yearDropdownItemNumber:7,shouldCloseOnSelect:!0,renderCustomHeader:({date:s,changeYear:a,changeMonth:i,decreaseMonth:c,increaseMonth:l,prevMonthButtonDisabled:d,nextMonthButtonDisabled:f})=>A.jsxs("div",{style:{margin:10,display:"flex",justifyContent:"center"},children:[A.jsx("button",{onClick:c,disabled:d,children:"<"}),A.jsx("select",{value:O(s),onChange:({target:{value:g}})=>a(g),children:e.map(g=>A.jsx("option",{value:g,children:g},g))}),A.jsx("select",{value:t[Z(s)],onChange:({target:{value:g}})=>i(t.indexOf(g)),children:t.map(g=>A.jsx("option",{value:g,children:g},g))}),A.jsx("button",{onClick:l,disabled:f,children:">"})]})})},Sc=()=>{const[r,n]=P.useState(!1),e=io(),t=async o=>{o.preventDefault();const s=o.currentTarget,a={name:o.target.elements.userName.value,dateOfBirth:o.target.elements[1].value,email:o.target.elements.userEmail.value,password:o.target.elements.userPassword.value},{error:i,payload:c}=await e(lo(a));if(i){uo.Notify.failure(c);return}s.reset()};return A.jsx(yo,{children:A.jsx(go,{className:"section",children:A.jsxs("div",{className:"signup",children:[A.jsx("h2",{className:"signupTitle",children:"Sign Up"}),A.jsxs("form",{className:"signupForm",onSubmit:t,children:[A.jsx("label",{children:A.jsx("input",{type:"text",name:"userName",className:"inputSignup",placeholder:"Name",required:!0})}),A.jsxs("div",{className:"inputWithIcon",children:[A.jsx("img",{src:wo,alt:"calendar",className:"calendarIcon",width:20,height:20,onClick:()=>n(!r)}),A.jsx(kc,{})]}),A.jsx("label",{children:A.jsx("input",{type:"email",placeholder:"Email",className:"inputSignup",required:!0,name:"userEmail"})}),A.jsx("label",{children:A.jsx("input",{type:"password",className:"inputSignup",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),A.jsx("button",{type:"submit",className:"buttonSignup",children:"Sign Up"}),A.jsx(co,{className:"link",to:"/signin",children:"Sign In"})]})]})})})};export{Sc as default};

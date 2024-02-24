@@ -1,14 +1,14 @@
-import{s as g,u as x,j as t,N as u,a as m}from"./index-1c9be079.js";import{s as n,c as h,a as r,d as f,w as b,b as o,e as w}from"./bg-welcome-desc@1x-0be22210.js";import{d as a,S as k}from"./Section-9d213090.js";import{n as $}from"./notiflix-aio-3.2.7.min-34044495.js";const y=g.div`
+import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-03f005b6.js";import{s as r,c as b,a as o,d as f,w,b as a,e as k}from"./bg-welcome-desc@1x-0be22210.js";import{S as $}from"./Section-79a3880a.js";const y=g.div`
   color: ${e=>e.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
   padding: 20px 0;
-  background-image: url(${n});
+  background-image: url(${r});
 
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
-      url(${n}) 1x,
-      url(${h}) 2x
+      url(${r}) 1x,
+      url(${b}) 2x
     );
   }
 
@@ -100,8 +100,8 @@ import{s as g,u as x,j as t,N as u,a as m}from"./index-1c9be079.js";import{s as 
     align-items: center;
   }
 
-  @media ${a.tablet} {
-    background-image: url(${r});
+  @media ${n.tablet} {
+    background-image: url(${o});
     text-align: left;
 
     & .section {
@@ -143,13 +143,13 @@ import{s as g,u as x,j as t,N as u,a as m}from"./index-1c9be079.js";import{s as 
 
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
-      url(${r}) 1x,
+      url(${o}) 1x,
       url(${f}) 2x
     );
   }
 
-  @media ${a.desktop} {
-    background: url(${b}), url(${o});
+  @media ${n.desktop} {
+    background: url(${w}), url(${a});
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-position: right, center;
@@ -161,8 +161,8 @@ import{s as g,u as x,j as t,N as u,a as m}from"./index-1c9be079.js";import{s as 
 
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
-      url(${o}) 1x,
-      url(${w}) 2x
+      url(${a}) 1x,
+      url(${k}) 2x
     );
   }
-`,N=()=>{const e=x(),s=async i=>{i.preventDefault();const l=i.currentTarget,p={email:i.target.elements.userEmail.value,password:i.target.elements.userPassword.value},{error:d,payload:c}=await e(m(p));if(d){$.Notify.failure(c);return}l.reset()};return t.jsx(y,{children:t.jsx(k,{className:"section",children:t.jsxs("div",{className:"signin",children:[t.jsx("h2",{className:"signinTitle",children:"Sign In"}),t.jsxs("form",{className:"signinForm",onSubmit:s,children:[t.jsx("label",{children:t.jsx("input",{type:"email",placeholder:"Email",className:"inputSignin",required:!0,name:"userEmail"})}),t.jsx("label",{children:t.jsx("input",{type:"password",className:"inputSignin",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),t.jsx("button",{type:"submit",className:"buttonSignin",children:"Sign In"}),t.jsx(u,{className:"link",to:"/signup",children:"Sign Up"})]})]})})})};export{N as default};
+`,C=()=>{const e=x(),s=async i=>{i.preventDefault();const l=i.currentTarget,p={email:i.target.elements.userEmail.value,password:i.target.elements.userPassword.value},{error:d,payload:c}=await e(m(p));if(d){h.Notify.failure(c);return}l.reset()};return t.jsx(y,{children:t.jsx($,{className:"section",children:t.jsxs("div",{className:"signin",children:[t.jsx("h2",{className:"signinTitle",children:"Sign In"}),t.jsxs("form",{className:"signinForm",onSubmit:s,children:[t.jsx("label",{children:t.jsx("input",{type:"email",placeholder:"Email",className:"inputSignin",required:!0,name:"userEmail"})}),t.jsx("label",{children:t.jsx("input",{type:"password",className:"inputSignin",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),t.jsx("button",{type:"submit",className:"buttonSignin",children:"Sign In"}),t.jsx(u,{className:"link",to:"/signup",children:"Sign Up"})]})]})})})};export{C as default};

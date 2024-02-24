@@ -1,4 +1,4 @@
-import{s as p,j as t,N as r}from"./index-1c9be079.js";import{s as i,a as o,w as n,b as a,c as s,d as c,e as d}from"./bg-welcome-desc@1x-0be22210.js";import{d as l,S as g}from"./Section-9d213090.js";const x="/drinkon-frontend/assets/bg-welcome-desc@2x-9b80a98c.jpg",m=p.div`
+import{s as p,d as r,j as t,N as l}from"./index-03f005b6.js";import{s as i,a as o,w as n,b as a,c as s,d as c,e as d}from"./bg-welcome-desc@1x-0be22210.js";import{S as g}from"./Section-79a3880a.js";const x="/drinkon-frontend/assets/bg-welcome-desc@2x-9b80a98c.jpg",m=p.div`
   color: ${e=>e.theme.startPageTxtColor};
   width: 100%;
   height: 100vh;
@@ -66,7 +66,7 @@ import{s as p,j as t,N as r}from"./index-1c9be079.js";import{s as i,a as o,w as 
       color: ${e=>e.theme.darkBlueColor};
     }
   }
-  @media ${l.tablet} {
+  @media ${r.tablet} {
     background-image: url(${o});
     text-align: left;
 
@@ -93,7 +93,7 @@ import{s as p,j as t,N as r}from"./index-1c9be079.js";import{s as i,a as o,w as 
       padding: 18px 44px;
     }
   }
-  @media ${l.desktop} {
+  @media ${r.desktop} {
     margin: 0;
     background: url(${n}), url(${a});
     background-repeat: no-repeat;
@@ -310,4 +310,4 @@ import{s as p,j as t,N as r}from"./index-1c9be079.js";import{s as i,a as o,w as 
       }
     }
   } */
-`,u=()=>t.jsx(m,{children:t.jsx(g,{className:"welcome",children:t.jsxs("div",{className:"welcome-info",children:[t.jsx("h2",{className:"welcome-title",children:"Welcome to the app!"}),t.jsx("p",{className:"welcome-text",children:"This app offers more than just a collection of recipes - it is designed to be your very own digital cookbook. You can easily save and retrieve your own recipes at any time."}),t.jsxs("div",{className:"welcome-link-block",children:[t.jsx(r,{className:"welcome-link link-signup",to:"/signup",children:"Sign Up"}),t.jsx(r,{className:"welcome-link link-signin",to:"/signin",children:"Sign In"})]})]})})});export{u as default};
+`,u=()=>t.jsx(m,{children:t.jsx(g,{className:"welcome",children:t.jsxs("div",{className:"welcome-info",children:[t.jsx("h2",{className:"welcome-title",children:"Welcome to the app!"}),t.jsx("p",{className:"welcome-text",children:"This app offers more than just a collection of recipes - it is designed to be your very own digital cookbook. You can easily save and retrieve your own recipes at any time."}),t.jsxs("div",{className:"welcome-link-block",children:[t.jsx(l,{className:"welcome-link link-signup",to:"/signup",children:"Sign Up"}),t.jsx(l,{className:"welcome-link link-signin",to:"/signin",children:"Sign In"})]})]})})});export{u as default};
