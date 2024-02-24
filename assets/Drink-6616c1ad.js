@@ -1,4 +1,4 @@
-import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x as w,y as $}from"./index-ecbef84a.js";import{P as v}from"./PageTitle-15348ffa.js";import{S as I}from"./Section-7d8c9e92.js";import{b as y,c as z,d as D}from"./selectors-3bd61cc3.js";const T=n.h4`
+import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x as w,y as $}from"./index-2c39c2a8.js";import{P as v}from"./PageTitle-d3abf1ea.js";import{S as I}from"./Section-2b23c95e.js";import{b as y,c as z,d as D}from"./selectors-3bd61cc3.js";const T=n.h4`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
@@ -146,7 +146,7 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,t as b,v as u,o as j,w as k,x a
     width: 400px;
     height: 400px;
   }
-`,U=({data:o})=>{const{_id:i,drink:s,drinkThumb:r,alcoholic:a,glass:d,description:p,favorites:x}=o;return e.jsxs(N,{children:[e.jsxs("div",{className:"info-inner",children:[e.jsx(v,{name:s}),e.jsxs(A,{children:[e.jsxs(H,{children:[d," / ",a]}),e.jsx(M,{children:p}),e.jsx(_,{id:i,favoritesDrink:x})]})]}),e.jsx(O,{src:r,alt:s,title:s})]})},W=n.div`
+`,U=({data:o})=>{const{_id:i,drink:s,alcoholic:r,glass:a,drinkThumb:d,shortDescription:p,favorites:x}=o;return e.jsxs(N,{children:[e.jsxs("div",{className:"info-inner",children:[e.jsx(v,{name:s}),e.jsxs(A,{children:[e.jsxs(H,{children:[a," / ",r]}),e.jsx(M,{children:p}),e.jsx(_,{id:i,favoritesDrink:x})]})]}),e.jsx(O,{src:d,alt:s,title:s})]})},W=n.div`
   @media screen and ${t.desktop} {
     display: flex;
     justify-content: space-between;
