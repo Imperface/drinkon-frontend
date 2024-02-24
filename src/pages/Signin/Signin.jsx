@@ -58,6 +58,7 @@ const Signin = () => {
             <button type="submit" className="buttonSignin">
               Sign In
             </button>
+
             <NavLink className="link" to="/signup">
               Sign Up
             </NavLink>

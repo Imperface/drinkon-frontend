@@ -1,8 +1,8 @@
 import { StyledUserLogo } from './UserLogo.styled';
 
-const UserLogo = () => {
+const UserLogo = ({ onClickUser }) => {
   return (
-    <StyledUserLogo>
+    <StyledUserLogo onClick={onClickUser}>
       <div className="user-logo-wrapper">
         <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="22" cy="22" r="22" fill="#161F37" />
