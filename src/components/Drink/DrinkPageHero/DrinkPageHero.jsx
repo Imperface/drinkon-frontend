@@ -10,8 +10,15 @@ import {
 } from './DrinkPageHero.styled';
 
 export const DrinkPageHero = ({ data }) => {
-  const { _id, drink, drinkThumb, alcoholic, glass, description, favorites } =
-    data;
+  const {
+    _id,
+    drink,
+    alcoholic,
+    glass,
+    drinkThumb,
+    shortDescription,
+    favorites,
+  } = data;
 
   return (
     <DrinkContainer>
@@ -22,7 +29,7 @@ export const DrinkPageHero = ({ data }) => {
           <Title>
             {glass} / {alcoholic}
           </Title>
-          <Desc>{description}</Desc>
+          <Desc>{shortDescription}</Desc>
           <Button id={_id} favoritesDrink={favorites} />
         </DrinkText>
       </div>
