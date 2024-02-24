@@ -20,11 +20,15 @@ const Header = () => {
       <Logo />
       <Navigation />
       <div className="media-screen-wrapper">
-        <TogglerTheme />
+        {/* <TogglerTheme /> */}
         <UserLogo />
         <BurgerMenu onClick={toggleOverlay} />
       </div>
-      <OverlayHeader onClose={toggleOverlay} isOpen={isOverlayOpen} />
+      <OverlayHeader
+        onClose={toggleOverlay}
+        isOpen={isOverlayOpen}
+        setIsOverlayOpen={setIsOverlayOpen}
+      />
     </StyledHeader>
   );
 };
