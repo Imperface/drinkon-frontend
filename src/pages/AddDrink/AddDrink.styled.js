@@ -1,3 +1,5 @@
 import { styled } from 'styled-components';
 
-export const AddDrinkWrapper = styled.div``;
+export const AddDrinkWrapper = styled.div`
+margin-bottom:80px;
+`;

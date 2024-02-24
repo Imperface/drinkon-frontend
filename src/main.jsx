@@ -33,6 +33,7 @@ export const theme = {
   lightFortyGreenColor: 'rgba(188, 230 210, 0.4)',
 
   whiteColor: '#f3f3f3',
+  whiteZeroColor: 'rgba(243, 243, 243, 0)',
   whiteTenColor: 'rgba(243, 243, 243, 0.1)',
   whiteTwentyColor: 'rgba(243, 243, 243, 0.2)',
   whiteThirtyColor: 'rgba(243, 243, 243, 0.3)',
