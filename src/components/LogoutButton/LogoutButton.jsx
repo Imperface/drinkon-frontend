@@ -16,7 +16,6 @@ const LogoutButton = ({ classNameButton, closingSignal }) => {
   const onClick = async () => {
     try {
       const { error, payload } = await dispatch(signoutThunk(options));
-      console.log('data._id: ', data._id);
       if (error) {
         Notify.failure(payload);
         return;
