@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import { HiPlusSmall } from "react-icons/hi2";
 import { selectFiltersCategories, selectFiltersGlasses } from '../../redux/filters/selectors';
 import { getCategoryThunk, getGlassesThunk } from '../../redux/filters/operations';
+import { selectUserData } from '../../redux/users/selectors';
 
 export const DrinkDescriptionFields = () => {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -16,27 +17,18 @@ export const DrinkDescriptionFields = () => {
   const category = useSelector(selectFiltersCategories); 
   const glasses = useSelector(selectFiltersGlasses);
 
-  console.log('category: ', category);
-    const GLASSES = [
-        'Beer Glass',
-        'Parfait glass',
-        'Mason jar',
-        'Margarita glass',
-        'Martini Glass',
-        'Balloon Glass',
-        'Coupe Glass',
-      ];
-    // const category = [
-    //             'Homemade Liqueur',
-    //     'Punch/Party Drink',
-    //     'Beer',
-    //     'Soft Drink',
-    //   ];
-     const dateOfBirth = 18;
-      const changeRadio = () => {if (dateOfBirth < 18)
-        setIsButtonDisabled(true);
-      };
-      
+  const user = useSelector(selectUserData);
+  const userDateOfBirth = user.dateOfBirth;
+  console.log('userDateOfBirth: ', userDateOfBirth);
+  const today = new Date();
+ 
+  
+  console.log('user: ', userDateOfBirth );
+
+  
+
+
+    
     return (
         <DrinkStyle>
          
@@ -87,7 +79,6 @@ export const DrinkDescriptionFields = () => {
     </div>
                
                <div>
-                {changeRadio()}
                 <input className='textRadioBtn' type="radio" name='alcoholic' value="Alcoholic" disabled={isButtonDisabled}/>
           <label className='radioBtn'>
             Alcoholic

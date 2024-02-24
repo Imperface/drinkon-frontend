@@ -4,29 +4,27 @@ import { IngredientsStyle } from "./DrinkIngredientsFields.styled";
 import { CgClose } from "react-icons/cg";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFiltersIngredients } from "../../redux/filters/selectors";
+import { getIngredientsThunk } from "../../redux/filters/operations";
 
 export const DrinkIngredientsFields = () => {
-  const dispatch = useDispatch();
-  useEffect(()=>{dispatch(selectFiltersIngredients())}, [dispatch])
-  const ingrediens = useSelector(selectFiltersIngredients);
+  // const dispatch = useDispatch();
+  // useEffect(()=>{dispatch(getIngredientsThunk())}, [dispatch])
+  // const ingrediens = useSelector(selectFiltersIngredients);
 
-  console.log('ingrediens: ', ingrediens);
+  // console.log('ingrediens: ', ingrediens);
 
-    // const ingreliens = [
-    //     'Beer Glass',
-    //     'Parfait glass',
-    //     'Mason jar',
-    //     'Margarita glass',
-    //     'Martini Glass',
-    //     'Balloon Glass',
-    //     'Coupe Glass',
-    //   ];
+    const ingrediens = [
+        'Beer Glass',
+        'Parfait glass',
+        'Mason jar',
+        'Margarita glass',
+        'Martini Glass',
+        'Balloon Glass',
+        'Coupe Glass',
+      ];
     const [counter, setCounter] = useState(3);
     
-    // useEffect(() => {
-    // console.log('Product counter value: ' + counter);
-    // }, [counter]);
-
+    
     const handleIncrementProduct = () => {
     setCounter(prevState => prevState + 1);
   };
@@ -60,7 +58,7 @@ export const DrinkIngredientsFields = () => {
             {Array.from({ length: 5 }, (v, k) => k)}
             {/* {changeInput()} */}
 
-            {Array.from({ length: 4 }, ()=> {return <div className="ingredient">
+            {Array.from({ length: 3 }, ()=> {return <div className="ingredient">
                         <select className='inputStyle' name='ingredients'>
                         {ingrediens.map((item) => (
                         <option value={item} key={item}>
