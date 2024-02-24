@@ -9,7 +9,7 @@ export const ButtonWrapper = styled.button`
   transition: all 0.3s;
 
   &.log-out-btn1 {
-    padding: 12px 44px;
+    padding: 12px 10px;
     width: 141px;
     height: 42px;
     font-weight: 600;
@@ -20,7 +20,7 @@ export const ButtonWrapper = styled.button`
   }
 
   &.log-out-btn2 {
-    padding: 16px 40px;
+    padding: 16px 10px;
     width: 140px;
     height: 50px;
     font-weight: 600;
@@ -37,11 +37,11 @@ export const ButtonWrapper = styled.button`
 
   @media ${device.tablet} {
     &.log-out-btn1 {
-      padding: 12px 44px;
+      padding: 12px 10px;
     }
 
     &.log-out-btn2 {
-      padding: 18px 68px;
+      padding: 18px 10px;
       width: 196px;
       height: 54px;
     }
@@ -49,11 +49,11 @@ export const ButtonWrapper = styled.button`
 
   @media ${device.desktop} {
     &.log-out-btn1 {
-      padding: 12px 44px;
+      padding: 12px 10px;
     }
 
     &.log-out-btn2 {
-      padding: 18px 68px;
+      padding: 18px 10px;
       width: 196px;
       height: 54px;
     }

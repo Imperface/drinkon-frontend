@@ -34,7 +34,7 @@ box-shadow: 0px -4px 74px -15px rgba(249,249,249,0.75);
   border: 1px solid ${(props) => props.theme.whiteColor};
   background-color: ${(props) => props.theme.whiteColor};
   transition: all 0.3s;
-   padding: 12px 44px;
+   padding: 12px 10px;
     width: 141px;
     height: 42px;
     font-weight: 600;
