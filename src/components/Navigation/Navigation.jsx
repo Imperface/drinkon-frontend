@@ -30,22 +30,42 @@ export const Navigation = () => {
   );
 };
 
-export const NavigationMobile = () => {
+export const NavigationMobile = ({ setIsOverlayOpen }) => {
   return (
     <StyledNavigationMobile>
-      <NavLink className="navigation-link" to={HOME_ROUTE}>
+      <NavLink
+        onClick={() => setIsOverlayOpen(false)}
+        className="navigation-link"
+        to={HOME_ROUTE}
+      >
         Home
       </NavLink>
-      <NavLink className="navigation-link" to={DRINKS_ROUTE}>
+      <NavLink
+        onClick={() => setIsOverlayOpen(false)}
+        className="navigation-link"
+        to={DRINKS_ROUTE}
+      >
         Drinks
       </NavLink>
-      <NavLink className="navigation-link" to={ADD_DRINK_ROUTE}>
+      <NavLink
+        onClick={() => setIsOverlayOpen(false)}
+        className="navigation-link"
+        to={ADD_DRINK_ROUTE}
+      >
         Add drink
       </NavLink>
-      <NavLink className="navigation-link" to={MY_DRINKS_ROUTE}>
+      <NavLink
+        onClick={() => setIsOverlayOpen(false)}
+        className="navigation-link"
+        to={MY_DRINKS_ROUTE}
+      >
         My drinks
       </NavLink>
-      <NavLink className="navigation-link" to={FAVORITES_ROUTE}>
+      <NavLink
+        onClick={() => setIsOverlayOpen(false)}
+        className="navigation-link"
+        to={FAVORITES_ROUTE}
+      >
         Favorites
       </NavLink>
     </StyledNavigationMobile>

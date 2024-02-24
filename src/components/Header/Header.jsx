@@ -44,7 +44,8 @@ const Header = () => {
       <Logo />
       <Navigation />
       <div className="media-screen-wrapper">
-        <TogglerTheme />
+
+         {/* <TogglerTheme /> */}
         <UserLogo onClickUser={onClickUser} />
         <ModalDropDown isOpenDrop={modalDropOpen} toggleModal={toggleModal} />
         <ModalLogOut
@@ -54,7 +55,11 @@ const Header = () => {
 
         <BurgerMenu onClick={toggleOverlay} />
       </div>
-      <OverlayHeader onClose={toggleOverlay} isOpen={isOverlayOpen} />
+      <OverlayHeader
+        onClose={toggleOverlay}
+        isOpen={isOverlayOpen}
+        setIsOverlayOpen={setIsOverlayOpen}
+      />
     </StyledHeader>
   );
 };

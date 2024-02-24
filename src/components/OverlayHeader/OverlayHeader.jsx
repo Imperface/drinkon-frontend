@@ -3,14 +3,17 @@ import { NavigationMobile } from '../Navigation/Navigation';
 import { TogglerThemeMobile } from '../TogglerTheme/TogglerTheme';
 import { StyledOverlayHeader } from './OverlayHeader.styled';
 
-const OverlayHeader = ({ onClose, isOpen }) => {
+const OverlayHeader = ({ onClose, isOpen, setIsOverlayOpen }) => {
   return (
-    <StyledOverlayHeader isOpen={isOpen}>
+    <StyledOverlayHeader style={{ top: isOpen ? '0' : '-100%' }}>
       <div>
-        <div className="overlay-head-container">
+        <div
+          onClick={() => setIsOverlayOpen(false)}
+          className="overlay-head-container"
+        >
           <Logo />
           <div className="overlay-head-right-container">
-            <TogglerThemeMobile />
+            {/* <TogglerThemeMobile /> */}
             <button className="overlay-close-btn" onClick={onClose}>
               <svg
                 width="32"
@@ -38,7 +41,7 @@ const OverlayHeader = ({ onClose, isOpen }) => {
           </div>
         </div>
         <div className="overlay-body-container">
-          <NavigationMobile />
+          <NavigationMobile setIsOverlayOpen={setIsOverlayOpen} />
         </div>
       </div>
     </StyledOverlayHeader>

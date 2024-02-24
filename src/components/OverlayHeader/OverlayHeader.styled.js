@@ -6,7 +6,7 @@ export const StyledOverlayHeader = styled.div`
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+
   left: 0;
   overflow: auto;
   z-index: 999;
