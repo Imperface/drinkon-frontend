@@ -16,10 +16,10 @@ export const OverlayLogOut = styled.div`
   & .modalLogOut {
     padding: 50px 25px;
     min-width: 280px;
-    // max-width: 335px;
     width: 335px;
-    height: 193px;
-    max-height: 400px;
+    // height: 193px;
+
+    max-height: 304px;
     background-color: ${(props) => props.theme.darkBlueColor};
     border-radius: 16px;
     position: relative;
@@ -52,6 +52,7 @@ export const OverlayLogOut = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    justify-content: center;
   }
 
   & .button-cancel {
