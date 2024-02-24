@@ -36,7 +36,6 @@ const drinksSlice = createSlice({
         state.favorites.push(payload.drink);
       })
       .addCase(removeFavoriteDrinksThunk.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.favorites = state.favorites.filter(
           (item) => item._id !== payload.drink._id
         );

@@ -1,4 +1,7 @@
 import { RiDeleteBinLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import * as ROUTES from 'constants/routes.js';
+
 // import placeholderImage from ''; // Шлях до заглушки
 import {
   StyledDrinksItem,
@@ -19,7 +22,6 @@ export const DrinksItem = ({
   description,
   onRemoveDrinks,
 }) => {
-  console.log(_id);
   return (
     <StyledDrinksItem key={_id}>
       <img
@@ -35,9 +37,11 @@ export const DrinksItem = ({
         </div>
         <TextDescr>{description}</TextDescr>
         <ButtonContainer>
-          <ButtonMore type="button">See more</ButtonMore>
+          <Link className="linkSeeMore" to={`${ROUTES.GET_DRINK_BY_ID}${_id}`}>
+            See more
+          </Link>
           <ButtonDelete type="button" onClick={() => onRemoveDrinks(_id)}>
-            <RiDeleteBinLine />
+            <RiDeleteBinLine color="#f3f3f3" size={24} />
           </ButtonDelete>
         </ButtonContainer>
       </StyledDivContainer>

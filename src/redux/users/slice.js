@@ -8,7 +8,7 @@ import {
 } from './operations';
 
 const initialState = {
-  user: { email: '', name: '', avatarURL: '' },
+  user: { email: '', name: '', avatarURL: '', _id: '' },
   token: '',
   isSignin: false,
   error: '',
@@ -31,13 +31,13 @@ const userSlice = createSlice({
         state.isSignin = true;
       })
       .addCase(signoutThunk.fulfilled, (state) => {
-        state.user = { name: '', email: '', avatarURL: '' };
+        state.user = { name: '', email: '', avatarURL: '', _id: '' };
         state.token = '';
         state.isSignin = false;
       })
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user = payload;
-        state.isLogin = true;
+        state.isSignin = true;
       })
       .addCase(updateUserThunk.fulfilled, (state, { payload }) => {
         state.user = { ...state.user, ...payload };

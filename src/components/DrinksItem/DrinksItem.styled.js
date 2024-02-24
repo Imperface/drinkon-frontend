@@ -6,20 +6,60 @@ export const StyledDrinksItem = styled.li`
   flex-direction: column;
   gap: 18px;
   width: 335px;
+  height: 581px;
+  & img {
+    border-radius: 20px;
+    width: 335px;
+    height: 392px;
+    object-fit: cover;
+  }
 
   @media ${device.tablet} {
     width: 342px;
+    height: 650px;
     gap: 24px;
+    & img {
+      width: 342px;
+      height: 360px;
+    }
   }
 
   @media ${device.desktop} {
     width: 400px;
+    height: 676px;
+    & img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  & .linkSeeMore {
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    border: none;
+    background: ${(props) => props.theme.darkBlueColor};
+    border-radius: 42px;
+    padding: 14px 40px;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.28571;
+    color: ${(props) => props.theme.whiteColor};
+
+    @media ${device.tablet} {
+      padding: 18px 44px;
+
+      font-size: 16px;
+      line-height: 1.125;
+    }
   }
 `;
 export const StyledDivContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
+  flex-grow: 1;
 
   @media ${device.tablet} {
     gap: 24px;
@@ -44,6 +84,7 @@ export const TextAlcohol = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
+
   color: ${(props) => props.theme.whiteFiftyColor};
 
   @media ${device.tablet} {
@@ -54,6 +95,12 @@ export const TextAlcohol = styled.p`
 
 export const TextDescr = styled.p`
   font-family: 'Manrope', sans-serif;
+  flex-grow: 1;
+
+  --max-lines: 3;
+  position: relative;
+  max-height: calc(1.4rem * 4);
+  overflow: hidden;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -71,28 +118,7 @@ export const ButtonContainer = styled.div`
   gap: 8px;
 `;
 
-export const ButtonMore = styled.button`
-  cursor: pointer;
-  padding: 0;
-  background: none;
-  border: none;
-  background: ${(props) => props.theme.darkBlueColor};
-  border-radius: 42px;
-  padding: 14px 40px;
-  height: 46px;
-
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.28571;
-  color: ${(props) => props.theme.whiteColor};
-
-  @media ${device.tablet} {
-    height: 54px;
-    font-size: 16px;
-    line-height: 1.125;
-  }
-`;
+export const ButtonMore = styled.button``;
 
 export const ButtonDelete = styled.button`
   display: flex;
