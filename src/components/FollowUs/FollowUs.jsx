@@ -9,10 +9,10 @@ import { TiSocialFacebook } from 'react-icons/ti';
 import { AiFillInstagram } from 'react-icons/ai';
 import { AiFillYoutube } from 'react-icons/ai';
 
-export const FollowUs = () => {
+export const FollowUs = ({ title }) => {
   return (
     <FollowUsWrapper>
-      <FollowUsTitle>Follow Us</FollowUsTitle>
+      {title && <FollowUsTitle>{title}</FollowUsTitle>}{' '}
       <FollowUsList>
         <FollowUsListItem>
           <FollowUsLink

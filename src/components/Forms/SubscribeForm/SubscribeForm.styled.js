@@ -75,10 +75,7 @@ export const SubscribeButton = styled.button`
   border-radius: 200px;
   color: ${(props) => props.theme.whiteColor};
   background-color: transparent;
-  transition:
-    border 500ms ease-in,
-    transform 500ms ease-in,
-    color 500ms ease-in;
+  transition: all 0.3s;
 
   &:disabled {
     color: ${(props) => props.theme.whiteTwentyColor};

@@ -6,40 +6,33 @@ import {
   SubscribeButton,
 } from './SubscribeForm.styled';
 import { useDispatch } from 'react-redux';
-import { subscribeEmail } from 'redux/subscribes/subscribesOperations';
-import { object, string } from 'yup';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { toastConfig } from '../../Notification/notification_options';
-
-const validationSchema = object({
-  email: string()
-    .matches(
-      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-      'Email must contain only digits, letters and . - _ symbols. e.g. example@mail.com'
-    )
-    .email('Invalid email format, example@mail.com')
-    .required('Email is required'),
-});
-
+import { subscribesEmailThunk } from '../../../redux/subscribes/operations';
 const SubscribeForm = () => {
   const dispatch = useDispatch();
 
   return (
     <Formik
       initialValues={{ email: '' }}
-      validationSchema={validationSchema}
-      onSubmit={async (values, actions) => {
-        try {
-          await dispatch(subscribeEmail(values));
-
-          actions.resetForm();
-          Notify.success('You have successfully subscribed!', toastConfig());
-        } catch (error) {
-          Notify.error('Subscription failed. Please try again.', toastConfig());
+      validate={(values) => {
+        const errors = {};
+        if (!values.email) {
+          errors.email = 'Required';
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = 'Invalid email address';
         }
+        return errors;
+      }}
+      onSubmit={async (values, { setSubmitting, resetForm }) => {
+        const { error } = await dispatch(subscribesEmailThunk(values.email));
+        if (!error) {
+          resetForm();
+        }
+        setSubmitting(false);
       }}
     >
-      {({ isSubmitting, isValid }) => (
+      {({ isSubmitting }) => (
         <SubscribeWrapper>
           <SubscribeText>
             Subscribe up to our newsletter. Be in touch with latest news and
@@ -58,7 +51,7 @@ const SubscribeForm = () => {
             style={{ color: 'red', fontSize: '14px' }}
           />
 
-          <SubscribeButton type="submit" disabled={isSubmitting || !isValid}>
+          <SubscribeButton type="submit" disabled={isSubmitting}>
             Subscribe
           </SubscribeButton>
         </SubscribeWrapper>

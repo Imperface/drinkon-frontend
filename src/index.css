@@ -8,7 +8,11 @@ body {
     url('./images/Background-left-bottom.png');
   background-position:
     left top,
-    left bottom;
+    center bottom;
+  background-size:
+    auto,
+    100% 15%,
+    auto;
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
@@ -18,8 +22,12 @@ body {
       url('./images//Background-right-top.png');
     background-position:
       left top,
-      left bottom,
+      center bottom,
       right top;
+    background-size:
+      auto,
+      100% 15%,
+      auto;
     background-repeat: no-repeat;
   }
 }
