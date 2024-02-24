@@ -24,6 +24,10 @@ const MyDrinks = lazy(() => import('pages/MyDrinks/MyDrinks'));
 const Favorites = lazy(() => import('pages/Favorites/Favorites'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 const Drink = lazy(() => import('pages/Drink/Drink'));
+const Privacy = lazy(() => import('pages/Privacy/Privacy'));
+const TermsOfService = lazy(() =>
+  import('pages/TermsOfService/TermsOfService')
+);
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -130,6 +134,30 @@ export const App = () => {
           <PrivateRoute>
             <Suspense fallback={<Loader />}>
               <Favorites />
+            </Suspense>
+          </PrivateRoute>
+        </Layout>
+      ),
+    },
+    {
+      path: ROUTES.PRIVACY_ROUTE,
+      element: (
+        <Layout>
+          <PrivateRoute>
+            <Suspense fallback={<Loader />}>
+              <Privacy />
+            </Suspense>
+          </PrivateRoute>
+        </Layout>
+      ),
+    },
+    {
+      path: ROUTES.SERVICE_ROUTE,
+      element: (
+        <Layout>
+          <PrivateRoute>
+            <Suspense fallback={<Loader />}>
+              <TermsOfService />
             </Suspense>
           </PrivateRoute>
         </Layout>

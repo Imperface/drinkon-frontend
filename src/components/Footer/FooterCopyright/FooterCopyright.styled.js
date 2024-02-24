@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 
 export const FooterCopyrightWrapper = styled.div`
   padding-top: 80px;
-
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    gap: 153px;
+    justify-content: space-between;
+    & .terms {
+      padding-right: 104px;
+    }
   }
 
   @media screen and (min-width: 1440px) {
@@ -47,6 +50,7 @@ export const FooterLink = styled(Link)`
   line-height: 1.28571;
   letter-spacing: -0.02em;
   text-align: right;
+  transition: all 0.3s;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
