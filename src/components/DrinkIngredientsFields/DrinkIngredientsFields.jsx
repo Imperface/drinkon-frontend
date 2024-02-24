@@ -2,11 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { IngredientsStyle } from "./DrinkIngredientsFields.styled";
 import { CgClose } from "react-icons/cg";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectFiltersIngredients } from "../../redux/filters/selectors";
 
 export const DrinkIngredientsFields = () => {
-
+  const dispatch = useDispatch();
+  useEffect(()=>{dispatch(selectFiltersIngredients())}, [dispatch])
   const ingrediens = useSelector(selectFiltersIngredients);
 
   console.log('ingrediens: ', ingrediens);

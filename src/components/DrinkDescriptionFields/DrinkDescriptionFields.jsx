@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-import { useSelector } from 'react-redux';
+import { useSelector,  useDispatch } from 'react-redux';
 import { DrinkStyle } from './DrinkDescriptionFields.styled';
 import { useFormik } from 'formik';
 import { HiPlusSmall } from "react-icons/hi2";
-import { selectFiltersCategories } from '../../redux/filters/selectors';
+import { selectFiltersCategories, selectFiltersGlasses } from '../../redux/filters/selectors';
+import { getCategoryThunk, getGlassesThunk } from '../../redux/filters/operations';
 
 export const DrinkDescriptionFields = () => {
-
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const category = useSelector(selectFiltersCategories);
+
+  const dispatch = useDispatch();
+  useEffect(()=>{dispatch(getCategoryThunk())}, [dispatch])
+  useEffect(()=>{dispatch(getGlassesThunk()) }, [dispatch])
+  const category = useSelector(selectFiltersCategories); 
+  const glasses = useSelector(selectFiltersGlasses);
+
   console.log('category: ', category);
     const GLASSES = [
         'Beer Glass',
@@ -68,8 +74,9 @@ export const DrinkDescriptionFields = () => {
            
 
           <label className='label'>Glass
+          
              <select className='inputStyle' name = "glass">
-              {GLASSES.map((item) => (
+              {glasses.map((item) => (
                 <option value={item} key={item}>
                   {item}
                 </option>
