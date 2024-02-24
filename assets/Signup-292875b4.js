@@ -1,4 +1,4 @@
-var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(oo(r,typeof n!="symbol"?n+"":n,e),e);import{s as dr,d as Gt,g as ao,r as P,b as fr,R as hr,e as m,i as so,j as A,u as io,N as co,c as lo,n as uo}from"./index-4a11e626.js";import{s as xn,c as po,a as Cn,d as fo,w as ho,b as Mn,e as mo}from"./bg-welcome-desc@1x-0be22210.js";import{S as go}from"./Section-2d7e4d12.js";const yo=dr.div`
+var ro=Object.defineProperty;var oo=(r,n,e)=>n in r?ro(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(oo(r,typeof n!="symbol"?n+"":n,e),e);import{s as dr,d as Gt,g as ao,r as P,b as fr,R as hr,e as m,i as so,j as A,u as io,N as co,c as lo,n as uo}from"./index-0f19a87f.js";import{s as xn,c as po,a as Cn,d as fo,w as ho,b as Mn,e as mo}from"./bg-welcome-desc@1x-0be22210.js";import{S as go}from"./Section-642e7cbf.js";const yo=dr.div`
   color: ${r=>r.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
