@@ -11,12 +11,10 @@ import { Navigation } from '../Navigation/Navigation';
 import ModalDropDown from '../Modal/DropDown/ModalDropDown';
 import ModalLogOut from '../Modal/LogOut/ModalLogOut';
 
-import { useState } from 'react';
-
 const Header = () => {
-<<<<<<< HEAD
   const [modalDropOpen, setModalDrop] = useState(false);
   const [modalLogOutOpen, setModalLogOut] = useState(false);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   const onClickUser = (e) => {
     const click = e.currentTarget;
@@ -35,12 +33,10 @@ const Header = () => {
 
   const modalLogOutClose = () => {
     setModalLogOut(!modalLogOutOpen);
-=======
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  };
 
   const toggleOverlay = () => {
     setIsOverlayOpen(!isOverlayOpen);
->>>>>>> main
   };
 
   return (
@@ -48,23 +44,17 @@ const Header = () => {
       <Logo />
       <Navigation />
       <div className="media-screen-wrapper">
-<<<<<<< HEAD
-        {/* <TogglerTheme /> */}
-        <UserLogo onClickUser={onClickUser} />
-        <BurgerMenu />
-      </div>
-      <ModalDropDown isOpenDrop={modalDropOpen} toggleModal={toggleModal} />
-      <ModalLogOut
-        isOpenLogOut={modalLogOutOpen}
-        closeModal={modalLogOutClose}
-      />
-=======
         <TogglerTheme />
-        <UserLogo />
+        <UserLogo onClickUser={onClickUser} />
+        <ModalDropDown isOpenDrop={modalDropOpen} toggleModal={toggleModal} />
+        <ModalLogOut
+          isOpenLogOut={modalLogOutOpen}
+          closeModal={modalLogOutClose}
+        />
+
         <BurgerMenu onClick={toggleOverlay} />
       </div>
       <OverlayHeader onClose={toggleOverlay} isOpen={isOverlayOpen} />
->>>>>>> main
     </StyledHeader>
   );
 };
