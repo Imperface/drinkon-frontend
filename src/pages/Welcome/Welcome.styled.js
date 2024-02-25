@@ -96,6 +96,7 @@ export const WelcomePageWrapper = styled.div`
     & .welcome-text {
       font-size: 18px;
       line-height: 1.3;
+      letter-spacing: -0.02em;
     }
     & .welcome-link-block {
       justify-content: left;
@@ -111,9 +112,13 @@ export const WelcomePageWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-position: right, center;
-  }
 
-  /* @media (max-width: 768px) {
+    & .welcome-info {
+      max-width: 485px;
+    }
+  }
+`;
+/* @media (max-width: 768px) {
     background-position: center;
     background-image: url(${start1xMobile});
     @supports (-webkit-image-set: url()) {
@@ -322,7 +327,7 @@ export const WelcomePageWrapper = styled.div`
       }
     }
   } */
-`;
+// `;
 
 // export const NavLink = styled(BaseNavLink)`
 //   border-radius: 42px;
