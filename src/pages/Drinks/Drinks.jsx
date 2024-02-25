@@ -10,6 +10,7 @@ import { getCategoryThunk } from '../../redux/filters/operations';
 import { MyComponent } from 'components/DrinksSearch/DrinksSearch';
 import { Pagination } from 'components/Pagination/Pagination';
 import { usePagination } from 'customHooks/usePagination';
+import { Link } from 'react-router-dom';
 
 const Drinks = () => {
   const [itemsPerPage, setItemsPerPage] = useState(9);
@@ -18,15 +19,7 @@ const Drinks = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(
-      getSearchDrinksThunk({
-        query: 'al',
-        category: '',
-        ingredientId: '',
-        page: '',
-        limit: '',
-      })
-    );
+    dispatch(getSearchDrinksThunk({}));
   }, [dispatch]);
 
   useEffect(() => {
@@ -34,13 +27,14 @@ const Drinks = () => {
   }, [dispatch]);
 
   const handleSearch = (query, value, ingredientId) => {
+    console.log(ingredientId);
     dispatch(
       getSearchDrinksThunk({
-        query: query,
-        category: value,
-        ingredientId: ingredientId,
+        query: query ?? '',
+        category: value ?? '',
+        ingredientId: ingredientId ?? '',
         page: '',
-        limit: '',
+        limit: itemsPerPage,
       })
     );
   };
@@ -88,9 +82,9 @@ const Drinks = () => {
                 />
                 <div className="drinkContainer">
                   <h2 className="title">{drink.drink}</h2>
-                  <button className="button" type="button">
+                  <Link to={`/drinks/${drink._id}`} className="button">
                     See more
-                  </button>
+                  </Link>
                 </div>
               </li>
             ))}
