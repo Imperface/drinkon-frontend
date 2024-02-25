@@ -5,16 +5,32 @@ export const IngredientsStyle = styled.div`
   display: grid;
   width: 335px;
   margin-bottom: 40px;
+  @media ${device.tablet} {
+    width: 100%;
+  }
+  @media ${device.desktop} {
+    width: 540px;
+  }
 
   & .react-select {
     margin-left: auto;
     background-color: transparent;
     color: #fff;
     &__control {
+      width: 200px;
+
       cursor: pointer;
       background-color: transparent;
       border: none;
       color: white !important;
+      border: 1px solid rgba(243, 243, 243, 0.5);
+      border-radius: 20px;
+      @media ${device.tablet} {
+        width: 332px;
+      }
+      @media ${device.desktop} {
+        width: 316px;
+      }
     }
     &--menu-is-open {
       background-color: transparent;
@@ -40,7 +56,7 @@ export const IngredientsStyle = styled.div`
 
   .counter {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     align-items: center;
     border: 1px solid rgba(243, 243, 243, 0.5);
@@ -72,6 +88,7 @@ export const IngredientsStyle = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    margin-bottom: 40px;
   }
   .text {
     font-weight: 600;
@@ -82,10 +99,43 @@ export const IngredientsStyle = styled.div`
   .listIngr {
     display: grid;
     /* justify-content: space-between; */
-    gap: 10px;
+    gap: 18px;
+    @media ${device.tablet} {
+      width: 100%;
+      gap: 24px;
+    }
   }
   .itemIngr {
     display: flex;
+    column-gap: 8px;
+  }
+
+  .itemIngrSelect {
+  }
+
+  .itemIngrInput {
+    border: 1px solid rgba(243, 243, 243, 0.5);
+    background-color: transparent;
+    color: white;
+    border-radius: 20px;
+    padding: 0 10px;
+    width: 101px;
+    @media ${device.tablet} {
+      width: 150px;
+    }
+  }
+
+  .itemIngrButton {
+    background-color: transparent;
+    border: none;
+    color: #ffffff50;
+    transition: all 0.3s;
+    @media ${device.tablet} {
+      margin-left: auto;
+    }
+    &:hover {
+      color: white;
+    }
   }
   .ingredient {
     display: flex;

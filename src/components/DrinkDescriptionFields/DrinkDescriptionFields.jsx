@@ -13,8 +13,9 @@ import {
 } from '../../redux/filters/operations';
 import { selectUserData } from '../../redux/users/selectors';
 
-export const DrinkDescriptionFields = () => {
+export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCategoryThunk());
@@ -49,12 +50,34 @@ export const DrinkDescriptionFields = () => {
   const user = useSelector(selectUserData);
   const userDateOfBirth = user.dateOfBirth;
 
+  const onImageChange = (e) => {
+    const fileURL = URL.createObjectURL(e.target.files[0]);
+    setImageURL(fileURL);
+    console.log(fileURL);
+  };
+
   return (
     <DrinkStyle>
       <div className="addAvatar">
+        {imageURL && (
+          <img
+            src={`${imageURL}`}
+            style={{
+              zIndex: 2,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+        )}
         <div className="avatar">
           <HiPlusSmall className="icon" />
-          <input type="file" name="drinkAvatar" />
+          <input
+            type="file"
+            name="drinkAvatar"
+            onChange={onImageChange}
+            required
+          />
           <label className="titleAvatar" id="file">
             Add image
           </label>
@@ -64,29 +87,38 @@ export const DrinkDescriptionFields = () => {
       <div className="formDescription">
         <label className="label">
           Enter item title
-          <input className="inputStyle" type="text" name="drink" />
+          <input className="inputStyle" type="text" name="drink" required />
         </label>
 
         <label className="label">
           Enter about recipe
-          <input className="inputStyle" type="text" name="shortDescription" />
+          <input
+            className="inputStyle"
+            type="text"
+            name="shortDescription"
+            required
+          />
         </label>
 
         <label className="label">
           Category
           <Select
+            name="category"
             options={getCategoryOptions()}
             classNamePrefix="react-select"
             placeholder="select a category"
+            required
           />
         </label>
 
         <label className="label">
           Glass
           <Select
+            name="glass"
             options={getGlassesOptions()}
             classNamePrefix="react-select"
             placeholder="select a glass"
+            required
           />
         </label>
 

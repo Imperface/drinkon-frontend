@@ -8,7 +8,13 @@ import { getIngredientsThunk } from '../../redux/filters/operations';
 import Select from 'react-select';
 import { v4 as uuidv4 } from 'uuid';
 
-export const DrinkIngredientsFields = () => {
+export const DrinkIngredientsFields = ({
+  ingredientList,
+  setIngredientList,
+  handleIncrementProduct,
+  handleDecrementProduct,
+  onButtonDeleteClick,
+}) => {
   const dispatch = useDispatch();
 
   // get ingredient
@@ -24,31 +30,25 @@ export const DrinkIngredientsFields = () => {
     return ingredients.map((item) => ({ value: item._id, label: item.title }));
   };
 
-  // get dynamic ingredient fields
-  const [ingredientsList, setIngredientsList] = useState([]);
-
-  // add new ingredient field
-  const handleIncrementProduct = () => {
-    setIngredientsList((prevState) => {
-      return [
-        ...prevState,
-        <div className="itemIngr" key={uuidv4()}>
-          <Select
-            options={getIngredientsOptions()}
-            classNamePrefix="react-select"
-            placeholder="select a category"
-          />
-          <input type="text" name="ingredient" />
-        </div>,
-      ];
+  const handleChangeIngredient = ({ value, label }, itemId) => {
+    const updatedIngredientsList = ingredientList.map((i) => {
+      if (i.id === itemId) {
+        i.ingredientId = value;
+        i.title = label;
+      }
+      return i;
     });
+    setIngredientList(updatedIngredientsList);
   };
 
-  // remove last field
-  const handleDecrementProduct = () => {
-    setIngredientsList((prevState) => {
-      return [...prevState.slice(0, -1)];
+  const handleChangeMeasure = ({ value }, itemId) => {
+    const updatedIngredientsList = ingredientList.map((i) => {
+      if (i.id === itemId) {
+        i.measure = value;
+      }
+      return i;
     });
+    setIngredientList(updatedIngredientsList);
   };
 
   return (
@@ -60,11 +60,11 @@ export const DrinkIngredientsFields = () => {
             <button
               className="btnCounter"
               onClick={handleDecrementProduct}
-              disabled={ingredientsList.length === 3}
+              disabled={ingredientList.length === 1}
             >
               -
             </button>
-            <span className="titleCounter">{ingredientsList.length + 3}</span>
+            <span className="titleCounter">{ingredientList.length}</span>
             <button className="btnCounter" onClick={handleIncrementProduct}>
               +
             </button>
@@ -73,33 +73,34 @@ export const DrinkIngredientsFields = () => {
       </div>
       {ingredients.length > 0 && (
         <div className="listIngr">
-          <div className="itemIngr" key={uuidv4()}>
-            <Select
-              name="selectIngredient1"
-              options={getIngredientsOptions()}
-              classNamePrefix="react-select"
-              placeholder="select a category"
-            />
-            <input type="text" name="inputIngredient1" />
-          </div>
-          <div className="itemIngr" key={uuidv4()}>
-            <Select
-              name="selectIngredient1"
-              options={getIngredientsOptions()}
-              classNamePrefix="react-select"
-              placeholder="select a category"
-            />
-            <input type="text" name="inputIngredient2" />
-          </div>
-          <div className="itemIngr" key={uuidv4()}>
-            <Select
-              options={getIngredientsOptions()}
-              classNamePrefix="react-select"
-              placeholder="select a category"
-            />
-            <input type="text" name="inputIngredient3" />
-          </div>
-          {ingredients.length > 0 && ingredientsList.map((item) => item)}
+          {ingredientList.map((item, idx) => (
+            <div className="itemIngr" key={item.id}>
+              <Select
+                className="itemIngrSelect"
+                options={getIngredientsOptions()}
+                classNamePrefix="react-select"
+                placeholder="select a category"
+                onChange={(inputValue) =>
+                  handleChangeIngredient(inputValue, item.id)
+                }
+                required
+              />
+              <input
+                className="itemIngrInput"
+                type="text"
+                placeholder="1 cl"
+                name={`ingredients[${idx}].measure`}
+                onChange={(e) => handleChangeMeasure(e.target, item.id)}
+                required
+              />
+              <button
+                className="itemIngrButton"
+                onClick={() => onButtonDeleteClick(item.id)}
+              >
+                <CgClose />
+              </button>
+            </div>
+          ))}
         </div>
       )}
     </IngredientsStyle>
