@@ -1,4 +1,4 @@
-import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-1f9764fe.js";import{s as r,c as b,a as o,d as f,w,b as a,e as k}from"./bg-welcome-desc@1x-0be22210.js";import{S as $}from"./Section-f579501d.js";const y=g.div`
+import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-441b2351.js";import{s as r,a as o,w as b,b as a}from"./bg-welcome-desc@1x-0e9701bd.js";import{s as f,a as w,b as k}from"./start-mob@2x-e5a7b397.js";import{S as $}from"./Section-863878da.js";const y=g.div`
   color: ${e=>e.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
@@ -8,7 +8,7 @@ import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-1f9764fe.js
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
       url(${r}) 1x,
-      url(${b}) 2x
+      url(${f}) 2x
     );
   }
 
@@ -144,12 +144,12 @@ import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-1f9764fe.js
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
       url(${o}) 1x,
-      url(${f}) 2x
+      url(${w}) 2x
     );
   }
 
   @media ${n.desktop} {
-    background: url(${w}), url(${a});
+    background: url(${b}), url(${a});
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-position: right, center;
@@ -165,4 +165,4 @@ import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-1f9764fe.js
       url(${k}) 2x
     );
   }
-`,C=()=>{const e=x(),s=async i=>{i.preventDefault();const l=i.currentTarget,p={email:i.target.elements.userEmail.value,password:i.target.elements.userPassword.value},{error:d,payload:c}=await e(m(p));if(d){h.Notify.failure(c);return}l.reset()};return t.jsx(y,{children:t.jsx($,{className:"section",children:t.jsxs("div",{className:"signin",children:[t.jsx("h2",{className:"signinTitle",children:"Sign In"}),t.jsxs("form",{className:"signinForm",onSubmit:s,children:[t.jsx("label",{children:t.jsx("input",{type:"email",placeholder:"Email",className:"inputSignin",required:!0,name:"userEmail"})}),t.jsx("label",{children:t.jsx("input",{type:"password",className:"inputSignin",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),t.jsx("button",{type:"submit",className:"buttonSignin",children:"Sign In"}),t.jsx(u,{className:"link",to:"/signup",children:"Sign Up"})]})]})})})};export{C as default};
+`,N=()=>{const e=x(),s=async i=>{i.preventDefault();const l=i.currentTarget,p={email:i.target.elements.userEmail.value,password:i.target.elements.userPassword.value},{error:d,payload:c}=await e(m(p));if(d){h.Notify.failure(c);return}l.reset()};return t.jsx(y,{children:t.jsx($,{className:"section",children:t.jsxs("div",{className:"signin",children:[t.jsx("h2",{className:"signinTitle",children:"Sign In"}),t.jsxs("form",{className:"signinForm",onSubmit:s,children:[t.jsx("label",{children:t.jsx("input",{type:"email",placeholder:"Email",className:"inputSignin",required:!0,name:"userEmail"})}),t.jsx("label",{children:t.jsx("input",{type:"password",className:"inputSignin",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),t.jsx("button",{type:"submit",className:"buttonSignin",children:"Sign In"}),t.jsx(u,{className:"link",to:"/signup",children:"Sign Up"})]})]})})})};export{N as default};

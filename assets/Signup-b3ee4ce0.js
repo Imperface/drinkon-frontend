@@ -1,4 +1,4 @@
-var fr=Object.defineProperty;var mr=(r,n,e)=>n in r?fr(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var v=(r,n,e)=>(mr(r,typeof n!="symbol"?n+"":n,e),e);import{s as Yn,d as Pt,g as gr,r as x,b as In,R as Rn,e as f,i as yr,j as F,u as wr,N as Dr,c as vr,n as br}from"./index-1f9764fe.js";import{s as Vt,c as kr,a as Ut,d as xr,w as Mr,b as Xt,e as Cr}from"./bg-welcome-desc@1x-0be22210.js";import{S as _r}from"./Section-f579501d.js";import{a as Gt,c as Sr,i as Xe,p as Pr,b as Er,f as Or,o as Nr}from"./floating-ui.dom-9d61e2db.js";const Tr=Yn.div`
+var fr=Object.defineProperty;var mr=(r,n,e)=>n in r?fr(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var v=(r,n,e)=>(mr(r,typeof n!="symbol"?n+"":n,e),e);import{s as Yn,d as Pt,g as gr,r as x,b as In,R as Rn,e as f,i as yr,j as F,u as wr,N as Dr,c as vr,n as br}from"./index-441b2351.js";import{s as Vt,a as Ut,w as kr,b as Xt}from"./bg-welcome-desc@1x-0e9701bd.js";import{s as xr,a as Mr,b as Cr}from"./start-mob@2x-e5a7b397.js";import{S as _r}from"./Section-863878da.js";import{a as Gt,c as Sr,i as Xe,p as Pr,b as Er,f as Or,o as Nr}from"./floating-ui.dom-9d61e2db.js";const Tr=Yn.div`
   color: ${r=>r.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
@@ -8,7 +8,7 @@ var fr=Object.defineProperty;var mr=(r,n,e)=>n in r?fr(r,n,{enumerable:!0,config
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
       url(${Vt}) 1x,
-      url(${kr}) 2x
+      url(${xr}) 2x
     );
   }
   background-size: cover;
@@ -174,12 +174,12 @@ var fr=Object.defineProperty;var mr=(r,n,e)=>n in r?fr(r,n,{enumerable:!0,config
   @supports (-webkit-image-set: url()) {
     background-image: -webkit-image-set(
       url(${Ut}) 1x,
-      url(${xr}) 2x
+      url(${Mr}) 2x
     );
   }
 
   @media ${Pt.desktop} {
-    background: url(${Mr}), url(${Xt});
+    background: url(${kr}), url(${Xt});
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-position: right, center;
@@ -228,4 +228,4 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 400px;
     height: 56px;
   }
-`,ri=()=>{const[r,n]=x.useState(new Date),e=a(1980,C(new Date)+1,1),t=["January","February","March","April","May","June","July","August","September","October","November","December"];function a(s,o,i){const c=Math.floor(Math.abs((o-s)/i))+1;return Array.from({length:c},(u,d)=>s+d*i)}return F.jsx(ni,{dateFormat:"dd/MM/yyyy",placeholderText:"dd/mm/yyyy",selected:r,onChange:s=>n(s),showYearDropdown:!0,scrollableYearDropdown:!0,yearDropdownItemNumber:7,shouldCloseOnSelect:!0,renderCustomHeader:({date:s,changeYear:o,changeMonth:i,decreaseMonth:c,increaseMonth:u,prevMonthButtonDisabled:d,nextMonthButtonDisabled:h})=>F.jsxs("div",{style:{margin:10,display:"flex",justifyContent:"center"},children:[F.jsx("button",{onClick:c,disabled:d,children:"<"}),F.jsx("select",{value:C(s),onChange:({target:{value:g}})=>o(g),children:e.map(g=>F.jsx("option",{value:g,children:g},g))}),F.jsx("select",{value:t[V(s)],onChange:({target:{value:g}})=>i(t.indexOf(g)),children:t.map(g=>F.jsx("option",{value:g,children:g},g))}),F.jsx("button",{onClick:u,disabled:h,children:">"})]})})},ui=()=>{const[r,n]=x.useState(!1),e=wr(),t=async a=>{a.preventDefault();const s=a.currentTarget,o={name:a.target.elements.userName.value,dateOfBirth:a.target.elements[1].value,email:a.target.elements.userEmail.value,password:a.target.elements.userPassword.value},{error:i,payload:c}=await e(vr(o));if(i){br.Notify.failure(c);return}s.reset()};return F.jsx(Tr,{children:F.jsx(_r,{className:"section",children:F.jsxs("div",{className:"signup",children:[F.jsx("h2",{className:"signupTitle",children:"Sign Up"}),F.jsxs("form",{className:"signupForm",onSubmit:t,children:[F.jsx("label",{children:F.jsx("input",{type:"text",name:"userName",className:"inputSignup",placeholder:"Name",required:!0})}),F.jsxs("div",{className:"inputWithIcon",children:[F.jsx("img",{src:Yr,alt:"calendar",className:"calendarIcon",width:20,height:20,onClick:()=>n(!r)}),F.jsx(ri,{})]}),F.jsx("label",{children:F.jsx("input",{type:"email",placeholder:"Email",className:"inputSignup",required:!0,name:"userEmail"})}),F.jsx("label",{children:F.jsx("input",{type:"password",className:"inputSignup",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),F.jsx("button",{type:"submit",className:"buttonSignup",children:"Sign Up"}),F.jsx(Dr,{className:"link",to:"/signin",children:"Sign In"})]})]})})})};export{ui as default};
+`,ri=()=>{const[r,n]=x.useState(new Date),e=a(1980,C(new Date)+1,1),t=["January","February","March","April","May","June","July","August","September","October","November","December"];function a(s,o,i){const c=Math.floor(Math.abs((o-s)/i))+1;return Array.from({length:c},(u,d)=>s+d*i)}return F.jsx(ni,{dateFormat:"dd/MM/yyyy",placeholderText:"dd/mm/yyyy",selected:r,onChange:s=>n(s),showYearDropdown:!0,scrollableYearDropdown:!0,yearDropdownItemNumber:7,shouldCloseOnSelect:!0,renderCustomHeader:({date:s,changeYear:o,changeMonth:i,decreaseMonth:c,increaseMonth:u,prevMonthButtonDisabled:d,nextMonthButtonDisabled:h})=>F.jsxs("div",{style:{margin:10,display:"flex",justifyContent:"center"},children:[F.jsx("button",{onClick:c,disabled:d,children:"<"}),F.jsx("select",{value:C(s),onChange:({target:{value:g}})=>o(g),children:e.map(g=>F.jsx("option",{value:g,children:g},g))}),F.jsx("select",{value:t[V(s)],onChange:({target:{value:g}})=>i(t.indexOf(g)),children:t.map(g=>F.jsx("option",{value:g,children:g},g))}),F.jsx("button",{onClick:u,disabled:h,children:">"})]})})},li=()=>{const[r,n]=x.useState(!1),e=wr(),t=async a=>{a.preventDefault();const s=a.currentTarget,o={name:a.target.elements.userName.value,dateOfBirth:a.target.elements[1].value,email:a.target.elements.userEmail.value,password:a.target.elements.userPassword.value},{error:i,payload:c}=await e(vr(o));if(i){br.Notify.failure(c);return}s.reset()};return F.jsx(Tr,{children:F.jsx(_r,{className:"section",children:F.jsxs("div",{className:"signup",children:[F.jsx("h2",{className:"signupTitle",children:"Sign Up"}),F.jsxs("form",{className:"signupForm",onSubmit:t,children:[F.jsx("label",{children:F.jsx("input",{type:"text",name:"userName",className:"inputSignup",placeholder:"Name",required:!0})}),F.jsxs("div",{className:"inputWithIcon",children:[F.jsx("img",{src:Yr,alt:"calendar",className:"calendarIcon",width:20,height:20,onClick:()=>n(!r)}),F.jsx(ri,{})]}),F.jsx("label",{children:F.jsx("input",{type:"email",placeholder:"Email",className:"inputSignup",required:!0,name:"userEmail"})}),F.jsx("label",{children:F.jsx("input",{type:"password",className:"inputSignup",placeholder:"Password",required:!0,name:"userPassword",minLength:6})}),F.jsx("button",{type:"submit",className:"buttonSignup",children:"Sign Up"}),F.jsx(Dr,{className:"link",to:"/signin",children:"Sign In"})]})]})})})};export{li as default};
