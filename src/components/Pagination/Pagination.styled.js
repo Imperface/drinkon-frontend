@@ -1,6 +1,8 @@
-import styled from 'styled-components'; 
-import { IoEllipse } from 'react-icons/io5';
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+import styled from 'styled-components';
+
+export const Navigation =styled.nav`
+ padding: 14px 0;
+`;
 
 export const PaginationList = styled.ul`
   list-style: none;
@@ -8,12 +10,36 @@ export const PaginationList = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 24px;
+  height: 27px;
 `;
 
 export const PaginationItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+ 
+
+  .chevron {
+    color: ${(props) => props.theme.whiteThirtyColor};
+    width: 2em;
+    height: 2em;
+  }
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .ioEllipse {
+    fill: none;
+    width: 27px;
+    height: 27px;
+    :hover,
+    :focus {
+      fill: ${(props) => props.theme.blueFiftyColor};
+    }
+  }
+  .active {
+    fill: ${(props) => props.theme.blueFiftyColor};
+  }
 `;
 
 export const PaginationButton = styled.button`
@@ -28,6 +54,7 @@ export const PaginationButton = styled.button`
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
   font-size: 12px;
+  color: ${(props) => props.theme.whiteColor};
 
   & span {
     position: absolute;
@@ -35,26 +62,7 @@ export const PaginationButton = styled.button`
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 16px;
-    color: ${props => props.theme.whiteColor};
+    color: ${(props) => props.theme.whiteColor};
     pointer-events: none;
   }
-`;
-
-export const PaginationEllipseSvg = styled(IoEllipse)`
-  fill: ${({ active, theme }) =>
-    active === 'true' ? theme.blueFiftyColor : 'none'};
-  width: 27px;
-  height: 27px;
-  :hover,
-  :focus {
-    fill: ${props => props.theme.blueFiftyColor};
-  }
-`;
-
-export const PaginationChevronLeft = styled(GoChevronLeft)`
-  fill: ${props => props.theme.whiteThirtyColor};
-`;
-
-export const PaginationChevronRight = styled(GoChevronRight)`
-  fill: ${props => props.theme.whiteThirtyColor};
 `;

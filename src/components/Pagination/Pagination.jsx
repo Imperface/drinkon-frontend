@@ -5,15 +5,15 @@ import {
   PaginationList,
   PaginationItem,
   PaginationButton,
-  PaginationEllipseSvg,
-  PaginationChevronLeft,
-  PaginationChevronRight,
+  Navigation,
 } from './Pagination.styled';
+import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+import { IoEllipse } from 'react-icons/io5';
 
 export const Pagination = ({ itemsPerPage, totalItems }) => {
   const dispatch = useDispatch();
   const currentPage = useSelector(selectPagination);
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const totalPages = Math.ceil(totalItems.length / itemsPerPage);
 
   const handlePageChange = (page) => {
     dispatch(setCurrentPage(page));
@@ -26,10 +26,12 @@ export const Pagination = ({ itemsPerPage, totalItems }) => {
     pageNumbers.push(
       <PaginationItem key={'prev'}>
         <PaginationButton
+          type="button"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
+          className={currentPage === 1 ? 'disabled' : ''}
         >
-          <PaginationChevronLeft />
+          <GoChevronLeft className="chevron" />
         </PaginationButton>
       </PaginationItem>
     );
@@ -38,9 +40,9 @@ export const Pagination = ({ itemsPerPage, totalItems }) => {
     for (let i = 1; i <= totalPages; i++) {
       pageNumbers.push(
         <PaginationItem key={i}>
-          <PaginationButton onClick={() => handlePageChange(i)}>
-            <PaginationEllipseSvg
-              active={currentPage === i ? 'true' : 'false'}
+          <PaginationButton type="button" onClick={() => handlePageChange(i)}>
+            <IoEllipse
+              className={currentPage === i ? 'ioEllipse active' : 'ioEllipse'}
             />
             <span>{i}</span>
           </PaginationButton>
@@ -52,10 +54,12 @@ export const Pagination = ({ itemsPerPage, totalItems }) => {
     pageNumbers.push(
       <PaginationItem key={'next'}>
         <PaginationButton
+          type="button"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
+          className={currentPage === totalPages ? 'disabled' : ''}
         >
-          <PaginationChevronRight />
+          <GoChevronRight className="chevron" />
         </PaginationButton>
       </PaginationItem>
     );
@@ -64,49 +68,8 @@ export const Pagination = ({ itemsPerPage, totalItems }) => {
   };
 
   return (
-    <nav aria-label="Page navigation">
+    <Navigation aria-label="Page navigation" className="navigation">
       <PaginationList>{renderPageNumbers()}</PaginationList>
-    </nav>
+    </Navigation>
   );
 };
-// зразок------------
-// import { usePagination } from 'папка_з_кастомними_хуками'; // Імпортуємо кастомний хук для пагінації
-
-// export function CardList({
-//   data,
-//   onAddToFavorites,
-//   onRemoveFromFavorites,
-// }) {
-// Зразок змінних
-// const itemsPerPage = 9;
-// Використовуємо кастомний хук для пагінації
-// const { currentPage, currentData, handlePageChange } = usePagination(data, itemsPerPage);
-
-// ваш код
-
-// return (
-//   <>
-//     <ul className={css.list}>
-// Проходимося по кожному елементу в масиві currentData і створюємо відповідні компоненти
-//       {currentData.map(item => (
-// ваш код
-//         <CardMarkup
-//           key={nanoid()}
-//           {...item}
-//           onAddToFavorites={() => onAddToFavorites(item)}
-//           onRemoveFromFavorites={() => onRemoveFromFavorites(item)}
-//         />
-//       ))}
-//     </ul>
-// вставляєм пагінатор
-//     {data.length > itemsPerPage && (
-//       <Pagination
-//         currentPage={currentPage}
-//         itemsPerPage={itemsPerPage}
-//         totalItems={data.length}
-//         onPageChange={handlePageChange}
-//       />
-//     )}
-//   </>
-// );
-// }
