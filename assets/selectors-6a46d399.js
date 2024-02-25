@@ -1,1 +1,0 @@
-const n=s=>s.drinks.favorites,r=s=>s.drinks.own,e=s=>s.drinks.byId,i=s=>s.drinks.mainPage,a=s=>s.drinks.popular,o=s=>s.drinks.error,t=s=>s.drinks.isLoading;export{t as a,a as b,o as c,r as d,n as e,e as f,i as s};
