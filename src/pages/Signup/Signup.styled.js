@@ -100,7 +100,7 @@ export const SignupPageWrapper = styled.div`
   & .buttonSignup {
     background-color: ${(props) => props.theme.whiteColor};
     color: ${(props) => props.theme.darkBlueColor};
-    border-radius: 30px;
+    border-radius: 42px;
     font-weight: 600;
     font-size: 14px;
     width: 335px;
