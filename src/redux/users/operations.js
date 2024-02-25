@@ -57,21 +57,18 @@ export const refreshThunk = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
-      const token = state.user.token;
+      const token = state.users.token;
       setToken(token);
       const { data } = await instance.get('/api/users/current');
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue({
-        message: error.response.data.message,
-        status: error.response.status,
-      });
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   },
   {
     condition: (_, thunkAPI) => {
       const state = thunkAPI.getState();
-      const token = state.user.token;
+      const token = state.users.token;
       if (!token) {
         return false;
       }

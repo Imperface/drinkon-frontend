@@ -1,9 +1,36 @@
 body {
   font-weight: 400;
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   color: #fff;
   margin: 0;
   background-color: #0a0a11;
+  background-image: url('./images/Background-left-top.png'),
+    url('./images/Background-left-bottom.png');
+  background-position:
+    left top,
+    center bottom;
+  background-size:
+    auto,
+    100% 15%,
+    auto;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  body {
+    background-image: url('./images/Background-left-top.png'),
+      url('./images/Background-left-bottom.png'),
+      url('./images//Background-right-top.png');
+    background-position:
+      left top,
+      center bottom,
+      right top;
+    background-size:
+      auto,
+      100% 15%,
+      auto;
+    background-repeat: no-repeat;
+  }
 }
 h1,
 h2,
@@ -12,7 +39,7 @@ h4,
 h5,
 h6,
 p {
-  margin-top: 0;
+  margin: 0;
 }
 a {
   text-decoration: none;

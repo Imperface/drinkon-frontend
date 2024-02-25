@@ -13,7 +13,8 @@ import { device } from 'constants/device';
 export const SigninPageWrapper = styled.div`
   color: ${(props) => props.theme.startPageTxtColor};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px 0;
   background-image: url(${start1xMobile});
 
   @supports (-webkit-image-set: url()) {
@@ -39,7 +40,6 @@ export const SigninPageWrapper = styled.div`
 
   & .signin {
     width: 335px;
-    height: 264px;
   }
 
   & .signinTitle {
@@ -92,10 +92,9 @@ export const SigninPageWrapper = styled.div`
     font-weight: 600;
     font-size: 14px;
     width: 335px;
-    height: 54px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    padding: 15px 0;
+
     margin-top: 14px;
     transition: all 0.3s;
 
@@ -123,7 +122,6 @@ export const SigninPageWrapper = styled.div`
 
     & .signin {
       width: 400px;
-      height: 292px;
     }
 
     & .signinTitle {

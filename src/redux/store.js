@@ -12,9 +12,9 @@ import {
 } from 'redux-persist';
 import { paginationReducer } from './pagination/paginationReducer';
 import { userReducer } from './users/slice';
-import { favoritesReducer } from './favorites/favoritesReducer';
 import { filtersReducer } from './filters/slice';
 import { drinksReducer } from './drinks/slice';
+import { subscribesReducer } from './subscribes/slice';
 
 const userConfig = {
   key: 'token',
@@ -22,19 +22,13 @@ const userConfig = {
   whitelist: ['token'],
 };
 
-const favoritesConfig = {
-  key: 'favorites',
-  storage,
-  whitelist: ['favorites'],
-};
-
 export const store = configureStore({
   reducer: {
     pagination: paginationReducer,
-    user: persistReducer(userConfig, userReducer),
-    drinkFavorite: persistReducer(favoritesConfig, favoritesReducer),
+    users: persistReducer(userConfig, userReducer),
     filters: filtersReducer,
     drinks: drinksReducer,
+    subscribes: subscribesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

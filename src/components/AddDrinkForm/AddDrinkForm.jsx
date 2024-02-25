@@ -5,11 +5,14 @@ import { addOwnDrinkThunk } from "../../redux/drinks/operations";
 import { DrinkDescriptionFields } from '../DrinkDescriptionFields/DrinkDescriptionFields';
 import { RecipePreparation } from '../RecipePreparation/RecipePreparation';
 import { AddDrinkStyle } from './AddDrinkForm.styled';
+import { DrinkIngredientsFields } from '../DrinkIngredientsFields/DrinkIngredientsFields';
+
 export const AddDrinkForm =() => {
     const dispatch = useDispatch()
 
     const onSubmitAddDrink = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
+      const form = e.target;
         const formData = new FormData();
         // const file = e.target.elements.drinkAvatar.files[0];
         // const drink = e.target.elements.drink.value;
@@ -25,16 +28,18 @@ export const AddDrinkForm =() => {
           '[{"title":"ingredient1","measure": "measure1", "ingredientId": "64aebb7f82d96cc69e0eb4a7"}, {"title":"ingredient2","measure": "measure2", "ingredientId": "64aebb7f82d96cc69e0eb4a7"},{"title":"ingredient3","measure": "measure3", "ingredientId": "64aebb7f82d96cc69e0eb4a7"}]'
         );
     
-        await dispatch(addOwnDrinkThunk(formData));
+      await dispatch(addOwnDrinkThunk(formData));
+      form.reset();
       };
 
 return (
     <AddDrinkStyle>
         <form onSubmit={onSubmitAddDrink}>
         {/* <input type="file" name="drinkAvatar" /> */}
-        <DrinkDescriptionFields/>
-        <RecipePreparation/>
-        <button className='btnAdd'>Add</button>
+      <DrinkDescriptionFields />
+      <DrinkIngredientsFields/>
+      <RecipePreparation />
+      <button className='btnAdd'>Add</button>
       </form>
        
           

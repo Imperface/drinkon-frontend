@@ -9,7 +9,7 @@ export function DrinksList({ data, onRemoveDrinks }) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1440) {
         setItemsPerPage(8); // Змінюємо кількість карток на сторінці для мобільних пристроїв
       } else {
         setItemsPerPage(9); // Відновлюємо кількість карток на сторінці для більших екранів

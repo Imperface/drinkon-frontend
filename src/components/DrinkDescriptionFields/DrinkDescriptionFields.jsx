@@ -1,43 +1,53 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
+import { useSelector,  useDispatch } from 'react-redux';
 import { DrinkStyle } from './DrinkDescriptionFields.styled';
 import { useFormik } from 'formik';
-import { Input } from './input';
-import {ReactComponent as Icon} from "../../images/addDrink/plus.svg"
+import { HiPlusSmall } from "react-icons/hi2";
+import { selectFiltersCategories, selectFiltersGlasses } from '../../redux/filters/selectors';
+import { getCategoryThunk, getGlassesThunk } from '../../redux/filters/operations';
+import { selectUserData } from '../../redux/users/selectors';
 
 export const DrinkDescriptionFields = () => {
-    const GLASSES = [
-        'Beer Glass',
-        'Parfait glass',
-        'Mason jar',
-        'Margarita glass',
-        'Martini Glass',
-        'Balloon Glass',
-        'Coupe Glass',
-      ];
-    const category = [
-                'Homemade Liqueur',
-        'Punch/Party Drink',
-        'Beer',
-        'Soft Drink',
-      ];
-     
-      
-      
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  const dispatch = useDispatch();
+  useEffect(()=>{dispatch(getCategoryThunk())}, [dispatch])
+  useEffect(()=>{dispatch(getGlassesThunk()) }, [dispatch])
+  const category = useSelector(selectFiltersCategories); 
+  const glasses = useSelector(selectFiltersGlasses);
+
+  const user = useSelector(selectUserData);
+  const userDateOfBirth = user.dateOfBirth;
+  console.log('userDateOfBirth: ', userDateOfBirth);
+  const today = new Date();
+ 
+  
+  console.log('user: ', userDateOfBirth );
+
+  
+
+
+    
     return (
         <DrinkStyle>
          
     <div className='addAvatar'>
-       <input  type="file" name="drinkAvatar" />  
+      <div className='avatar'> <HiPlusSmall className='icon'/>
+      <input  type="file" name="drinkAvatar" />  
        <label className='titleAvatar' htmlFor="file">Add image</label>
+      </div>
     </div>
                   
 
     <div className='formDescription'>
-          <label className='label'>Enter item title
-            <input className='inputStyle' type="text" name='drink' />
-          </label>
-                
+      
+      <label className='label' htmlFor="drink">Enter item title
+      <input className='inputStyle' type="text" name='drink' />
+      </label>
+          
+      
+          
 
           <label className='label'>Enter about recipe
             <input className='inputStyle' type="text" name="shortDescription" />
@@ -56,8 +66,9 @@ export const DrinkDescriptionFields = () => {
            
 
           <label className='label'>Glass
+          
              <select className='inputStyle' name = "glass">
-              {GLASSES.map((item) => (
+              {glasses.map((item) => (
                 <option value={item} key={item}>
                   {item}
                 </option>
@@ -68,10 +79,16 @@ export const DrinkDescriptionFields = () => {
     </div>
                
                <div>
-               <label htmlFor="alcoholic">Alcoholic</label>
-            <input type="radio"  name='alcoholic' />
-            <label htmlFor="nonAlcoholices">Non-alcoholic</label>
-            <input type="radio" name = "alcoholic" />
+                <input className='textRadioBtn' type="radio" name='alcoholic' value="Alcoholic" disabled={isButtonDisabled}/>
+          <label className='radioBtn'>
+            Alcoholic
+          </label>
+           
+          <input className='textRadioBtn' type="radio" name="alcoholic" value="Non alcoholic"/>
+          <label className='radioBtn'>
+            Non-alcoholic
+          </label>
+            
                </div>
            
                       

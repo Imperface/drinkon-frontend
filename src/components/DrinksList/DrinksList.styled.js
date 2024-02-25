@@ -5,11 +5,11 @@ export const StyledDrinksList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  margin-bottom: 54px;
+  row-gap: 40px;
+  padding-bottom: 80px;
 
   @media ${device.tablet} {
-    margin-bottom: 94px;
+    padding-bottom: 94px;
 
     row-gap: 80px;
     column-gap: 20px;

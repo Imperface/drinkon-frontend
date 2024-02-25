@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 
-const theme = {
+export const theme = {
   blue: 'rgb(0, 0, 255)',
   yellow: '#FFFF00',
   black: '#000',
@@ -33,6 +33,7 @@ const theme = {
   lightFortyGreenColor: 'rgba(188, 230 210, 0.4)',
 
   whiteColor: '#f3f3f3',
+  whiteZeroColor: 'rgba(243, 243, 243, 0)',
   whiteTenColor: 'rgba(243, 243, 243, 0.1)',
   whiteTwentyColor: 'rgba(243, 243, 243, 0.2)',
   whiteThirtyColor: 'rgba(243, 243, 243, 0.3)',
