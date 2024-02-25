@@ -59,6 +59,9 @@ export const DrinkStyle = styled.div`
     transform: translate(-50%, -50%);
     width: 80px;
     height: 88px;
+    & input {
+      cursor: pointer;
+    }
   }
   .icon {
     color: black;
@@ -71,6 +74,7 @@ export const DrinkStyle = styled.div`
     transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
+    cursor: pointer;
   }
   input[type='file'] {
     position: absolute;
@@ -84,13 +88,14 @@ export const DrinkStyle = styled.div`
     outline: 0;
     opacity: 0;
     user-select: none;
+    cursor: pointer;
   }
 
   .formDescription {
     display: grid;
     gap: 20px;
     width: 335px;
-    height: 229px;
+
     margin-bottom: 40px;
   }
 

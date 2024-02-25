@@ -31,13 +31,13 @@ export const PopularDrinks = () => {
   const loading = useSelector(selectDrinksIsLoading);
   const error = useSelector(selectDrinksError);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
 
-  if (error) {
-    return <p>{error}</p>;
-  }
+  // if (error) {
+  //   return <p>{error}</p>;
+  // }
 
   if (popularDrinks.length === 0) {
     return <p>No popular drinks available at the moment.</p>;

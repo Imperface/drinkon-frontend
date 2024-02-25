@@ -1,11 +1,19 @@
 import { styled } from 'styled-components';
 import { device } from 'constants/device';
 
-export const FollowUsWrapper = styled.div``;
+export const FollowUsWrapper = styled.div`
+  margin-top: 80px;
+  @media ${device.tablet} {
+    margin-top: 80px;
+  }
+  @media ${device.desktop} {
+    margin-top: 0;
+  }
+`;
 
 export const FollowUsTitle = styled.h3`
   width: 106px;
-  height: 32px;
+  height: 36px;
   font-family: Manrope;
   font-weight: 500;
   font-size: 18px;
@@ -14,6 +22,11 @@ export const FollowUsTitle = styled.h3`
   @media ${device.tablet} {
     font-size: 24px;
     margin-bottom: 24px;
+  }
+  @media ${device.desktop} {
+    height: 130px;
+
+    padding-top: 90px;
   }
 `;
 
