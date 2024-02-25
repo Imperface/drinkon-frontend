@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import { HomeListWrapper } from './HomeList.styled';
 import hero from '../../images/heroImage/hero-desc@1x.png';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { getMainPageDrinksThunk } from '../../redux/drinks/operations';
 import { selectMainPageDrinks } from '../../redux/drinks/selectors';
 
@@ -15,18 +16,6 @@ const HomeList = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUserData);
   const listResults = useSelector(selectMainPageDrinks);
-  console.log(listResults);
-
-  // const userDateOfBirth = new Date(user.dateOfBirth);
-  // const today = new Date();
-  // const ageDifference = today.getFullYear() - userDateOfBirth.getFullYear();
-
-  // const isAdult = ageDifference >= 18;
-  // const isMinor = !isAdult;
-  // console.log(user);
-  // console.log('isAdult:', isAdult);
-  // console.log('isMinor:', isMinor);
-
   useEffect(() => {
     dispatch(getMainPageDrinksThunk());
   }, [dispatch]);
@@ -35,12 +24,12 @@ const HomeList = () => {
     <HomeListWrapper>
       <ul className="categoryList">
         {listResults.map((item) => (
-          <li className="categoryItem" key={item._id}>
+          <li className="categoryItem" key={uuidv4()}>
             <h2 className="categoryTitleItem">{item._id}</h2>
 
             <ul className="drinkList">
               {item.drinks.map((result) => (
-                <li className="drinkItem" key={result.id}>
+                <li className="drinkItem" key={uuidv4()}>
                   <img
                     src={result.drinkThumb}
                     alt="hero"
@@ -50,9 +39,9 @@ const HomeList = () => {
                   />
                   <div className="drinkAbout">
                     <h3 className="drinkTitleItem">{result.drink}</h3>
-                    <NavLink className="linkId" to="/drink/:drinkId">
+                    <Link className="linkId" to={`/drinks/${result._id}`}>
                       See more
-                    </NavLink>
+                    </Link>
                   </div>
                 </li>
               ))}
