@@ -33,17 +33,18 @@ const Drinks = () => {
     dispatch(getCategoryThunk());
   }, [dispatch]);
 
-  const handleSearch = () => {
+  const handleSearch = (query, value, ingredientId) => {
     dispatch(
       getSearchDrinksThunk({
-        query: 'al',
-        category: '',
-        ingredientId: '',
+        query: query,
+        category: value,
+        ingredientId: ingredientId,
         page: '',
         limit: '',
       })
     );
   };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 1440) {
