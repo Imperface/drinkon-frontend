@@ -1,4 +1,4 @@
-import{s as n,d as t,j as e,r as l,u as m,k as c,l as b,x as u,t as j,y as k,z as w,A as $}from"./index-62cc04f8.js";import{P as v}from"./PageTitle-2eb382bf.js";import{S as I}from"./Section-b3a1a615.js";import{b as z,c as y,d as D}from"./selectors-3bd61cc3.js";const T=n.h4`
+import{s as n,d as t,j as e,r as l,u as m,l as c,o as b,z as u,w as j,A as k,B as w,C as $}from"./index-a561bd39.js";import{P as v}from"./PageTitle-9cc99f5b.js";import{S as I}from"./Section-ad6088ef.js";import{b as z,c as D,d as y}from"./selectors-3bd61cc3.js";const T=n.h4`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
@@ -53,7 +53,7 @@ import{s as n,d as t,j as e,r as l,u as m,k as c,l as b,x as u,t as j,y as k,z a
     font-size: 18px;
     line-height: 1.33;
   }
-`,L=n.p`
+`,B=n.p`
   color: rgba(243, 243, 243, 0.5);
   font-size: 14px;
   font-weight: 500;
@@ -63,7 +63,7 @@ import{s as n,d as t,j as e,r as l,u as m,k as c,l as b,x as u,t as j,y as k,z a
     font-size: 16px;
     line-height: 1.25;
   }
-`,B="/drinkon-frontend/assets/coctailPlaceholder-46d16baa.png",C=({data:o})=>e.jsxs(e.Fragment,{children:[e.jsx(T,{children:"Ingredients"}),e.jsx(F,{children:o.map(i=>{var s;return e.jsxs(P,{children:[e.jsx(E,{src:((s=i.ingredientId)==null?void 0:s.ingredientThumb)||B,alt:i.title}),e.jsxs(R,{children:[e.jsx(S,{children:i.title}),e.jsx(L,{children:i.measure})]})]},i._id)})})]}),h=n.button`
+`,C="/drinkon-frontend/assets/coctailPlaceholder-46d16baa.png",L=({data:o})=>e.jsxs(e.Fragment,{children:[e.jsx(T,{children:"Ingredients"}),e.jsx(F,{children:o.map(i=>{var s;return e.jsxs(P,{children:[e.jsx(E,{src:((s=i.ingredientId)==null?void 0:s.ingredientThumb)||C,alt:i.title}),e.jsxs(R,{children:[e.jsx(S,{children:i.title}),e.jsx(B,{children:i.measure})]})]},i._id)})})]}),h=n.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.3;
@@ -214,4 +214,4 @@ import{s as n,d as t,j as e,r as l,u as m,k as c,l as b,x as u,t as j,y as k,z a
     padding-top: 158px;
     padding-bottom: 140px;
   }
-`,ne=()=>{const o=m(),{drinkId:i}=k();l.useEffect(()=>{o(w(i))},[o,i]);const s=c(z),r=c(y),a=c(D);return e.jsx(X,{children:e.jsxs(I,{className:"drinkSection",children:[r&&e.jsx($,{}),a&&e.jsx("h1",{children:a}),Object.keys(s).length>0&&e.jsxs(e.Fragment,{children:[e.jsx(U,{data:s}),e.jsx(C,{data:s.ingredients}),e.jsx(V,{instructions:s.instructions})]})]})})};export{ne as default};
+`,ne=()=>{const o=m(),{drinkId:i}=k();l.useEffect(()=>{o(w(i))},[o,i]);const s=c(z),r=c(D),a=c(y);return e.jsx(X,{children:e.jsxs(I,{className:"drinkSection",children:[r&&e.jsx($,{}),a&&e.jsx("h1",{children:a}),Object.keys(s).length>0&&e.jsxs(e.Fragment,{children:[e.jsx(U,{data:s}),e.jsx(L,{data:s.ingredients}),e.jsx(V,{instructions:s.instructions})]})]})})};export{ne as default};
