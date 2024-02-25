@@ -63,10 +63,10 @@ const Drinks = () => {
   }, []);
 
   const { currentPage, currentData, handlePageChange } = usePagination(
-    ingredients.drinks || [], 
+    ingredients.drinks || [],
     itemsPerPage
   );
-  console.log(ingredients.drinks);
+
   return (
     <DrinksWrapper>
       <Section className="drinks">
