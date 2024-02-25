@@ -1,103 +1,107 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { IngredientsStyle } from "./DrinkIngredientsFields.styled";
-import { CgClose } from "react-icons/cg";
-import { useSelector, useDispatch } from "react-redux";
-import { selectFiltersIngredients } from "../../redux/filters/selectors";
-import { getIngredientsThunk } from "../../redux/filters/operations";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { IngredientsStyle } from './DrinkIngredientsFields.styled';
+import { CgClose } from 'react-icons/cg';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectFiltersIngredients } from '../../redux/filters/selectors';
+import { getIngredientsThunk } from '../../redux/filters/operations';
+import Select from 'react-select';
+import { v4 as uuidv4 } from 'uuid';
 
 export const DrinkIngredientsFields = () => {
-  // const dispatch = useDispatch();
-  // useEffect(()=>{dispatch(getIngredientsThunk())}, [dispatch])
-  // const ingrediens = useSelector(selectFiltersIngredients);
+  const dispatch = useDispatch();
 
-  // console.log('ingrediens: ', ingrediens);
+  // get ingredient
+  useEffect(() => {
+    dispatch(getIngredientsThunk());
+  }, [dispatch]);
 
-    const ingrediens = [
-        'Beer Glass',
-        'Parfait glass',
-        'Mason jar',
-        'Margarita glass',
-        'Martini Glass',
-        'Balloon Glass',
-        'Coupe Glass',
+  // get ingredient
+  const ingredients = useSelector(selectFiltersIngredients);
+
+  // get ingredient options
+  const getIngredientsOptions = () => {
+    return ingredients.map((item) => ({ value: item._id, label: item.title }));
+  };
+
+  // get dynamic ingredient fields
+  const [ingredientsList, setIngredientsList] = useState([]);
+
+  // add new ingredient field
+  const handleIncrementProduct = () => {
+    setIngredientsList((prevState) => {
+      return [
+        ...prevState,
+        <div className="itemIngr" key={uuidv4()}>
+          <Select
+            options={getIngredientsOptions()}
+            classNamePrefix="react-select"
+            placeholder="select a category"
+          />
+          <input type="text" name="ingredient" />
+        </div>,
       ];
-    const [counter, setCounter] = useState(3);
-    
-    
-    const handleIncrementProduct = () => {
-    setCounter(prevState => prevState + 1);
+    });
   };
 
-    const handleDecrementProduct = () => {
-      if(counter <= 3) { return } setCounter(prevState => prevState - 1)
-     };
-
-  const changeInput = () => {
-    Array.from({ length: counter }, ()=> {return <input key = {ingr}/>})
+  // remove last field
+  const handleDecrementProduct = () => {
+    setIngredientsList((prevState) => {
+      return [...prevState.slice(0, -1)];
+    });
   };
 
-
-    return (
-        <IngredientsStyle>
-          <div>
-                <div className="title">
-                <h3 className="text">Ingredients</h3>
-                <div className="counter">
-                    <button className="btnCounter" onClick={handleDecrementProduct}>
-                        -
-                    </button>
-                    <span className="titleCounter">{ counter}</span>
-                    <button className="btnCounter" onClick={handleIncrementProduct}>
-                        +
-                    </button>
-                </div>
-                </div>
-            </div>
-            <div className="listIngr">
-            {Array.from({ length: 5 }, (v, k) => k)}
-            {/* {changeInput()} */}
-
-            {Array.from({ length: 3 }, ()=> {return <div className="ingredient">
-                        <select className='inputStyle' name='ingredients'>
-                        {ingrediens.map((item) => (
-                        <option value={item} key={item}>
-                        {item}
-                        </option>
-                        ))}</select>
-                        <div className="quantity">
-                        <input className="textQuantity" type="number" placeholder="1"/>
-                        <span className="btnCounter">cl</span>
-                        </div>
-                        
-                        <button className="btnDelet"><CgClose /></button>
-                    </div> })}
-
-
-                    {/* <div>
-                        <select className='inputStyle' name='ingredients'>
-                        {ingr.map((item) => (
-                        <option value={item} key={item}>
-                        {item}
-                        </option>
-                        ))}</select>
-                        
-                        <input type="number" placeholder="1"/>
-                        <p>cl</p>
-                        <button>x</button>
-                    </div> */}
-                    <div></div>
-                    <div></div>
-            </div>
-            
+  return (
+    <IngredientsStyle>
+      <div>
+        <div className="title">
+          <h3 className="text">Ingredients</h3>
+          <div className="counter">
+            <button
+              className="btnCounter"
+              onClick={handleDecrementProduct}
+              disabled={ingredientsList.length === 3}
+            >
+              -
+            </button>
+            <span className="titleCounter">{ingredientsList.length + 3}</span>
+            <button className="btnCounter" onClick={handleIncrementProduct}>
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+      {ingredients.length > 0 && (
+        <div className="listIngr">
+          <div className="itemIngr" key={uuidv4()}>
+            <Select
+              name="selectIngredient1"
+              options={getIngredientsOptions()}
+              classNamePrefix="react-select"
+              placeholder="select a category"
+            />
+            <input type="text" name="inputIngredient1" />
+          </div>
+          <div className="itemIngr" key={uuidv4()}>
+            <Select
+              name="selectIngredient1"
+              options={getIngredientsOptions()}
+              classNamePrefix="react-select"
+              placeholder="select a category"
+            />
+            <input type="text" name="inputIngredient2" />
+          </div>
+          <div className="itemIngr" key={uuidv4()}>
+            <Select
+              options={getIngredientsOptions()}
+              classNamePrefix="react-select"
+              placeholder="select a category"
+            />
+            <input type="text" name="inputIngredient3" />
+          </div>
+          {ingredients.length > 0 && ingredientsList.map((item) => item)}
+        </div>
+      )}
     </IngredientsStyle>
-    )
-}
-
-
-// function changeArray(arr) {
-//     for( i = 0; i < arr.length; ++i) {
-//         alert(arr[i]);
-//     }
-// }
-
+  );
+};
