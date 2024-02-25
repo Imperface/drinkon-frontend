@@ -14,6 +14,7 @@ import { paginationReducer } from './pagination/paginationReducer';
 import { userReducer } from './users/slice';
 import { filtersReducer } from './filters/slice';
 import { drinksReducer } from './drinks/slice';
+import { subscribesReducer } from './subscribes/slice';
 
 const userConfig = {
   key: 'token',
@@ -27,6 +28,7 @@ export const store = configureStore({
     users: persistReducer(userConfig, userReducer),
     filters: filtersReducer,
     drinks: drinksReducer,
+    subscribes: subscribesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

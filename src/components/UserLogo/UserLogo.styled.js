@@ -6,6 +6,7 @@ export const StyledUserLogo = styled.div`
   justify-content: center;
   gap: 8px;
   margin-right: 14px;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     gap: 14px;
