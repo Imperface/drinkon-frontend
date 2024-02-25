@@ -87,6 +87,7 @@ export const CustomStyles = {
     border: '1px solid rgba(243, 243, 243, 0.2)',
     borderRadius: '200px',
     backgroundColor: '#161f37',
+    // height: 'auto',
     [`@media ${device.tablet}`]: {
       width: '199px',
       fontSize: '17px',
@@ -113,7 +114,7 @@ export const CustomStyles = {
     border: '1px solid rgba(243, 243, 243, 0.2)',
     borderRadius: '20px',
     backgroundColor: '#161f37',
-    width: '335px',
+    width: '100%',
   }),
   indicatorSeparator: (provided) => ({
     ...provided,
