@@ -1,4 +1,4 @@
-import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-f7d5d131.js";import{s as r,a as o,w as b,b as a}from"./bg-welcome-desc@1x-0e9701bd.js";import{s as f,a as w,b as k}from"./start-mob@2x-e5a7b397.js";import{S as $}from"./Section-807ae223.js";const y=g.div`
+import{s as g,d as n,u as x,j as t,N as u,a as m,n as h}from"./index-b2aa70be.js";import{s as r,a as o,w as b,b as a}from"./bg-welcome-desc@1x-0e9701bd.js";import{s as f,a as w,b as k}from"./start-mob@2x-e5a7b397.js";import{S as $}from"./Section-0cb8d1a2.js";const y=g.div`
   color: ${e=>e.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
