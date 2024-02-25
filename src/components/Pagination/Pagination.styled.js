@@ -35,26 +35,26 @@ export const PaginationButton = styled.button`
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 16px;
-    color: ${props => props.theme.colors.whiteColor};
+    color: ${props => props.theme.whiteColor};
     pointer-events: none;
   }
 `;
 
 export const PaginationEllipseSvg = styled(IoEllipse)`
   fill: ${({ active, theme }) =>
-    active === 'true' ? theme.colors.blueFiftyColor : 'none'};
+    active === 'true' ? theme.blueFiftyColor : 'none'};
   width: 27px;
   height: 27px;
   :hover,
   :focus {
-    fill: ${props => props.theme.colors.blueFiftyColor};
+    fill: ${props => props.theme.blueFiftyColor};
   }
 `;
 
 export const PaginationChevronLeft = styled(GoChevronLeft)`
-  fill: ${props => props.theme.colors.whiteThirtyColor};
+  fill: ${props => props.theme.whiteThirtyColor};
 `;
 
 export const PaginationChevronRight = styled(GoChevronRight)`
-  fill: ${props => props.theme.colors.whiteThirtyColor};
+  fill: ${props => props.theme.whiteThirtyColor};
 `;
