@@ -9,6 +9,7 @@ export const RecipePreparation = () => {
           className="recipe"
           placeholder="Enter the recipe"
           name="instructions"
+          required
         />
       </label>
     </RecipeStyle>
