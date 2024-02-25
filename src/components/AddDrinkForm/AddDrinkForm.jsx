@@ -6,15 +6,22 @@ import { DrinkDescriptionFields } from '../DrinkDescriptionFields/DrinkDescripti
 import { RecipePreparation } from '../RecipePreparation/RecipePreparation';
 import { AddDrinkStyle } from './AddDrinkForm.styled';
 import { DrinkIngredientsFields } from '../DrinkIngredientsFields/DrinkIngredientsFields';
+import { v4 as uuidv4 } from 'uuid';
 
 export const AddDrinkForm = () => {
   const dispatch = useDispatch();
 
+  const [ingredientList, setIngredientList] = useState([
+    { id: uuidv4(), value: '', label: '' },
+    { id: uuidv4(), value: '', label: '' },
+    { id: uuidv4(), value: '', label: '' },
+  ]);
+
   const onSubmitAddDrink = async (e) => {
     e.preventDefault();
     const form = e.target;
+    console.log(form.elements.selectIngredient1);
     const formData = new FormData();
-    console.log(e.target.elements);
     // formData.append('drinkAvatar', e.target.elements.drinkAvatar.files[0]);
     // formData.append('drink', e.target.elements.drink.value);
     // formData.append('category', e.target.elements.category.value);
@@ -38,7 +45,10 @@ export const AddDrinkForm = () => {
     <AddDrinkStyle>
       <form className="form" onSubmit={onSubmitAddDrink}>
         <DrinkDescriptionFields />
-        <DrinkIngredientsFields />
+        <DrinkIngredientsFields
+          ingredientList={ingredientList}
+          setIngredientList={setIngredientList}
+        />
         <RecipePreparation />
         <button className="btnAdd">Add</button>
       </form>

@@ -8,7 +8,10 @@ import { getIngredientsThunk } from '../../redux/filters/operations';
 import Select from 'react-select';
 import { v4 as uuidv4 } from 'uuid';
 
-export const DrinkIngredientsFields = () => {
+export const DrinkIngredientsFields = ({
+  ingredientList,
+  setIngredientList,
+}) => {
   const dispatch = useDispatch();
 
   // get ingredient
@@ -25,7 +28,7 @@ export const DrinkIngredientsFields = () => {
   };
 
   // get dynamic ingredient fields
-  const [ingredientsList, setIngredientsList] = useState([]);
+  // const [ingredientsList, setIngredientsList] = useState([]);
 
   // add new ingredient field
   const handleIncrementProduct = () => {
@@ -51,6 +54,10 @@ export const DrinkIngredientsFields = () => {
     });
   };
 
+  const onInputChange = (inputValue) => {
+    console.log(inputValue);
+  };
+
   return (
     <IngredientsStyle>
       <div>
@@ -60,11 +67,11 @@ export const DrinkIngredientsFields = () => {
             <button
               className="btnCounter"
               onClick={handleDecrementProduct}
-              disabled={ingredientsList.length === 3}
+              disabled={ingredientList.length === 3}
             >
               -
             </button>
-            <span className="titleCounter">{ingredientsList.length + 3}</span>
+            <span className="titleCounter">{ingredientList.length}</span>
             <button className="btnCounter" onClick={handleIncrementProduct}>
               +
             </button>
@@ -73,33 +80,23 @@ export const DrinkIngredientsFields = () => {
       </div>
       {ingredients.length > 0 && (
         <div className="listIngr">
-          <div className="itemIngr" key={uuidv4()}>
-            <Select
-              name="selectIngredient1"
-              options={getIngredientsOptions()}
-              classNamePrefix="react-select"
-              placeholder="select a category"
-            />
-            <input type="text" name="inputIngredient1" />
-          </div>
-          <div className="itemIngr" key={uuidv4()}>
-            <Select
-              name="selectIngredient1"
-              options={getIngredientsOptions()}
-              classNamePrefix="react-select"
-              placeholder="select a category"
-            />
-            <input type="text" name="inputIngredient2" />
-          </div>
-          <div className="itemIngr" key={uuidv4()}>
-            <Select
-              options={getIngredientsOptions()}
-              classNamePrefix="react-select"
-              placeholder="select a category"
-            />
-            <input type="text" name="inputIngredient3" />
-          </div>
-          {ingredients.length > 0 && ingredientsList.map((item) => item)}
+          {ingredientList.map((item) => (
+            <div className="itemIngr" key={item.id}>
+              <Select
+                name={`ingredient${item.id}`}
+                options={getIngredientsOptions()}
+                classNamePrefix="react-select"
+                placeholder="select a category"
+                onChange={(inputValue) => {
+                  const ingredientObject = {
+                    ...inputValue,
+                    name: `ingredient${item.id}`,
+                  };
+                }}
+              />
+              <input type="text" name={`measure${id}`} />
+            </div>
+          ))}
         </div>
       )}
     </IngredientsStyle>
