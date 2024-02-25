@@ -1,4 +1,4 @@
-var fr=Object.defineProperty;var mr=(r,n,e)=>n in r?fr(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var v=(r,n,e)=>(mr(r,typeof n!="symbol"?n+"":n,e),e);import{s as Yn,d as Pt,g as gr,r as x,b as In,R as Rn,e as f,i as yr,j as F,u as wr,N as Dr,c as vr,n as br}from"./index-a561bd39.js";import{s as Vt,c as kr,a as Ut,d as xr,w as Mr,b as Xt,e as Cr}from"./bg-welcome-desc@1x-0be22210.js";import{S as _r}from"./Section-ad6088ef.js";import{a as Gt,c as Sr,i as Xe,p as Pr,b as Er,f as Or,o as Nr}from"./floating-ui.dom-9d61e2db.js";const Tr=Yn.div`
+var fr=Object.defineProperty;var mr=(r,n,e)=>n in r?fr(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var v=(r,n,e)=>(mr(r,typeof n!="symbol"?n+"":n,e),e);import{s as Yn,d as Pt,g as gr,r as x,b as In,R as Rn,e as f,i as yr,j as F,u as wr,N as Dr,c as vr,n as br}from"./index-813bbb88.js";import{s as Vt,c as kr,a as Ut,d as xr,w as Mr,b as Xt,e as Cr}from"./bg-welcome-desc@1x-0be22210.js";import{S as _r}from"./Section-20e22ad1.js";import{a as Gt,c as Sr,i as Xe,p as Pr,b as Er,f as Or,o as Nr}from"./floating-ui.dom-9d61e2db.js";const Tr=Yn.div`
   color: ${r=>r.theme.startPageTxtColor};
   width: 100%;
   min-height: 100vh;
@@ -90,7 +90,7 @@ var fr=Object.defineProperty;var mr=(r,n,e)=>n in r?fr(r,n,{enumerable:!0,config
   & .buttonSignup {
     background-color: ${r=>r.theme.whiteColor};
     color: ${r=>r.theme.darkBlueColor};
-    border-radius: 30px;
+    border-radius: 42px;
     font-weight: 600;
     font-size: 14px;
     width: 335px;
