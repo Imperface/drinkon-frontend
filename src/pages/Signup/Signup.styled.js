@@ -110,6 +110,7 @@ export const SignupPageWrapper = styled.div`
     align-items: center;
     margin-top: 14px;
     transition: all 0.3s;
+    border: 1px solid ${(props) => props.theme.whiteColor};
 
     &:hover {
       background-color: transparent;

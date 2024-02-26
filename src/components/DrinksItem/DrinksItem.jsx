@@ -19,7 +19,7 @@ export const DrinksItem = ({
   drinkThumb,
   drink,
   alcoholic,
-  description,
+  shortDescription,
   onRemoveDrinks,
 }) => {
   return (
@@ -35,7 +35,7 @@ export const DrinksItem = ({
           <Title>{drink}</Title>
           <TextAlcohol>{alcoholic}</TextAlcohol>
         </div>
-        <TextDescr>{description}</TextDescr>
+        <TextDescr>{shortDescription}</TextDescr>
         <ButtonContainer>
           <Link className="linkSeeMore" to={`${ROUTES.GET_DRINK_BY_ID}${_id}`}>
             See more

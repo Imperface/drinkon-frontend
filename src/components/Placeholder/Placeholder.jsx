@@ -4,7 +4,9 @@ import placeholderImageMob from '../../images/heroImage/hero-mob@2x.png';
 import placeholderImageTab from '../../images/heroImage/hero-tab@2x.png';
 import placeholderImageDesc from '../../images/heroImage/hero-desc@2x.png';
 
-export const Placeholder = () => {
+export const Placeholder = ({
+  text = 'You haven`t added any favorite cocktails yet',
+}) => {
   return (
     <PlaceholderContainer>
       <img
@@ -12,7 +14,7 @@ export const Placeholder = () => {
         srcSet={`${placeholderImageMob} 420w, ${placeholderImageTab} 768w, ${placeholderImageDesc} 1440w`}
         alt="Placeholder"
       />
-      <p>You haven{"'"}t added any favorite cocktails yet</p>
+      <p>{text}</p>
     </PlaceholderContainer>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addOwnDrinkThunk } from '../../redux/drinks/operations';
-// import { selectDrinks } from "../../redux/drink/drink.selectors";
 import { DrinkDescriptionFields } from '../DrinkDescriptionFields/DrinkDescriptionFields';
 import { RecipePreparation } from '../RecipePreparation/RecipePreparation';
 import { AddDrinkStyle } from './AddDrinkForm.styled';
@@ -11,6 +10,7 @@ import { PageTitle } from '../Title/PageTitle';
 import { Notify } from 'notiflix';
 import { Loader } from 'components/Loader/Loader';
 import { selectDrinksIsLoading } from '../../redux/drinks/selectors';
+import { useNavigate } from 'react-router-dom';
 
 export const AddDrinkForm = () => {
   const dispatch = useDispatch();
@@ -22,6 +22,7 @@ export const AddDrinkForm = () => {
     { id: uuidv4(), title: '', ingredientId: '', measure: '' },
   ]);
 
+  const navigate = useNavigate();
   // add new ingredient field
   const handleIncrementProduct = () => {
     setIngredientList((prevState) => {
@@ -47,6 +48,7 @@ export const AddDrinkForm = () => {
 
   const onSubmitAddDrink = async (e) => {
     e.preventDefault();
+    const navigateTo = () => history.push('/drinks');
     const formData = new FormData();
     const form = e.target;
 
@@ -66,6 +68,7 @@ export const AddDrinkForm = () => {
     Notify.success('Drink successfully added');
     setImageURL('');
     form.reset();
+    navigate('/my-drinks');
   };
 
   return (

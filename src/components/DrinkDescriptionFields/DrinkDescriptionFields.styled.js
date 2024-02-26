@@ -8,7 +8,9 @@ export const DrinkStyle = styled.div`
   margin-bottom: 40px;
   @media ${device.tablet} {
   }
-
+  .alcoholicBlock {
+    cursor: not-allowed;
+  }
   & .react-select {
     margin-left: auto;
     width: 200px;
@@ -157,7 +159,7 @@ export const DrinkStyle = styled.div`
     align-items: center;
     color: rgba(243, 243, 243, 0.5);
 
-     & .custom-radiobutton {
+    & .custom-radiobutton {
       display: inline-block;
       height: 24px;
       width: 24px;
@@ -232,7 +234,7 @@ export const DrinkStyle = styled.div`
     margin: -1px;
     border: 0;
     padding: 0;
-    
+
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);

@@ -1,16 +1,39 @@
+import { useEffect } from 'react';
 import { OverlayLogOut } from './ModalLogOut.styled';
-
 import { IoCloseOutline } from 'react-icons/io5';
 import LogoutButton from '../../LogoutButton/LogoutButton';
 
 const ModalLogOut = ({ isOpenLogOut, closeModal }) => {
+  useEffect(() => {
+    if (isOpenLogOut) {
+      const handleKeyDown = (e) => {
+        if (e.code === 'Escape') {
+          closeModal();
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'auto';
+      };
+    }
+  }, [isOpenLogOut, closeModal]);
+
+  const clickOnOverlay = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
   return (
     <>
       {isOpenLogOut && (
-        <OverlayLogOut onClick={closeModal}>
+        <OverlayLogOut onClick={clickOnOverlay}>
           <div className="modalLogOut">
             <div>
-              <button className="button-close">
+              <button onClick={closeModal} className="button-close">
                 <IoCloseOutline className="close" />
               </button>
 

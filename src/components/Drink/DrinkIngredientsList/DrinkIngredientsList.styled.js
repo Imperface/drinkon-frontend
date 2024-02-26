@@ -18,17 +18,18 @@ export const Title = styled.h4`
 export const ListIngredients = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   row-gap: 20px;
+  column-gap: 22px;
+
   margin-bottom: 80px;
 
   @media screen and ${device.tablet} {
-    justify-content: flex-start;
     column-gap: 22px;
   }
   @media screen and ${device.desktop} {
-    justify-content: space-between;
     margin-bottom: 100px;
+    justify-content: left;
   }
 `;
 
