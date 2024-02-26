@@ -49,7 +49,6 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
   const userDateOfBirth = user.dateOfBirth;
 
   const isAdult = () => {
-    console.log(userDateOfBirth);
     const dateOfBirth = userDateOfBirth;
     // get day, month, year from params
     let [day, month, year] = dateOfBirth.split('/');
@@ -85,7 +84,6 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
   const onImageChange = (e) => {
     const fileURL = URL.createObjectURL(e.target.files[0]);
     setImageURL(fileURL);
-    console.log(fileURL);
   };
 
   return (

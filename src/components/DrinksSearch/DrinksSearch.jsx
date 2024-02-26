@@ -39,13 +39,11 @@ export const MyComponent = ({ categories, onSearch }) => {
   };
 
   const handleIngredientChange = (selectedOptions) => {
-    console.log(selectedOptions);
     setSelectedIngredients(selectedOptions?.value || '');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchQuery, selectedCategory, selectedIngredients);
     onSearch(`${searchQuery}`, `${selectedCategory}`, selectedIngredients);
     setSearchQuery('');
   };
