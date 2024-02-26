@@ -1,4 +1,4 @@
-import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P as w,x as $}from"./index-c1feab16.js";import{P as I}from"./PageTitle-a56dab28.js";import{S as v}from"./Section-86cbff5c.js";import{g as z,b as D,d as y}from"./selectors-a7001df1.js";const T=n.h4`
+import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,K as u,I as j,M as k,O as w,x as $}from"./index-bebf1e44.js";import{P as I}from"./PageTitle-99e4a3dd.js";import{S as v}from"./Section-4f9a7dfe.js";import{g as z,b as D,d as y}from"./selectors-a7001df1.js";const T=n.h4`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
@@ -147,13 +147,13 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P a
     width: 400px;
     height: 400px;
   }
-`,U=({data:o})=>{const{_id:i,drink:s,alcoholic:r,glass:a,drinkThumb:d,shortDescription:p,favorites:x}=o;return e.jsxs(N,{children:[e.jsxs("div",{className:"info-inner",children:[e.jsx(I,{name:s}),e.jsxs(A,{children:[e.jsxs(M,{children:[a," / ",r]}),e.jsx(O,{children:p}),e.jsx(_,{id:i,favoritesDrink:x})]})]}),e.jsx(H,{src:d,alt:s,title:s})]})},W=n.div`
+`,K=({data:o})=>{const{_id:i,drink:s,alcoholic:r,glass:a,drinkThumb:d,shortDescription:p,favorites:x}=o;return e.jsxs(N,{children:[e.jsxs("div",{className:"info-inner",children:[e.jsx(I,{name:s}),e.jsxs(A,{children:[e.jsxs(M,{children:[a," / ",r]}),e.jsx(O,{children:p}),e.jsx(_,{id:i,favoritesDrink:x})]})]}),e.jsx(H,{src:d,alt:s,title:s})]})},U=n.div`
   @media screen and ${t.desktop} {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
   }
-`,q=n.h3`
+`,W=n.h3`
   font-weight: 600;
   font-size: 28px;
   line-height: 1.14;
@@ -169,7 +169,7 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P a
   @media screen and ${t.desktop} {
     margin-bottom: 60px;
   }
-`,G=n.p`
+`,q=n.p`
   font-size: 14px;
   line-height: 1.28;
   margin-bottom: 40px;
@@ -182,7 +182,7 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P a
   @media screen and ${t.desktop} {
     width: 549px;
   }
-`,J=n.img`
+`,G=n.img`
   width: 335px;
   height: 430px;
 
@@ -198,7 +198,7 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P a
     width: 631px;
     height: 480px;
   }
-`,K="/drinkon-frontend/assets/drink-mob@1x-303d46ea.jpg",Q="/drinkon-frontend/assets/drink-tab@1x-cbbb464f.jpg",g="/drinkon-frontend/assets/drink-desc@1x-c40c8a65.jpg",V=({instructions:o})=>e.jsxs(e.Fragment,{children:[e.jsx(q,{children:"Recipe Preparation"}),e.jsxs(W,{children:[e.jsx(G,{children:o}),e.jsx(J,{srcSet:`${K} 375w, ${Q} 768w, ${g} 1024w`,sizes:"(max-width: 768px) 375px, (max-width: 1024px) 768px, 1024px",src:g,alt:"Drink"})]})]}),X=n.div`
+`,J="/drinkon-frontend/assets/drink-mob@1x-303d46ea.jpg",Q="/drinkon-frontend/assets/drink-tab@1x-cbbb464f.jpg",g="/drinkon-frontend/assets/drink-desc@1x-c40c8a65.jpg",V=({instructions:o})=>e.jsxs(e.Fragment,{children:[e.jsx(W,{children:"Recipe Preparation"}),e.jsxs(U,{children:[e.jsx(q,{children:o}),e.jsx(G,{srcSet:`${J} 375w, ${Q} 768w, ${g} 1024w`,sizes:"(max-width: 768px) 375px, (max-width: 1024px) 768px, 1024px",src:g,alt:"Drink"})]})]}),X=n.div`
   width: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -215,4 +215,4 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P a
     padding-top: 158px;
     padding-bottom: 140px;
   }
-`,ne=()=>{const o=m(),{drinkId:i}=k();l.useEffect(()=>{o(w(i))},[o,i]);const s=c(z),r=c(D),a=c(y);return e.jsx(X,{children:e.jsxs(v,{className:"drinkSection",children:[r&&e.jsx($,{}),a&&e.jsx("h1",{children:a}),Object.keys(s).length>0&&e.jsxs(e.Fragment,{children:[e.jsx(U,{data:s}),e.jsx(C,{data:s.ingredients}),e.jsx(V,{instructions:s.instructions})]})]})})};export{ne as default};
+`,ne=()=>{const o=m(),{drinkId:i}=k();l.useEffect(()=>{o(w(i))},[o,i]);const s=c(z),r=c(D),a=c(y);return e.jsx(X,{children:e.jsxs(v,{className:"drinkSection",children:[r&&e.jsx($,{}),a&&e.jsx("h1",{children:a}),Object.keys(s).length>0&&e.jsxs(e.Fragment,{children:[e.jsx(K,{data:s}),e.jsx(C,{data:s.ingredients}),e.jsx(V,{instructions:s.instructions})]})]})})};export{ne as default};
