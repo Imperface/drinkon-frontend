@@ -149,6 +149,41 @@ export const DrinkStyle = styled.div`
     display: flex;
     margin-top: 20px;
   }
+  .radioBtn1 {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    color: rgba(243, 243, 243, 0.5);
+
+     & .custom-radiobutton {
+      display: inline-block;
+      height: 24px;
+      width: 24px;
+      border: 1px solid rgba(243, 243, 243, 0.5);
+      cursor: pointer;
+      background-color: transparent;
+      margin-right: 10px;
+      border-radius: 50%;
+      position: relative;
+    }
+    & .textRadioBtn:checked + span {
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+      }
+    }
+  }
+
   .radioBtn {
     font-weight: 400;
     font-size: 14px;
@@ -197,7 +232,7 @@ export const DrinkStyle = styled.div`
     margin: -1px;
     border: 0;
     padding: 0;
-
+    
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);

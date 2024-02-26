@@ -50,6 +50,18 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
   const user = useSelector(selectUserData);
   const userDateOfBirth = user.dateOfBirth;
 
+  const getAge = (str) => {
+    const dd = str.split('/').map(d => Number(d));
+    const userBirthdate = new Date(dd[2], dd[1] - 1, dd[0], 0, 0, 0, 0);
+    const currentDate = new Date();
+    const age = currentDate.getFullYear() - userBirthdate.getFullYear();
+    const monthsPassed = currentDate.getMonth() - userBirthdate.getMonth();
+    if (age < 18) 
+    return true;
+  }
+
+  const isAdult = getAge(userDateOfBirth);
+
   const onImageChange = (e) => {
     const fileURL = URL.createObjectURL(e.target.files[0]);
     setImageURL(fileURL);
@@ -123,17 +135,31 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
         </label>
 
         <div className="radioBtnBlock">
+          {isAdult ? (<label className="radioBtn1">
+            <input
+              className="textRadioBtn visually-hidden"
+              type="radio"
+              name="alcoholic"
+              value="Alcoholic"
+              disabled={true}
+            />
+            <span className="custom-radiobutton"></span>
+            Alcoholic
+          </label>
+          ):(
           <label className="radioBtn">
             <input
               className="textRadioBtn visually-hidden"
               type="radio"
               name="alcoholic"
               value="Alcoholic"
-              disabled={isButtonDisabled}
+              disabled= {false}
             />
             <span className="custom-radiobutton"></span>
             Alcoholic
           </label>
+          )}
+          
 
           <label className="radioBtn">
             <input
