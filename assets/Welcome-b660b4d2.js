@@ -1,4 +1,4 @@
-import{s as n,d as t,j as o,N as i}from"./index-1d5a8b99.js";import{s as r,a as l,w as a,b as s}from"./bg-welcome-desc@1x-0e9701bd.js";import{S as c}from"./Section-043d5a3e.js";const p=n.div`
+import{s as n,d as t,j as o,N as i}from"./index-9c0186d4.js";import{s as r,a as l,w as a,b as s}from"./bg-welcome-desc@1x-0e9701bd.js";import{S as c}from"./Section-45366637.js";const p=n.div`
   color: ${e=>e.theme.startPageTxtColor};
   width: 100%;
   height: 100vh;
