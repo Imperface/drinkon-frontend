@@ -5,22 +5,19 @@ import { selectUserData } from '../../../redux/users/selectors';
 
 import { updateUserThunk } from '../../../redux/users/operations';
 
-// import UserLogo from '../../UserLogo/UserLogo';
-
 import { BackDrop } from './Modal.styled';
 import { IoCloseOutline } from 'react-icons/io5';
+import { FaPlus } from 'react-icons/fa6';
 import { LuPen } from 'react-icons/lu';
 
 import { Notify } from 'notiflix';
-
-// import userLogoImg from '../../images/userInfoModal/userAvatar.svg';
-// import ModalDropDown from './ModalDropDown';
 
 export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUserData);
   const [inputName, setInputName] = useState(user.name);
-  const [photo, setPhoto] = useState(user.avatarURL);
+  let avatarURLUSer = user.avatarURL;
+  const [photo, setPhoto] = useState(avatarURLUSer);
 
   useEffect(() => {
     if (isOpenModal) {
@@ -38,36 +35,35 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
         document.body.style.overflow = 'auto';
       };
     }
-  }, [isClose, isOpenModal]);
+  }, [isClose, isOpenModal, photo]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target.elements.name.value;
-    const avatar = e.target.elements.avatar.files[0];
-    const { error, payload } = await dispatch(
-      updateUserThunk({ name, avatar })
-    );
+
+    const formData = new FormData();
+    const form = e.target;
+    formData.append('name', form.elements.name.value);
+    formData.append('avatarURL', form.elements.avatar.files[0]);
+
+    const { error, payload } = await dispatch(updateUserThunk(formData));
+    console.log('payload: ', payload);
+
     if (error) {
       Notify.failure(payload);
       return;
     }
-    setPhoto(avatar);
+    if (payload) {
+      setPhoto(payload.avatarURL);
+      isClose();
+    }
     isClose();
-    // e.target.reset();
   };
 
   const clickOnOverlay = (e) => {
     if (e.target === e.currentTarget) {
       isClose();
-      console.log(e.code);
     }
   };
-  // const handlePhoto = (e) => {
-  //   const avatar = e.target.files[0];
-  //   const avatarURL = URL.createObjectURL(avatar);
-  //   setPhoto(avatarURL);
-  // };
-
   return (
     <>
       {isOpenModal && (
@@ -76,26 +72,20 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
             <button onClick={isClose} className="button-close">
               <IoCloseOutline className="icon-close" />
             </button>
-            {/* <UserLogo /> */}
+
             <form className="form" onSubmit={handleSubmit}>
               <div className="wrapper-img-inp">
-                {/* <input
-                  className="wrapper-photo"
-                  type="file"
-                  name="avatar"
-                  id="avatar"
-                  accept=".jpg, .jpeg, .png"
-                  onChange={handlePhoto}
-                /> */}
                 <input
                   type="file"
                   id="avatar"
                   accept=".jpg, .jpeg, .png"
-                  // onChange={handleFileChange}
                   style={{ display: 'none' }}
                 />
                 <label htmlFor="avatar" className="custom-upload-label">
                   <img className="img-user" src={photo} alt="" />
+                  <span className="supun-plus">
+                    <FaPlus className="plus" />
+                  </span>
                 </label>
               </div>
 
@@ -117,53 +107,6 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
           </div>
         </BackDrop>
       )}
-      {/* <div onClick={toggleMenu}>
-        <UserLogo />
-      </div>
-      <BackDrop open={isOpen} onClick={toggleMenu} />
-      <Modal open={isOpen}>
-        <CloseBtn onClick={closeModal}> */}
-      {/* <svg width="18px" height="18px" stroke="#F3F3F3">
-            <use href={`${sprite}#icon-close`} />
-          </svg> */}
-      {/* <IoCloseOutline />
-        </CloseBtn>
-        <Form onSubmit={handleSubmit}>
-          <Photo>
-            <PhotoWrapper>
-              <img
-                width="100"
-                height="100"
-                src={photo}
-                alt="User avatar"
-                onError={(event) => {
-                  event.currentTarget.src = photo;
-                }}
-              />
-            </PhotoWrapper>
-            <AddBtn htmlFor="avatar"> */}
-      {/* <svg width="34px" height="34px">
-                <use href={`${sprite}#icon-add`} />
-              </svg> */}
-      {/* <ImgInput
-                type="file"
-                name="avatar"
-                id="avatar"
-                accept=".jpg, .jpeg, .png"
-                onChange={handlePhoto}
-              />
-            </AddBtn>
-          </Photo>
-          <NameInput
-            type="text"
-            name="name"
-            value={inputName}
-            onChange={(e) => setInputName(e.target.value)}
-          />
-          <SaveBtn type="submit">Save changes</SaveBtn>
-        </Form>
-      </Modal> */}
-      {/* <ModalDropDown isOpenDrop={isOpen} handleClickEdit={toggleMenu} /> */}
     </>
   );
 };

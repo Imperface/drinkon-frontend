@@ -18,7 +18,7 @@ export const OverlayLogOut = styled.div`
     min-width: 280px;
     width: 335px;
     // height: 193px;
-
+    z-index: 1200;
     max-height: 304px;
     background-color: ${(props) => props.theme.darkBlueColor};
     border-radius: 16px;
