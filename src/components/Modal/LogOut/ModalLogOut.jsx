@@ -4,10 +4,15 @@ import { IoCloseOutline } from 'react-icons/io5';
 import LogoutButton from '../../LogoutButton/LogoutButton';
 
 const ModalLogOut = ({ isOpenLogOut, closeModal }) => {
+  const clickOnOverlay = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
   return (
     <>
       {isOpenLogOut && (
-        <OverlayLogOut onClick={closeModal}>
+        <OverlayLogOut onClick={clickOnOverlay}>
           <div className="modalLogOut">
             <div>
               <button className="button-close">
