@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 import { LuPen } from 'react-icons/lu';
 
 const ModalDropDown = ({
-  isOpenDrop: isOpen,
+  isOpenDrop,
   toggleModal,
   isOpenUserUpdate,
   closeDropDown,
 }) => {
   useEffect(() => {
-    if (isOpen) {
+    if (isOpenDrop) {
       const handleKeyDown = (e) => {
         if (e.code === 'Escape') {
           closeDropDown();
@@ -24,7 +24,7 @@ const ModalDropDown = ({
         document.body.style.overflow = 'auto';
       };
     }
-  }, [isOpen, closeDropDown]);
+  }, [isOpenDrop, closeDropDown]);
 
   const onClickPen = () => {
     closeDropDown();
@@ -39,7 +39,7 @@ const ModalDropDown = ({
 
   return (
     <>
-      {isOpen && (
+      {isOpenDrop && (
         <ModalWrapperDrop onClick={clickOnOverlay}>
           <div className="overlay-drop-modal">
             <div className="wrapper-text">

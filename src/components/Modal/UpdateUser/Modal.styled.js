@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from 'constants/device';
 export const BackDrop = styled.div`
   position: fixed;
   top: 0;
@@ -10,6 +11,7 @@ export const BackDrop = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 2200;
 
   & .wrapper-modal {
     border-radius: 16px;
@@ -18,7 +20,7 @@ export const BackDrop = styled.div`
     background-color: ${(props) => props.theme.darkBlueColor};
     padding: 50px 25px;
     position: relative;
-    z-index: 1200;
+    z-index: 2200;
   }
 
   & .button-close {
@@ -59,7 +61,6 @@ export const BackDrop = styled.div`
 
   & .wrapper-img-inp {
     margin-bottom: 25px;
-    height: 94px;
   }
   & .pen-input {
     position: absolute;
@@ -70,6 +71,7 @@ export const BackDrop = styled.div`
     margin-bottom: 18px;
     width: 285px;
     height: 54px;
+
     padding: 18px 40px 18px 24px;
     border-radius: 42px;
     font-weight: 600;
@@ -89,6 +91,105 @@ export const BackDrop = styled.div`
     font-size: 14px;
     line-height: 1.28571;
     background-color: ${(props) => props.theme.white};
-    color: ${(props) => props.theme.darkBlueColor};
+    color: ${(props) => props.theme.darkBlueColor}; 
+
   }
+
+  & .custom-upload-label {
+    display: inline-block;
+    height: 94px;
+    position: relative;
+    cursor: pointer;
+  }
+  & .plus {
+    background-color: #546081;
+    border-radius: 50%;
+  }
+
+  & .supun-plus {
+    position: absolute;
+    top: 66px;
+    left: 26px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #546081;
+    border-radius: 50%;
+  }
+
+  @media ${device.tablet} {
+    & .wrapper-modal {
+      width: 500px;
+      height: 426px;
+      padding: 50px 50px 75px 50px;
+    }
+
+    & .button-close {
+      top: 18px;
+      right: 18px;
+    }
+
+    & .icon-close {
+      width: 32px;
+      height: 32px;
+    }
+
+    & .img-user {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    & .wrapper-img-inp {
+      height: 116px;
+      margin-bottom: 50px;
+    }
+
+    & .supun-plus {
+      top: 84px;
+      left: 34px;
+      width: 32px;
+      height: 32px;
+    }
+
+    & .pen-input {
+      top: 18px;
+      width: 20px;
+      height: 20px;
+    }
+
+    & .name-user {
+      width: 400px;
+      height: 56px;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.56;
+      padding: 14px 40px 15px 24px;
+    }
+
+    & .label-text {
+      margin-bottom: 25px;
+    }
+
+    & .btn-submit {
+      width: 400px;
+      height: 56px;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.56;
+      padding: 18px 146px;
+      font-size: 16px;
+ 
+      line-height: 1.125;
+       &:hover {
+       
+    background-color: transparent;
+       border: 1px solid ${(props) => props.theme.whiteColor};
+    color: ${(props) => props.theme.whiteColor};
+    }
+  }
+
+  @media ${device.desktop} {   
 `;

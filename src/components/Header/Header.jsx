@@ -36,6 +36,7 @@ const Header = () => {
     const clickPenBtn = e.currentTarget;
     if (clickPenBtn) {
       setModalDrop(!modalDropOpen);
+
       setModalLogOut(!modalLogOutOpen);
     }
   };
@@ -50,7 +51,7 @@ const Header = () => {
 
   const modalUserUpdateClose = () => {
     setUserUpdate(!modalUpdateUserOpen);
-    setModalDrop(!modalDropOpen);
+    setModalDrop(false);
   };
 
   const toggleOverlay = () => {
