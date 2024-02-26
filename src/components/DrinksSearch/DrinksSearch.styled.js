@@ -74,7 +74,7 @@ export const CustomSelect = styled(Select)`
 `;
 
 export const CustomStyles = {
-  ...CustomSelect, // використовую власні стилі
+  ...CustomSelect,
   control: (provided) => ({
     ...provided,
     padding: '8px 16px 8px 24px',
@@ -87,7 +87,6 @@ export const CustomStyles = {
     border: '1px solid rgba(243, 243, 243, 0.2)',
     borderRadius: '200px',
     backgroundColor: '#161f37',
-    // height: 'auto',
     [`@media ${device.tablet}`]: {
       width: '199px',
       fontSize: '17px',
@@ -103,11 +102,6 @@ export const CustomStyles = {
     ...provided,
     width: '107px',
     backgroundColor: '#161f37',
-    // fontFamily: '"Manrope", sans-serif',
-    // fontWeight: 400,
-    // fontSize: '14px',
-    // lineHeight: '1.28571',
-    // color: '#f3f3f3',
   }),
   menu: (provided) => ({
     ...provided,

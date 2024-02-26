@@ -52,7 +52,6 @@ export const PopularDrinksListDescriptionContainer = styled.div`
 `;
 export const PopularDrinksListDescriptionTitle = styled.h4`
   margin: 0;
-  /* width: 79px; */
   height: 22px;
   font-family: 'Manrope', sans-serif;
   font-weight: 500;

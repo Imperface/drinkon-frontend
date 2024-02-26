@@ -111,7 +111,6 @@ export const DrinkStyle = styled.div`
     height: 34px;
     min-width: 200px;
 
-    /* margin-bottom: 35px; */
   }
   .titleAvatar {
     position: absolute;
@@ -139,7 +138,6 @@ export const DrinkStyle = styled.div`
     width: 335px;
     height: auto;
     padding-bottom: 10px;
-    /* margin-bottom: 40px; */
     font-size: 14px;
     color: ${(props) => props.theme.whiteFiftyColor};
     font-weight: 400;

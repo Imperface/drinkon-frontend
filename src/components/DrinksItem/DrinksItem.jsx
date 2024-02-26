@@ -2,7 +2,6 @@ import { RiDeleteBinLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import * as ROUTES from 'constants/routes.js';
 
-// import placeholderImage from ''; // Шлях до заглушки
 import {
   StyledDrinksItem,
   StyledDivContainer,
@@ -24,12 +23,7 @@ export const DrinksItem = ({
 }) => {
   return (
     <StyledDrinksItem key={_id}>
-      <img
-        // src={drinkThumb || placeholderImage}
-        src={drinkThumb}
-        alt={drink}
-        loading="lazy"
-      />
+      <img src={drinkThumb} alt={drink} loading="lazy" />
       <StyledDivContainer>
         <div>
           <Title>{drink}</Title>

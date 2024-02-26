@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { device } from 'constants/device';
 
 export const StyledDatePicker = styled(DatePicker)`
-  /* ЦЕЙ КУСОК НЕ ЧІПАТИ, БО ЦЕ DIV СТИЛІЗОВАНИЙ, ЯК ІНПУТ */
+  /* THIS DIV IS STYLED AS INPUT */
   border-radius: 42px;
   width: 335px;
   height: 54px;
@@ -28,7 +28,6 @@ export const StyledDatePicker = styled(DatePicker)`
   &:focus::placeholder {
     color: ${(props) => props.theme.whiteColor};
   }
-  /* ЦЕЙ КУСОК НЕ ЧІПАТИ */
   @media ${device.tablet} {
     width: 400px;
     height: 56px;

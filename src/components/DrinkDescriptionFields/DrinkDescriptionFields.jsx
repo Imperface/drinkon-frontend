@@ -79,8 +79,6 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
     return true;
   };
 
-  // const isAdult = getAge(userDateOfBirth);
-
   const onImageChange = (e) => {
     const fileURL = URL.createObjectURL(e.target.files[0]);
     setImageURL(fileURL);

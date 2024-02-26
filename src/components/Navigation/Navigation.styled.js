@@ -40,7 +40,6 @@ export const StyledNavigationMobile = styled.nav`
   gap: 16px;
   flex-direction: column;
   padding-top: 160px;
-  /* padding-bottom: 100vh; */
 
   .navigation-link {
     font-size: 14px;
