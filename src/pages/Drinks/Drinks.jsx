@@ -30,7 +30,7 @@ const Drinks = () => {
   // get options for Selects
   const ingredients = useSelector(selectSearchDrinks);
   const categories = useSelector(selectFiltersCategories);
-  const isLoading = useSelector(selectDrinksIsLoading);
+  // const isLoading = useSelector(selectDrinksIsLoading);
   const dispatch = useDispatch();
 
   // get first render drinks
@@ -121,7 +121,7 @@ const Drinks = () => {
 
   return (
     <DrinksWrapper>
-      {isLoading && <Loader />}
+      {/* {isLoading && <Loader />} */}
       <Section className="drinks">
         <PageTitle name="Drinks" />
         <MyComponent
