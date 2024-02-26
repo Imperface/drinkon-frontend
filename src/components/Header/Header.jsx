@@ -46,6 +46,7 @@ const Header = () => {
 
   const modalUserUpdateClose = () => {
     setUserUpdate(!modalUpdateUserOpen);
+    setModalDrop(!modalDropOpen);
   };
 
   const toggleOverlay = () => {

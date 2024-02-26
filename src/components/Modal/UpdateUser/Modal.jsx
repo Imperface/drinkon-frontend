@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserData } from '../../../redux/users/selectors';
 
@@ -21,6 +23,24 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
   const [inputName, setInputName] = useState(user.name);
   const [photo, setPhoto] = useState(user.avatarURL);
 
+  useEffect(() => {
+    if (isOpenModal) {
+      const handleKeyDown = (e) => {
+        if (e.code === 'Escape') {
+          isClose();
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'auto';
+      };
+    }
+  }, [isClose, isOpenModal]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target.elements.name.value;
@@ -40,6 +60,7 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
   const clickOnOverlay = (e) => {
     if (e.target === e.currentTarget) {
       isClose();
+      console.log(e.code);
     }
   };
   // const handlePhoto = (e) => {
@@ -53,7 +74,7 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
       {isOpenModal && (
         <BackDrop onClick={clickOnOverlay}>
           <div className="wrapper-modal">
-            <button onClick={() => isClose} className="button-close">
+            <button onClick={isClose} className="button-close">
               <IoCloseOutline className="icon-close" />
             </button>
             {/* <UserLogo /> */}
