@@ -24,7 +24,7 @@ export const PaginationItem = styled.li`
     height: 2em;
   }
   .disabled {
-    opacity: 0.5;
+    /* opacity: 0.5; */
     pointer-events: none;
   }
   .ioEllipse {
@@ -50,15 +50,21 @@ export const PaginationButton = styled.button`
   height: 55px;
   cursor: pointer;
   padding: 0;
-  background: none;
-  border: 2px solid #4473ee;
+  border: 1px solid ${(props) => props.theme.whiteColor};
+  background-color: inherit;
+  transition: all 0.3s;
   border-radius: 50px;
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
-  /* color: ${(props) => props.theme.whiteColor}; */
-  color: #4473ee;
+  color: ${(props) => props.theme.whiteColor};
+
+  &:hover,
+  &:focus {
+    background-color: ${(props) => props.theme.whiteColor};
+    color: ${(props) => props.theme.blackColor};
+  }
 
   & span {
     position: absolute;
