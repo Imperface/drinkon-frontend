@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   ContainerDiv,
   Input,
@@ -9,11 +9,13 @@ import { LuSearch } from 'react-icons/lu';
 import { selectFiltersIngredients } from '../../redux/filters/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIngredientsThunk } from '../../redux/filters/operations';
+import throttle from 'lodash.throttle';
 
 export const MyComponent = ({ categories, onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedIngredients, setSelectedIngredients] = useState('');
+
   const dispatch = useDispatch();
   // get ingredient
   useEffect(() => {
@@ -48,8 +50,25 @@ export const MyComponent = ({ categories, onSearch }) => {
     setSearchQuery('');
   };
 
+  const throttled = useRef(
+    throttle(
+      (
+        searchQueryThrottled,
+        selectedCategoryThrottled,
+        selectedIngredientsThrottled
+      ) => {
+        onSearch(
+          searchQueryThrottled,
+          selectedCategoryThrottled,
+          selectedIngredientsThrottled
+        );
+      },
+      2000
+    )
+  );
+
   useEffect(() => {
-    onSearch(searchQuery, selectedCategory, selectedIngredients);
+    throttled.current(searchQuery, selectedCategory, selectedIngredients);
   }, [searchQuery, selectedCategory, selectedIngredients]);
 
   const optionsCategories = categories.map((category) => ({

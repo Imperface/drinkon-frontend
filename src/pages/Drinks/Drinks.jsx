@@ -27,7 +27,6 @@ const Drinks = () => {
   }, [dispatch]);
 
   const handleSearch = (query, value, ingredientId) => {
-    console.log(ingredientId);
     dispatch(
       getSearchDrinksThunk({
         query: query ?? '',

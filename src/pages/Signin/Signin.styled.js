@@ -94,7 +94,7 @@ export const SigninPageWrapper = styled.div`
     width: 335px;
     display: block;
     padding: 15px 0;
-
+    border: 1px solid ${(props) => props.theme.whiteColor};
     margin-top: 14px;
     transition: all 0.3s;
 
