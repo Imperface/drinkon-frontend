@@ -9,7 +9,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { getMainPageDrinksThunk } from '../../redux/drinks/operations';
 import { selectMainPageDrinks } from '../../redux/drinks/selectors';
 
-// import { signupThunk } from '../../redux/users/operations';
 import { selectUserData } from '../../redux/users/selectors';
 
 const HomeList = () => {

@@ -3,8 +3,6 @@ import HomeList from '../../components/HomeList/HomeList';
 import hero from '../../images/heroImage/hero-desc@1x.png';
 import { NavLink } from 'react-router-dom';
 
-// !!! Має бути маршрут на /add, а не /add-drink
-
 const Home = () => {
   return (
     <HomeWrapper>

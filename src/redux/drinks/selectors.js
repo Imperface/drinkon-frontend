@@ -6,12 +6,3 @@ export const selectPopularDrinks = (state) => state.drinks.popular;
 export const selectSearchDrinks = (state) => state.drinks.search;
 export const selectDrinksError = (state) => state.drinks.error;
 export const selectDrinksIsLoading = (state) => state.drinks.isLoading;
-
-//   favorites: [],
-//   own: [],
-//   byId: {},
-//   mainPage: [],
-//   popular: [],
-//   search: {},
-//   error: '',
-//   isLoading: false,

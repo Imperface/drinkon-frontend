@@ -10,18 +10,16 @@ export function DrinksList({ data, onRemoveDrinks }) {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 1440) {
-        setItemsPerPage(8); // Змінюємо кількість карток на сторінці для мобільних пристроїв
+        setItemsPerPage(8);
       } else {
-        setItemsPerPage(9); // Відновлюємо кількість карток на сторінці для більших екранів
+        setItemsPerPage(9);
       }
     };
 
     window.addEventListener('resize', handleResize);
 
-    // Підписка на подію resize відбувається під час завантаження сторінки
     handleResize();
 
-    // Видалення підписки на подію resize при видаленні компонента
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -30,7 +28,7 @@ export function DrinksList({ data, onRemoveDrinks }) {
   const { currentPage, currentData, handlePageChange } = usePagination(
     data,
     itemsPerPage
-  ); // Використовуємо хук
+  );
 
   return (
     <>

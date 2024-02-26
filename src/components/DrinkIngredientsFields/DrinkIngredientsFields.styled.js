@@ -61,12 +61,9 @@ export const IngredientsStyle = styled.div`
     align-items: center;
     border: 1px solid rgba(243, 243, 243, 0.5);
     border-radius: 50px;
-    /* opacity: 0.1; */
     width: 104px;
     height: 38px;
-    /* transition: all; */
     color: white;
-    /* padding: 0 10px; 0 10 */
   }
   .btnCounter {
     background-color: ${(props) => props.theme.whiteZeroColor};
@@ -98,7 +95,6 @@ export const IngredientsStyle = styled.div`
   }
   .listIngr {
     display: grid;
-    /* justify-content: space-between; */
     gap: 18px;
     @media ${device.tablet} {
       width: 100%;
@@ -161,7 +157,6 @@ export const IngredientsStyle = styled.div`
     gap: 10px;
     align-items: center;
     border: 1px solid rgba(243, 243, 243, 0.5);
-    /* opacity: 0.1; */
     border-radius: 200px;
     width: 101px;
     height: 50px;
