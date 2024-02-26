@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addOwnDrinkThunk } from '../../redux/drinks/operations';
-// import { selectDrinks } from "../../redux/drink/drink.selectors";
 import { DrinkDescriptionFields } from '../DrinkDescriptionFields/DrinkDescriptionFields';
 import { RecipePreparation } from '../RecipePreparation/RecipePreparation';
 import { AddDrinkStyle } from './AddDrinkForm.styled';
@@ -47,6 +46,7 @@ export const AddDrinkForm = () => {
 
   const onSubmitAddDrink = async (e) => {
     e.preventDefault();
+    const navigateTo = () => history.push('/drinks');
     const formData = new FormData();
     const form = e.target;
 
@@ -66,6 +66,7 @@ export const AddDrinkForm = () => {
     Notify.success('Drink successfully added');
     setImageURL('');
     form.reset();
+    navigateTo;
   };
 
   return (

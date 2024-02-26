@@ -14,8 +14,6 @@ import {
 import { selectUserData } from '../../redux/users/selectors';
 
 export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCategoryThunk());
@@ -50,17 +48,39 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
   const user = useSelector(selectUserData);
   const userDateOfBirth = user.dateOfBirth;
 
-  const getAge = (str) => {
-    const dd = str.split('/').map(d => Number(d));
-    const userBirthdate = new Date(dd[2], dd[1] - 1, dd[0], 0, 0, 0, 0);
-    const currentDate = new Date();
-    const age = currentDate.getFullYear() - userBirthdate.getFullYear();
-    const monthsPassed = currentDate.getMonth() - userBirthdate.getMonth();
-    if (age < 18) 
-    return true;
-  }
+  const isAdult = () => {
+    console.log(userDateOfBirth);
+    const dateOfBirth = userDateOfBirth;
+    // get day, month, year from params
+    let [day, month, year] = dateOfBirth.split('/');
 
-  const isAdult = getAge(userDateOfBirth);
+    // transform vars to number
+    day = Number(day);
+    month = Number(month);
+    year = Number(year);
+
+    // get date
+    const today = new Date();
+    const userBirth = new Date(year, month - 1, day);
+
+    // get years
+    let age = today.getFullYear() - userBirth.getFullYear();
+
+    // get month
+    const m = today.getMonth() - userBirth.getMonth();
+
+    // decrement year if today month < userBirth month or month < 0
+    if (m < 0 || (m === 0 && today.getDate() < userBirth.getDate())) {
+      age--;
+    }
+
+    if (age < 18) {
+      return false;
+    }
+    return true;
+  };
+
+  // const isAdult = getAge(userDateOfBirth);
 
   const onImageChange = (e) => {
     const fileURL = URL.createObjectURL(e.target.files[0]);
@@ -134,45 +154,33 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
           />
         </label>
 
-        <div className="radioBtnBlock">
-          {isAdult ? (<label className="radioBtn1">
-            <input
-              className="textRadioBtn visually-hidden"
-              type="radio"
-              name="alcoholic"
-              value="Alcoholic"
-              disabled={true}
-            />
-            <span className="custom-radiobutton"></span>
-            Alcoholic
-          </label>
-          ):(
-          <label className="radioBtn">
-            <input
-              className="textRadioBtn visually-hidden"
-              type="radio"
-              name="alcoholic"
-              value="Alcoholic"
-              disabled= {false}
-            />
-            <span className="custom-radiobutton"></span>
-            Alcoholic
-          </label>
-          )}
-          
+        {userDateOfBirth && (
+          <div className="radioBtnBlock">
+            <label className={`radioBtn ${!isAdult() ? 'alcoholicBlock' : ''}`}>
+              <input
+                className="textRadioBtn visually-hidden"
+                type="radio"
+                name="alcoholic"
+                value="Alcoholic"
+                disabled={!isAdult()}
+              />
+              <span className="custom-radiobutton"></span>
+              Alcoholic
+            </label>
 
-          <label className="radioBtn">
-            <input
-              className="textRadioBtn"
-              type="radio"
-              name="alcoholic"
-              defaultChecked="true"
-              value="Non alcoholic"
-            />
-            <span className="custom-radiobutton"></span>
-            Non-alcoholic
-          </label>
-        </div>
+            <label className="radioBtn">
+              <input
+                className="textRadioBtn"
+                type="radio"
+                name="alcoholic"
+                defaultChecked="true"
+                value="Non alcoholic"
+              />
+              <span className="custom-radiobutton"></span>
+              Non-alcoholic
+            </label>
+          </div>
+        )}
       </div>
     </DrinkStyle>
   );
