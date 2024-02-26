@@ -11,6 +11,7 @@ import { MyComponent } from 'components/DrinksSearch/DrinksSearch';
 import { Pagination } from 'components/Pagination/Pagination';
 import { usePagination } from 'customHooks/usePagination';
 import { Link } from 'react-router-dom';
+import { Placeholder } from 'components/Placeholder/Placeholder';
 
 const Drinks = () => {
   const [itemsPerPage, setItemsPerPage] = useState(9);
@@ -88,6 +89,9 @@ const Drinks = () => {
               </li>
             ))}
           </ul>
+        )}
+        {ingredients.drinks && ingredients.drinks.length === 0 && (
+          <Placeholder text="Nothing was found for your request" />
         )}
         {ingredients.drinks && ingredients.drinks.length > itemsPerPage && (
           <Pagination
