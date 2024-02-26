@@ -1,4 +1,4 @@
-import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w as P,x as S,y as F,n as C,z as R,L as O,A as E,F as T}from"./index-6e5269cd.js";import{a as q,b as M,S as v,s as Z}from"./react-select.esm-387da3be.js";import{P as G}from"./PageTitle-f1361c49.js";import{b as B,c as U,d as H}from"./selectors-a7001df1.js";import{v as I}from"./v4-4a60fe23.js";import{S as Y}from"./Section-8e41c986.js";import"./floating-ui.dom-9d61e2db.js";const V=l.div`
+import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w as P,x as S,y as F,n as C,z as R,L as O,A as E,F as T}from"./index-57700730.js";import{a as q,b as M,S as v,s as Z}from"./react-select.esm-1c12c2ef.js";import{P as G}from"./PageTitle-851a04d7.js";import{b as B,c as U,d as H}from"./selectors-a7001df1.js";import{v as I}from"./v4-4a60fe23.js";import{S as Y}from"./Section-0e8f8362.js";import"./floating-ui.dom-9d61e2db.js";const V=l.div`
   margin: 0 auto;
   margin-bottom: 80px;
   padding: 80px 0;
@@ -131,7 +131,6 @@ import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w
     height: 34px;
     min-width: 200px;
 
-    /* margin-bottom: 35px; */
   }
   .titleAvatar {
     position: absolute;
@@ -159,7 +158,6 @@ import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w
     width: 335px;
     height: auto;
     padding-bottom: 10px;
-    /* margin-bottom: 40px; */
     font-size: 14px;
     color: ${t=>t.theme.whiteFiftyColor};
     font-weight: 400;
@@ -362,12 +360,9 @@ import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w
     align-items: center;
     border: 1px solid rgba(243, 243, 243, 0.5);
     border-radius: 50px;
-    /* opacity: 0.1; */
     width: 104px;
     height: 38px;
-    /* transition: all; */
     color: white;
-    /* padding: 0 10px; 0 10 */
   }
   .btnCounter {
     background-color: ${t=>t.theme.whiteZeroColor};
@@ -399,7 +394,6 @@ import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w
   }
   .listIngr {
     display: grid;
-    /* justify-content: space-between; */
     gap: 18px;
     @media ${s.tablet} {
       width: 100%;
@@ -462,7 +456,6 @@ import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w
     gap: 10px;
     align-items: center;
     border: 1px solid rgba(243, 243, 243, 0.5);
-    /* opacity: 0.1; */
     border-radius: 200px;
     width: 101px;
     height: 50px;
@@ -527,7 +520,6 @@ import{s as l,d as s,G as $,u as y,r as w,t as _,v as z,h,k as A,j as e,o as L,w
   gap: 8px;
 `,pe=l.h4`
   margin: 0;
-  /* width: 79px; */
   height: 22px;
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
