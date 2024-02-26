@@ -109,4 +109,34 @@ export const DrinksWrapper = styled.div`
       }
     }
   }
+
+  & .paginationBlock {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+  }
+  & .button-pagination {
+    padding: 20px 40px;
+    border-radius: 30px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    transition: all 0.3s;
+    font-size: 18px;
+    &:hover {
+      background-color: white;
+      color: #161f37;
+      border: 1px solid transparent;
+    }
+    &:disabled {
+      color: #161f37;
+      border: 1px solid transparent;
+
+      background-color: #ffffff50;
+      cursor: not-allowed;
+      &:hover {
+        background-color: #ffffff50;
+      }
+    }
+  }
 `;

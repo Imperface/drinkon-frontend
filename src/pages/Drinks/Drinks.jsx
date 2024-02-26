@@ -1,10 +1,13 @@
 import { DrinksWrapper } from './Drinks.styled';
 import { Section } from 'components/Section/Section';
 import { PageTitle } from 'components/Title/PageTitle';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFiltersCategories } from '../../redux/filters/selectors';
-import { selectSearchDrinks } from '../../redux/drinks/selectors';
+import {
+  selectDrinksIsLoading,
+  selectSearchDrinks,
+} from '../../redux/drinks/selectors';
 import { getSearchDrinksThunk } from '../../redux/drinks/operations';
 import { getCategoryThunk } from '../../redux/filters/operations';
 import { MyComponent } from 'components/DrinksSearch/DrinksSearch';
@@ -12,36 +15,75 @@ import { Pagination } from 'components/Pagination/Pagination';
 import { usePagination } from 'customHooks/usePagination';
 import { Link } from 'react-router-dom';
 import { Placeholder } from 'components/Placeholder/Placeholder';
-
+import throttle from 'lodash.throttle';
+import { Loader } from 'components/Loader/Loader';
 const Drinks = () => {
+  // get image count
   const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [countOfPages, setCountOfPages] = useState(1);
+  // get params
+  const [queryValue, setQueryValue] = useState('');
+  const [categoryValue, setCategoryValue] = useState('');
+  const [ingredientValue, setIngredientValue] = useState('');
+  const [page, setPage] = useState(1);
+
+  // get options for Selects
   const ingredients = useSelector(selectSearchDrinks);
   const categories = useSelector(selectFiltersCategories);
+  const isLoading = useSelector(selectDrinksIsLoading);
   const dispatch = useDispatch();
 
+  // get first render drinks
   useEffect(() => {
     dispatch(getSearchDrinksThunk({}));
   }, [dispatch]);
 
+  // get categories
   useEffect(() => {
     dispatch(getCategoryThunk());
   }, [dispatch]);
 
-  const handleSearch = (query, value, ingredientId) => {
-    dispatch(
-      getSearchDrinksThunk({
-        query: query ?? '',
-        category: value ?? '',
-        ingredientId: ingredientId ?? '',
-        page: '',
-        limit: itemsPerPage,
-      })
-    );
-  };
+  // NOT WORKED
+  // const throttled = useRef(
+  //   throttle(() => {
+  //     const searchParams = { page, limit: itemsPerPage };
+  //     if (queryValue) {
+  //       searchParams.query = queryValue;
+  //     }
+  //     if (categoryValue) {
+  //       searchParams.category = categoryValue.value;
+  //     }
+  //     if (ingredientValue) {
+  //       searchParams.ingredientId = ingredientValue.value;
+  //     }
+  //     dispatch(getSearchDrinksThunk(searchParams));
+  //   }, 2000)
+  // );
+  // useEffect(throttled.current, [
+  //   throttled,
+  //   queryValue,
+  //   categoryValue,
+  //   ingredientValue,
+  //   page,
+  // ]);
+
+  useEffect(() => {
+    const searchParams = { page, limit: itemsPerPage };
+    if (queryValue) {
+      searchParams.query = queryValue;
+    }
+    if (categoryValue) {
+      searchParams.category = categoryValue.value;
+    }
+    if (ingredientValue) {
+      searchParams.ingredientId = ingredientValue.value;
+    }
+    dispatch(getSearchDrinksThunk(searchParams));
+  }, [queryValue, categoryValue, ingredientValue, page, itemsPerPage]);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 1440) {
+      if (window.innerWidth < 1440) {
         setItemsPerPage(10);
       } else {
         setItemsPerPage(9);
@@ -62,18 +104,39 @@ const Drinks = () => {
     itemsPerPage
   );
 
+  const onButtonPrevClick = (e) => {
+    if (page === 1) {
+      return;
+    }
+    setPage((prevState) => prevState - 1);
+  };
+  const onButtonNextClick = (e) => {
+    setPage((prevState) => prevState + 1);
+  };
+
+  const getNumberOfPages = () => {
+    const countOfDrinks = Number(ingredients.quantityTotal);
+    return Math.ceil(countOfDrinks / itemsPerPage);
+  };
+
   return (
     <DrinksWrapper>
+      {isLoading && <Loader />}
       <Section className="drinks">
         <PageTitle name="Drinks" />
         <MyComponent
+          setQueryValue={setQueryValue}
+          setCategoryValue={setCategoryValue}
+          setIngredientValue={setIngredientValue}
+          queryValue={queryValue}
+          categoryValue={categoryValue}
           ingredients={ingredients}
           categories={categories}
-          onSearch={handleSearch}
+          setPage={setPage}
         />
         {ingredients.drinks && (
           <ul className="list">
-            {currentData.map((drink) => (
+            {ingredients.drinks.map((drink) => (
               <li className="item" key={drink._id}>
                 <img
                   className="drinkImg"
@@ -93,13 +156,23 @@ const Drinks = () => {
         {ingredients.drinks && ingredients.drinks.length === 0 && (
           <Placeholder text="Nothing was found for your request" />
         )}
-        {ingredients.drinks && ingredients.drinks.length > itemsPerPage && (
-          <Pagination
-            currentPage={currentPage}
-            itemsPerPage={itemsPerPage}
-            totalItems={ingredients.drinks}
-            onPageChange={handlePageChange}
-          />
+        {ingredients.drinks && ingredients.quantityTotal > itemsPerPage && (
+          <div className="paginationBlock">
+            <button
+              className="button-pagination prev-button"
+              onClick={onButtonPrevClick}
+              disabled={page === 1}
+            >
+              Prev
+            </button>
+            <button
+              className="button-pagination next-button"
+              onClick={onButtonNextClick}
+              disabled={getNumberOfPages() === page}
+            >
+              Next
+            </button>
+          </div>
         )}
       </Section>
     </DrinksWrapper>

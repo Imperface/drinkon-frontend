@@ -5,17 +5,19 @@ import {
   CustomSelect,
   CustomStyles,
 } from './DrinksSearch.styled';
-import { LuSearch } from 'react-icons/lu';
 import { selectFiltersIngredients } from '../../redux/filters/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIngredientsThunk } from '../../redux/filters/operations';
 import throttle from 'lodash.throttle';
 
-export const MyComponent = ({ categories, onSearch }) => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedIngredients, setSelectedIngredients] = useState('');
-
+export const MyComponent = ({
+  categories,
+  setQueryValue,
+  queryValue,
+  setCategoryValue,
+  setIngredientValue,
+  setPage,
+}) => {
   const dispatch = useDispatch();
   // get ingredient
   useEffect(() => {
@@ -31,43 +33,27 @@ export const MyComponent = ({ categories, onSearch }) => {
   };
 
   const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
+    setQueryValue(e.target.value);
+    setPage(1);
   };
 
   const handleCategoryChange = (selectedOption) => {
-    setSelectedCategory(selectedOption?.value || '');
+    if (selectedOption === null) {
+      setCategoryValue('');
+      return;
+    }
+    setPage(1);
+    setCategoryValue(selectedOption);
   };
 
   const handleIngredientChange = (selectedOptions) => {
-    setSelectedIngredients(selectedOptions?.value || '');
+    if (selectedOptions === null) {
+      setIngredientValue('');
+      return;
+    }
+    setPage(1);
+    setIngredientValue(selectedOptions);
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(`${searchQuery}`, `${selectedCategory}`, selectedIngredients);
-    setSearchQuery('');
-  };
-
-  const throttled = useRef(
-    throttle(
-      (
-        searchQueryThrottled,
-        selectedCategoryThrottled,
-        selectedIngredientsThrottled
-      ) => {
-        onSearch(
-          searchQueryThrottled,
-          selectedCategoryThrottled,
-          selectedIngredientsThrottled
-        );
-      },
-      2000
-    )
-  );
-
-  useEffect(() => {
-    throttled.current(searchQuery, selectedCategory, selectedIngredients);
-  }, [searchQuery, selectedCategory, selectedIngredients]);
 
   const optionsCategories = categories.map((category) => ({
     value: category,
@@ -76,17 +62,14 @@ export const MyComponent = ({ categories, onSearch }) => {
 
   return (
     <ContainerDiv>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form">
         <div className="inputContainer">
           <Input
             type="text"
-            value={searchQuery}
-            onChange={handleInputChange}
+            value={queryValue}
+            onInput={throttle(handleInputChange, 10000)}
             placeholder="Enter the text"
           />
-          <button className="buttonSvg" type="submit">
-            <LuSearch color="#f3f3f3" size={24} />
-          </button>
         </div>
 
         <CustomSelect
