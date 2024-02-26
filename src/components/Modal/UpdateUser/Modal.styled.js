@@ -18,6 +18,7 @@ export const BackDrop = styled.div`
     background-color: ${(props) => props.theme.darkBlueColor};
     padding: 50px 25px;
     position: relative;
+    z-index: 1200;
   }
 
   & .button-close {
