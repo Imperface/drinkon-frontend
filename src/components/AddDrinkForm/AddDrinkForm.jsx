@@ -10,6 +10,7 @@ import { PageTitle } from '../Title/PageTitle';
 import { Notify } from 'notiflix';
 import { Loader } from 'components/Loader/Loader';
 import { selectDrinksIsLoading } from '../../redux/drinks/selectors';
+import { useNavigate } from 'react-router-dom';
 
 export const AddDrinkForm = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export const AddDrinkForm = () => {
     { id: uuidv4(), title: '', ingredientId: '', measure: '' },
   ]);
 
+  const navigate = useNavigate();
   // add new ingredient field
   const handleIncrementProduct = () => {
     setIngredientList((prevState) => {
@@ -66,7 +68,7 @@ export const AddDrinkForm = () => {
     Notify.success('Drink successfully added');
     setImageURL('');
     form.reset();
-    navigateTo;
+    navigate('/my-drinks');
   };
 
   return (
