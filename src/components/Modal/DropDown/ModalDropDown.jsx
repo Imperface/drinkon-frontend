@@ -2,14 +2,22 @@ import { ModalWrapperDrop } from './ModalDropDown.styled';
 
 import { LuPen } from 'react-icons/lu';
 
-const ModalDropDown = ({ isOpenDrop: isOpen, toggleModal, handleClickEdit }) => {
+const ModalDropDown = ({
+  isOpenDrop: isOpen,
+  toggleModal,
+  isOpenUserUpdate,
+}) => {
   return (
     <>
       {isOpen && (
         <ModalWrapperDrop>
           <div className="wrapper-text">
             <p>Edit profile</p>
-            <button className="button-edit" onClick={handleClickEdit} type="button">
+            <button
+              className="button-edit"
+              onClick={isOpenUserUpdate}
+              type="button"
+            >
               <LuPen className="pen" />
             </button>
           </div>

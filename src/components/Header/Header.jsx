@@ -10,10 +10,12 @@ import { Navigation } from '../Navigation/Navigation';
 
 import ModalDropDown from '../Modal/DropDown/ModalDropDown';
 import ModalLogOut from '../Modal/LogOut/ModalLogOut';
+import { ModalUserUpdate } from '../Modal/UpdateUser/Modal';
 
 const Header = () => {
   const [modalDropOpen, setModalDrop] = useState(false);
   const [modalLogOutOpen, setModalLogOut] = useState(false);
+  const [modalUpdateUserOpen, setUserUpdate] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   const onClickUser = (e) => {
@@ -35,6 +37,10 @@ const Header = () => {
     setModalLogOut(!modalLogOutOpen);
   };
 
+  const modalUserUpdateClose = () => {
+    setUserUpdate(!modalUpdateUserOpen);
+  };
+
   const toggleOverlay = () => {
     setIsOverlayOpen(!isOverlayOpen);
   };
@@ -44,15 +50,21 @@ const Header = () => {
       <Logo />
       <Navigation />
       <div className="media-screen-wrapper">
-
-         {/* <TogglerTheme /> */}
+        {/* <TogglerTheme /> */}
         <UserLogo onClickUser={onClickUser} />
-        <ModalDropDown isOpenDrop={modalDropOpen} toggleModal={toggleModal} />
+        <ModalDropDown
+          isOpenUserUpdate={modalUserUpdateClose}
+          isOpenDrop={modalDropOpen}
+          toggleModal={toggleModal}
+        />
         <ModalLogOut
           isOpenLogOut={modalLogOutOpen}
           closeModal={modalLogOutClose}
         />
-
+        <ModalUserUpdate
+          isOpen={modalUpdateUserOpen}
+          isClose={modalUserUpdateClose}
+        />
         <BurgerMenu onClick={toggleOverlay} />
       </div>
       <OverlayHeader
