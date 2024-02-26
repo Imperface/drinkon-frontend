@@ -44,6 +44,10 @@ const Header = () => {
     setModalLogOut(!modalLogOutOpen);
   };
 
+  const modalDropClose = () => {
+    setModalDrop(!modalDropOpen);
+  };
+
   const modalUserUpdateClose = () => {
     setUserUpdate(!modalUpdateUserOpen);
     setModalDrop(!modalDropOpen);
@@ -61,6 +65,7 @@ const Header = () => {
         {/* <TogglerTheme /> */}
         <UserLogo onClickUser={onClickUser} />
         <ModalDropDown
+          closeDropDown={modalDropClose}
           isOpenUserUpdate={modalUserUpdateClose}
           isOpenDrop={modalDropOpen}
           toggleModal={toggleModal}

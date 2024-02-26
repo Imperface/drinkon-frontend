@@ -3,7 +3,20 @@ import styled from 'styled-components';
 import { device } from 'constants/device';
 
 export const ModalWrapperDrop = styled.div`
-  border-radius: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+
+& .overlay-drop-modal {
+    border-radius: 8px;
   width: 177px;
   height: 134px;
   background: #161f37;
@@ -17,6 +30,8 @@ export const ModalWrapperDrop = styled.div`
 box-shadow: 0px -4px 74px -15px rgba(249,249,249,0.75);
 -webkit-box-shadow: 0px -4px 74px -15px rgba(249,249,249,0.75);
 -moz-box-shadow: 0px -4px 74px -15px rgba(249,249,249,0.75);x 6px 0px rgba(251, 250, 250, 0.75);
+z-index:1200;
+}
 
   & .wrapper-text {
     display: flex;
