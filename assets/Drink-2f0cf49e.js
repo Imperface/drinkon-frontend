@@ -1,4 +1,4 @@
-import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P as w,x as $}from"./index-319eec76.js";import{P as I}from"./PageTitle-a5a462b4.js";import{S as v}from"./Section-b4c86906.js";import{g as z,b as D,d as y}from"./selectors-a7001df1.js";const T=n.h4`
+import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P as w,x as $}from"./index-7cd3407e.js";import{P as I}from"./PageTitle-6c7708f4.js";import{S as v}from"./Section-052ae763.js";import{g as z,b as D,d as y}from"./selectors-a7001df1.js";const T=n.h4`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
@@ -13,17 +13,18 @@ import{s as n,d as t,j as e,r as l,u as m,h as c,k as b,M as u,I as j,O as k,P a
 `,F=n.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   row-gap: 20px;
+  column-gap: 22px;
+
   margin-bottom: 80px;
 
   @media screen and ${t.tablet} {
-    justify-content: flex-start;
     column-gap: 22px;
   }
   @media screen and ${t.desktop} {
-    justify-content: space-between;
     margin-bottom: 100px;
+    justify-content: left;
   }
 `,P=n.li`
   width: 157px;
