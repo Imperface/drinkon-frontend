@@ -7,8 +7,8 @@ import {
   PaginationButton,
   Navigation,
 } from './Pagination.styled';
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
-import { IoEllipse } from 'react-icons/io5';
+// import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+// import { IoEllipse } from 'react-icons/io5';
 
 export const Pagination = ({ itemsPerPage, totalItems }) => {
   const dispatch = useDispatch();
@@ -30,25 +30,25 @@ export const Pagination = ({ itemsPerPage, totalItems }) => {
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className={currentPage === 1 ? 'disabled' : ''}
-        >
-          <GoChevronLeft className="chevron" />
+        >prev
+          {/* <GoChevronLeft className="chevron" /> */}
         </PaginationButton>
       </PaginationItem>
     );
 
     // Додаємо кнопки з номерами сторінок
-    for (let i = 1; i <= totalPages; i++) {
-      pageNumbers.push(
-        <PaginationItem key={i}>
-          <PaginationButton type="button" onClick={() => handlePageChange(i)}>
-            <IoEllipse
-              className={currentPage === i ? 'ioEllipse active' : 'ioEllipse'}
-            />
-            <span>{i}</span>
-          </PaginationButton>
-        </PaginationItem>
-      );
-    }
+    // for (let i = 1; i <= totalPages; i++) {
+    //   pageNumbers.push(
+    //     <PaginationItem key={i}>
+    //       <PaginationButton type="button" onClick={() => handlePageChange(i)}>
+    //         <IoEllipse
+    //           className={currentPage === i ? 'ioEllipse active' : 'ioEllipse'}
+    //         />
+    //         <span>{i}</span>
+    //       </PaginationButton>
+    //     </PaginationItem>
+    //   );
+    // }
 
     // Додаємо кнопку ">" для переходу на наступну сторінку
     pageNumbers.push(
@@ -58,8 +58,8 @@ export const Pagination = ({ itemsPerPage, totalItems }) => {
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
           className={currentPage === totalPages ? 'disabled' : ''}
-        >
-          <GoChevronRight className="chevron" />
+        >next
+          {/* <GoChevronRight className="chevron" /> */}
         </PaginationButton>
       </PaginationItem>
     );

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Navigation =styled.nav`
- padding: 14px 0;
+export const Navigation = styled.nav`
+  padding: 14px 0;
 `;
 
 export const PaginationList = styled.ul`
@@ -17,7 +17,6 @@ export const PaginationItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
- 
 
   .chevron {
     color: ${(props) => props.theme.whiteThirtyColor};
@@ -47,14 +46,19 @@ export const PaginationButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 120px;
+  height: 55px;
   cursor: pointer;
   padding: 0;
   background: none;
-  border: none;
+  border: 2px solid #4473ee;
+  border-radius: 50px;
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
-  font-size: 12px;
-  color: ${(props) => props.theme.whiteColor};
+  font-size: 14px;
+  line-height: 1.28571;
+  /* color: ${(props) => props.theme.whiteColor}; */
+  color: #4473ee;
 
   & span {
     position: absolute;
