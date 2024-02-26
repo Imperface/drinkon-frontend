@@ -18,6 +18,13 @@ const Header = () => {
   const [modalUpdateUserOpen, setUserUpdate] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
+  // BLOCK BODY WHEN MODALS OPEN
+  if (isOverlayOpen || modalDropOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+
   const onClickUser = (e) => {
     const click = e.currentTarget;
     if (click) {
