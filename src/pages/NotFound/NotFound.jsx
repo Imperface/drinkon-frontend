@@ -1,10 +1,16 @@
-import { NotFoundWrapper } from './NotFound.styled';
+import {
+  ErrorPageImage,
+  ErrorPageText,
+  CenterPageContainer,
+} from './NotFound.styled';
 
 const NotFound = () => {
   return (
-    <NotFoundWrapper>
-      <p>404 Page not found</p>
-    </NotFoundWrapper>
+    <CenterPageContainer>
+      <ErrorPageText>4</ErrorPageText>
+      <ErrorPageImage />
+      <ErrorPageText>4</ErrorPageText>
+    </CenterPageContainer>
   );
 };
 
