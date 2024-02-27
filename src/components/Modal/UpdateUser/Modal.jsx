@@ -44,9 +44,7 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
     const form = e.target;
     formData.append('name', form.elements.name.value);
     formData.append('avatarURL', form.elements.avatar.files[0]);
-    console.log(form.elements.avatar.files[0]);
     const { error, payload } = await dispatch(updateUserThunk(formData));
-    console.log('payload: ', payload);
 
     if (error) {
       Notify.failure(payload);
