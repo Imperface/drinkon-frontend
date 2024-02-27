@@ -4,25 +4,20 @@ import { PageTitle } from 'components/Title/PageTitle';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFiltersCategories } from '../../redux/filters/selectors';
-import {
-  selectDrinksIsLoading,
-  selectSearchDrinks,
-} from '../../redux/drinks/selectors';
+import { selectSearchDrinks } from '../../redux/drinks/selectors';
 import { getSearchDrinksThunk } from '../../redux/drinks/operations';
 import { getCategoryThunk } from '../../redux/filters/operations';
 import { MyComponent } from 'components/DrinksSearch/DrinksSearch';
-import { Pagination } from 'components/Pagination/Pagination';
-import { usePagination } from 'customHooks/usePagination';
 import { Link } from 'react-router-dom';
 import { Placeholder } from 'components/Placeholder/Placeholder';
 import throttle from 'lodash.throttle';
-import { Loader } from 'components/Loader/Loader';
 const Drinks = () => {
   // get image count
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [countOfPages, setCountOfPages] = useState(1);
   // get params
   const [queryValue, setQueryValue] = useState('');
+  const [query, setQuery] = useState('');
   const [categoryValue, setCategoryValue] = useState('');
   const [ingredientValue, setIngredientValue] = useState('');
   const [page, setPage] = useState(1);
@@ -30,7 +25,6 @@ const Drinks = () => {
   // get options for Selects
   const ingredients = useSelector(selectSearchDrinks);
   const categories = useSelector(selectFiltersCategories);
-  // const isLoading = useSelector(selectDrinksIsLoading);
   const dispatch = useDispatch();
 
   // get first render drinks
@@ -43,34 +37,16 @@ const Drinks = () => {
     dispatch(getCategoryThunk());
   }, [dispatch]);
 
-  // NOT WORKED
-  // const throttled = useRef(
-  //   throttle(() => {
-  //     const searchParams = { page, limit: itemsPerPage };
-  //     if (queryValue) {
-  //       searchParams.query = queryValue;
-  //     }
-  //     if (categoryValue) {
-  //       searchParams.category = categoryValue.value;
-  //     }
-  //     if (ingredientValue) {
-  //       searchParams.ingredientId = ingredientValue.value;
-  //     }
-  //     dispatch(getSearchDrinksThunk(searchParams));
-  //   }, 2000)
-  // );
-  // useEffect(throttled.current, [
-  //   throttled,
-  //   queryValue,
-  //   categoryValue,
-  //   ingredientValue,
-  //   page,
-  // ]);
+  const makeApiRequestT = (value) => {
+    setQuery(value);
+  };
+
+  const makeApiRequestThrottled = useRef(throttle(makeApiRequestT, 3000));
 
   useEffect(() => {
     const searchParams = { page, limit: itemsPerPage };
-    if (queryValue) {
-      searchParams.query = queryValue;
+    if (query) {
+      searchParams.query = query;
     }
     if (categoryValue) {
       searchParams.category = categoryValue.value;
@@ -79,7 +55,7 @@ const Drinks = () => {
       searchParams.ingredientId = ingredientValue.value;
     }
     dispatch(getSearchDrinksThunk(searchParams));
-  }, [queryValue, categoryValue, ingredientValue, page, itemsPerPage]);
+  }, [query, categoryValue, ingredientValue, page, itemsPerPage]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -99,10 +75,10 @@ const Drinks = () => {
     };
   }, []);
 
-  const { currentPage, currentData, handlePageChange } = usePagination(
-    ingredients.drinks || [],
-    itemsPerPage
-  );
+  const handleChange = (value) => {
+    setQueryValue(value);
+    makeApiRequestThrottled.current(value);
+  };
 
   const onButtonPrevClick = (e) => {
     if (page === 1) {
@@ -125,7 +101,7 @@ const Drinks = () => {
       <Section className="drinks">
         <PageTitle name="Drinks" />
         <MyComponent
-          setQueryValue={setQueryValue}
+          setQueryValue={handleChange}
           setCategoryValue={setCategoryValue}
           setIngredientValue={setIngredientValue}
           queryValue={queryValue}
