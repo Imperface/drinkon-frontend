@@ -44,7 +44,7 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
     const form = e.target;
     formData.append('name', form.elements.name.value);
     formData.append('avatarURL', form.elements.avatar.files[0]);
-
+    console.log(form.elements.avatar.files[0]);
     const { error, payload } = await dispatch(updateUserThunk(formData));
     console.log('payload: ', payload);
 
@@ -57,6 +57,15 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
       isClose();
     }
     isClose();
+  };
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+
+    if (selectedFile) {
+      const url = URL.createObjectURL(selectedFile);
+      setPhoto(url);
+    }
   };
 
   const clickOnOverlay = (e) => {
@@ -80,6 +89,7 @@ export const ModalUserUpdate = ({ isOpen: isOpenModal, isClose }) => {
                   id="avatar"
                   accept=".jpg, .jpeg, .png"
                   style={{ display: 'none' }}
+                  onChange={handleFileChange}
                 />
                 <label htmlFor="avatar" className="custom-upload-label">
                   <img className="img-user" src={photo} alt="" />

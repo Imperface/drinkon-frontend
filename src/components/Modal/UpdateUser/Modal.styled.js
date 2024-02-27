@@ -87,8 +87,9 @@ export const BackDrop = styled.div`
     padding: 18px 90px;
     width: 285px;
     height: 54px;
+    border:none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 14px; transition: all 0.3s;
     line-height: 1.28571;
     background-color: ${(props) => props.theme.white};
     color: ${(props) => props.theme.darkBlueColor}; 
@@ -137,6 +138,7 @@ export const BackDrop = styled.div`
     }
 
     & .img-user {
+      object-fit: cover;
       width: 100px;
       height: 100px;
       border-radius: 50%;
