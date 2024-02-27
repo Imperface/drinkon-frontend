@@ -49,9 +49,8 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
   const userDateOfBirth = user.dateOfBirth;
 
   const isAdult = () => {
-    const dateOfBirth = userDateOfBirth;
     // get day, month, year from params
-    let [day, month, year] = dateOfBirth.split('/');
+    let [day, month, year] = user.dateOfBirth.split('/');
 
     // transform vars to number
     day = Number(day);
