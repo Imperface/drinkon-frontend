@@ -150,7 +150,7 @@ export const DrinkDescriptionFields = ({ imageURL, setImageURL }) => {
           />
         </label>
 
-        {userDateOfBirth && (
+        {user && (
           <div className="radioBtnBlock">
             <label className={`radioBtn ${!isAdult() ? 'alcoholicBlock' : ''}`}>
               <input
