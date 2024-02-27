@@ -1,4 +1,4 @@
-import{s as n,d as o,j as t}from"./index-67dee03a.js";import{p as a}from"./hero-desc@1x-c9bd24ae.js";const i=n.div`
+import{s as n,d as o,j as t}from"./index-6313e73e.js";import{p as a}from"./hero-desc@1x-c9bd24ae.js";const i=n.div`
   display: flex;
   flex-direction: column;
   align-items: center;
