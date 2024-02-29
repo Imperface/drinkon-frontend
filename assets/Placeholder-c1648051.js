@@ -1,4 +1,4 @@
-import{s as r,d as o,j as t}from"./index-0a84b6e4.js";import{p as i}from"./hero-desc@1x-24a2b576.js";const n=r.div`
+import{s as n,d as o,j as t}from"./index-68e1c7ef.js";import{p as a}from"./hero-desc@1x-c9bd24ae.js";const i=n.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,4 +28,4 @@ import{s as r,d as o,j as t}from"./index-0a84b6e4.js";import{p as i}from"./hero-
       line-height: 1.375;
     }
   }
-`,s="/refreshing-drink-frontend/assets/hero-mob@2x-1445b2a8.png",a="/refreshing-drink-frontend/assets/hero-tab@2x-ab1de86f.png",d="/refreshing-drink-frontend/assets/hero-desc@2x-bc84bac2.png",c=({text:e="You haven`t added any favorite cocktails yet"})=>t.jsxs(n,{children:[t.jsx("img",{src:i,srcSet:`${s} 420w, ${a} 768w, ${d} 1440w`,alt:"Placeholder"}),t.jsx("p",{children:e})]});export{c as P};
+`,s="/drinkon-frontend/assets/hero-mob@2x-1445b2a8.png",r="/drinkon-frontend/assets/hero-tab@2x-ab1de86f.png",d="/drinkon-frontend/assets/hero-desc@2x-bc84bac2.png",h=({text:e="You haven`t added any favorite cocktails yet"})=>t.jsxs(i,{children:[t.jsx("img",{src:a,srcSet:`${s} 420w, ${r} 768w, ${d} 1440w`,alt:"Placeholder"}),t.jsx("p",{children:e})]});export{h as P};

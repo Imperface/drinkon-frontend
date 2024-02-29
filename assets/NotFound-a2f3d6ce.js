@@ -1,4 +1,4 @@
-import{s as n,j as e}from"./index-0a84b6e4.js";const t="/refreshing-drink-frontend/assets/404_iced_tea@1x_sm-a8bc46fc.png",d="/refreshing-drink-frontend/assets/404_iced_tea@2x_sm-0a222142.png",a="/refreshing-drink-frontend/assets/404_iced_tea@1x_md-f54c9dfb.png",r="/refreshing-drink-frontend/assets/404_iced_tea@2x_md-811df41c.png",s=n.div`
+import{s as e,j as n}from"./index-68e1c7ef.js";const t="/drinkon-frontend/assets/404_iced_tea@1x_sm-a8bc46fc.png",d="/drinkon-frontend/assets/404_iced_tea@2x_sm-0a222142.png",a="/drinkon-frontend/assets/404_iced_tea@1x_md-f54c9dfb.png",r="/drinkon-frontend/assets/404_iced_tea@2x_md-811df41c.png",o=e.div`
   width: 123px;
   height: 156px;
   background-image: url(${t});
@@ -21,7 +21,7 @@ import{s as n,j as e}from"./index-0a84b6e4.js";const t="/refreshing-drink-fronte
     screen and (min-resolution: 2dppx) and (min-width: 768px) {
     background-image: url(${r});
   }
-`,i=n.p`
+`,i=e.p`
   color: var(--white-ten-color);
   font-family: 'Manrope';
   font-size: 120px;
@@ -43,7 +43,7 @@ import{s as n,j as e}from"./index-0a84b6e4.js";const t="/refreshing-drink-fronte
     line-height: 200px;
     letter-spacing: 0em;
   }
-`,o=n.div`
+`,s=e.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,4 +61,4 @@ import{s as n,j as e}from"./index-0a84b6e4.js";const t="/refreshing-drink-fronte
   @media screen and (min-width: 1440px) {
     width: 1440px;
   }
-`,p=()=>e.jsxs(o,{children:[e.jsx(i,{children:"4"}),e.jsx(s,{}),e.jsx(i,{children:"4"})]});export{p as default};
+`,p=()=>n.jsxs(s,{children:[n.jsx(i,{children:"4"}),n.jsx(o,{}),n.jsx(i,{children:"4"})]});export{p as default};

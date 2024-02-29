@@ -1,1 +1,0 @@
-const s="/refreshing-drink-frontend/assets/start-desc@1x-056acf8c.jpg",t="/refreshing-drink-frontend/assets/start-tabl@1x-d2779c30.jpg",e="/refreshing-drink-frontend/assets/start-mob@1x-d50afbcf.jpg",r="/refreshing-drink-frontend/assets/bg-welcome-desc@1x-d9c12561.jpg";export{t as a,s as b,e as s,r as w};
