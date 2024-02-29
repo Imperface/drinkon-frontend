@@ -1,1 +1,0 @@
-const t="/drinkon-frontend/assets/start-desc@2x-1b660c93.jpg",s="/drinkon-frontend/assets/start-tabl@2x-baeefd91.jpg",a="/drinkon-frontend/assets/start-mob@2x-166b0082.jpg";export{s as a,t as b,a as s};
