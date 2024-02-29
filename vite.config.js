@@ -15,5 +15,5 @@ export default defineConfig({
       customHooks: '/src/customHooks',
     },
   },
-  base: '/refreshing-drink-frontend/',
+  base: '/drinkon-frontend/',
 });
